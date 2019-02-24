@@ -50,9 +50,11 @@
                                         }
                                         session.removeAttribute("status");
                                     %>
-                <form method="get" action="../products_add" 
-                    id="validationform" charset="utf-8"
-                    enctype="multipart/form-data"
+                <form 
+                    method="post" 
+                    action="../products_add" 
+                    enctype = "multipart/form-data"
+                    id="validationform" 
                     
                     >
                     <div class="form-group row">
