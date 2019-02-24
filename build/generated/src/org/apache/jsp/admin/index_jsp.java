@@ -18,6 +18,8 @@ import Controller.brands;
 import Models.Products;
 import java.util.Vector;
 import Controller.products;
+import Models.Products;
+import Controller.products;
 
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -27,12 +29,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static java.util.List<String> _jspx_dependants;
 
   static {
-    _jspx_dependants = new java.util.ArrayList<String>(6);
+    _jspx_dependants = new java.util.ArrayList<String>(7);
     _jspx_dependants.add("/admin/block/header.jsp");
     _jspx_dependants.add("/admin/block/nav.jsp");
     _jspx_dependants.add("/admin/products.jsp");
     _jspx_dependants.add("/admin/Views/product/create.jsp");
     _jspx_dependants.add("/admin/Views/product/update.jsp");
+    _jspx_dependants.add("/admin/Views/product/details.jsp");
     _jspx_dependants.add("/admin/block/footer.jsp");
   }
 
@@ -67,28 +70,34 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
-      out.write("\n");
-      out.write("<!doctype html>\n");
+      out.write("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n");
       out.write("\n");
       out.write("\n");
       out.write("<html lang=\"en\">\n");
       out.write(" \n");
       out.write("<head>\n");
+      out.write("    \n");
       out.write("    <!-- Required meta tags -->\n");
       out.write("    <meta charset=\"utf-8\">\n");
+      out.write("    <META http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("    <META name=\"GENERATOR\" content=\"IBM WebSphere Studio\">\n");
+      out.write("    <META http-equiv=\"Content-Style-Type\" content=\"text/css\">\n");
+      out.write("    \n");
       out.write("    \n");
       out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n");
       out.write("    <!-- Bootstrap CSS -->\n");
       out.write("    <link rel=\"stylesheet\" href=\"assets/vendor/bootstrap/css/bootstrap.min.css\">\n");
       out.write("    <link href=\"assets/vendor/fonts/circular-std/style.css\" rel=\"stylesheet\">\n");
       out.write("    <link rel=\"stylesheet\" href=\"assets/libs/css/style.css\">\n");
-      out.write("    \n");
       out.write("    <link rel=\"stylesheet\" href=\"assets/vendor/fonts/fontawesome/css/fontawesome-all.css\">\n");
       out.write("    <link rel=\"stylesheet\" href=\"assets/vendor/charts/chartist-bundle/chartist.css\">\n");
       out.write("    <link rel=\"stylesheet\" href=\"assets/vendor/charts/morris-bundle/morris.css\">\n");
       out.write("    <link rel=\"stylesheet\" href=\"assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css\">\n");
       out.write("    <link rel=\"stylesheet\" href=\"assets/vendor/charts/c3charts/c3.css\">\n");
       out.write("    <link rel=\"stylesheet\" href=\"assets/vendor/fonts/flag-icon-css/flag-icon.min.css\">\n");
+      out.write("    <script src=\"assets/vendor/jquery/jquery-3.3.1.min.js\"></script>\n");
+      out.write("    <!--jquery-validate-->\n");
+      out.write("    <script src=\"assets/validate/jquery-validate.js\"></script>\n");
       out.write("    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>\n");
       out.write("</head>\n");
       out.write("\n");
@@ -613,17 +622,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                  \n");
       out.write("                                    ");
 
-                                        }else if(session.getAttribute("status")== "danger"){
-                                    
-      out.write("\n");
-      out.write("                                    <div class=\"alert alert-danger\" role=\"alert\">\n");
-      out.write("                                                This is a danger alert—check it out!\n");
-      out.write("                                            </div>\n");
-      out.write("                                    ");
-
                                         }
                                     
       out.write("\n");
+      out.write("                                    \n");
       out.write("                                    ");
 
                                                 session.removeAttribute("status");
@@ -646,10 +648,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                            <tr>\n");
       out.write("                                                <th>id</th>\n");
       out.write("                                                <th>tên</th>\n");
+      out.write("                                                <th>ảnh</th>\n");
       out.write("                                                <th>giá</th>\n");
       out.write("                                                <th>Nơi sx</th>\n");
-      out.write("                                                <th>Phân khối </th>\n");
-      out.write("                                                <th>Màu </th>\n");
       out.write("                                                <th>Đời xe </th>\n");
       out.write("                                                <th>Loại xe </th>\n");
       out.write("                                                <th>Địa điểm </th>\n");
@@ -684,14 +685,15 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                <td>");
       out.print(list.get(i).getPrice());
       out.write("</td>\n");
-      out.write("                                                <td>");
-      out.print(list.get(i).getCapacity());
-      out.write("</td>\n");
+      out.write("                                                <td>\n");
+      out.write("                                                    <img src=\"");
+      out.print(list.get(i).getAvatar());
+      out.write("\" width=\"100px\" />\n");
+      out.write("                                                    \n");
+      out.write("                                                </td>\n");
+      out.write("                                                \n");
       out.write("                                                <td>");
       out.print(list.get(i).getMade_in());
-      out.write("</td>\n");
-      out.write("                                                <td>");
-      out.print(list.get(i).getColor());
       out.write("</td>\n");
       out.write("                                                <td>");
       out.print(list.get(i).getModel_year());
@@ -712,7 +714,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                    <a href=\"../products_delete?id=");
       out.print(list.get(i).getId());
       out.write("\" class=\"btn btn-danger active\">Xóa </a>\n");
-      out.write("                                                    <a href=\"#\" class=\"btn btn-info active\">Chi Tiết </a>\n");
+      out.write("                                                    <a href=\"index.jsp?status=DetailProduct&id=");
+      out.print(list.get(i).getId());
+      out.write("\" class=\"btn btn-info active\">Chi Tiết </a>\n");
       out.write("                                                </td>\n");
       out.write("                                            </tr>\n");
       out.write("                                            ");
@@ -725,10 +729,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                            <tr>\n");
       out.write("                                                <th>id</th>\n");
       out.write("                                                <th>tên</th>\n");
+      out.write("                                                <th>ảnh</th>\n");
       out.write("                                                <th>giá</th>\n");
       out.write("                                                <th>Nơi sx</th>\n");
-      out.write("                                                <th>Phân khối </th>\n");
-      out.write("                                                <th>Màu </th>\n");
+      out.write("                                               \n");
       out.write("                                                <th>Đời xe </th>\n");
       out.write("                                                <th>Loại xe </th>\n");
       out.write("                                                <th>Địa điểm </th>\n");
@@ -748,7 +752,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <!-- ============================================================== -->\n");
       out.write("                    <!-- end data table multiselects  -->\n");
       out.write("                    <!-- ============================================================== -->\n");
-      out.write("                </div>");
+      out.write("                </div>\n");
+      out.write(" ");
       out.write("\n");
       out.write("                    ");
 
@@ -765,18 +770,21 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("<!--pageEncoding=\"UTF-8\"%>-->\n");
+      out.write("     \n");
       out.write("<!DOCTYPE html>\n");
       out.write("<div class=\"row\">\n");
       out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n");
       out.write("        <div class=\"page-header\">\n");
-      out.write("            <h2 class=\"pageheader-title\">Form Validations </h2>\n");
-      out.write("            <p class=\"pageheader-text\">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>\n");
+      out.write("            <h2 class=\"pageheader-title\">Thêm</h2>\n");
+      out.write("           \n");
       out.write("            <div class=\"page-breadcrumb\">\n");
       out.write("                <nav aria-label=\"breadcrumb\">\n");
       out.write("                    <ol class=\"breadcrumb\">\n");
       out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Dashboard</a></li>\n");
-      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Forms</a></li>\n");
-      out.write("                        <li class=\"breadcrumb-item active\" aria-current=\"page\">Form Validations</li>\n");
+      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Products</a></li>\n");
+      out.write("                        <li class=\"breadcrumb-item active\" aria-current=\"page\">Thêm</li>\n");
       out.write("                    </ol>\n");
       out.write("                </nav>\n");
       out.write("            </div>\n");
@@ -789,12 +797,30 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <!-- ============================================================== -->\n");
       out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n");
       out.write("        <div class=\"card\">\n");
-      out.write("            <h5 class=\"card-header\">Validation Types</h5>\n");
+      out.write("            <h5 class=\"card-header\">Products</h5>\n");
       out.write("            <div class=\"card-body\">\n");
-      out.write("                <form method=\"post\" action=\"../products_add\"\n");
-      out.write("                    id=\"validationform\" \n");
-      out.write("                    data-parsley-validate=\"\"\n");
-      out.write("                    novalidate=\"\">\n");
+      out.write("                \n");
+      out.write("                                    ");
+
+                                    if(session.getAttribute("status")== "danger"){
+                                    
+      out.write("\n");
+      out.write("                                    <div class=\"alert alert-danger\" role=\"alert\">\n");
+      out.write("                                        ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${alert}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\n");
+      out.write("                                    </div>\n");
+      out.write("                                    ");
+
+                                        }
+                                        session.removeAttribute("status");
+                                    
+      out.write("\n");
+      out.write("                <form method=\"get\" action=\"../products_add\" \n");
+      out.write("                    id=\"validationform\" charset=\"utf-8\"\n");
+      out.write("                    enctype=\"multipart/form-data\"\n");
+      out.write("                    \n");
+      out.write("                    >\n");
       out.write("                    <div class=\"form-group row\">\n");
       out.write("                        <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Tên</label>\n");
       out.write("                        <div class=\"col-12 col-sm-8 col-lg-6\">\n");
@@ -810,7 +836,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"form-group row\">\n");
       out.write("                        <label class=\"col-12 col-sm-3 col-form-label text-sm-right\"> Ảnh  </label>\n");
       out.write("                        <div class=\"col-12 col-sm-8 col-lg-6\">\n");
-      out.write("                            <input type=\"text\" required=\"\" name=\"avatar\"  placeholder=\"Ảnh \" class=\"form-control\">\n");
+      out.write("                            <input type=\"file\" required=\"\" name=\"avatar\"  placeholder=\"Ảnh \" class=\"form-control\">\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
       out.write("                    <div class=\"form-group row\">\n");
@@ -834,7 +860,14 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"form-group row\">\n");
       out.write("                        <label class=\"col-12 col-sm-3 col-form-label text-sm-right\"> Model Year </label>\n");
       out.write("                        <div class=\"col-12 col-sm-8 col-lg-6\">\n");
-      out.write("                            <input type=\"text\" required=\"\" name=\"model_year\"  placeholder=\"Model của năm \"form-control\">\n");
+      out.write("                            <input type=\"text\" required=\"\" name=\"model_year\"  placeholder=\"Model của năm \" class=\"form-control\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"form-group row\">\n");
+      out.write("                        <label class=\"col-12 col-sm-3 col-form-label text-sm-right\"> Nội dung</label>\n");
+      out.write("                        <div class=\"col-12 col-sm-8 col-lg-6\">\n");
+      out.write("                            <input type=\"text\" required=\"\" name=\"content\"  placeholder=\"Nội dung \" class=\"form-control\">\n");
+      out.write("                            \n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
       out.write("\n");
@@ -986,7 +1019,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"form-group row text-right\">\n");
       out.write("                        <div class=\"col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0\">\n");
       out.write("                            <button type=\"submit\" class=\"btn btn-space btn-primary\">Submit</button>\n");
-      out.write("                            <button class=\"btn btn-space btn-secondary\">Cancel</button>\n");
+      out.write("                             <a href=\"index.jsp\" class=\"btn btn-space btn-secondary\" >Cancel</a>\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
       out.write("                </form>\n");
@@ -997,13 +1030,14 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <!-- end valifation types -->\n");
       out.write("    <!-- ============================================================== -->\n");
       out.write("</div>\n");
+      out.write("<script src=\"assets/validate/products.js\"></script>");
       out.write("\n");
       out.write("                    ");
 
                         }else if( status.equals("EditProduct")){
                     
       out.write("\n");
-      out.write("                    %>\n");
+      out.write("                   \n");
       out.write("                         ");
       out.write("\n");
       out.write("\n");
@@ -1028,14 +1062,14 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<div class=\"row\">\n");
       out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n");
       out.write("        <div class=\"page-header\">\n");
-      out.write("            <h2 class=\"pageheader-title\">Form Validations </h2>\n");
-      out.write("            <p class=\"pageheader-text\">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>\n");
+      out.write("            <h2 class=\"pageheader-title\">Chỉnh sửa </h2>\n");
+      out.write("           \n");
       out.write("            <div class=\"page-breadcrumb\">\n");
       out.write("                <nav aria-label=\"breadcrumb\">\n");
       out.write("                    <ol class=\"breadcrumb\">\n");
       out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Dashboard</a></li>\n");
-      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Forms</a></li>\n");
-      out.write("                        <li class=\"breadcrumb-item active\" aria-current=\"page\">Form Validations</li>\n");
+      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Products </a></li>\n");
+      out.write("                        <li class=\"breadcrumb-item active\" aria-current=\"page\">Chỉnh sửa </li>\n");
       out.write("                    </ol>\n");
       out.write("                </nav>\n");
       out.write("            </div>\n");
@@ -1048,12 +1082,31 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <!-- ============================================================== -->\n");
       out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n");
       out.write("        <div class=\"card\">\n");
-      out.write("            <h5 class=\"card-header\">Validation Types</h5>\n");
+      out.write("            <h5 class=\"card-header\">Products</h5>\n");
       out.write("            <div class=\"card-body\">\n");
-      out.write("                <form method=\"post\" action=\"../products_add\"\n");
+      out.write("                                    ");
+
+                                    if(session.getAttribute("status")== "danger"){
+                                    
+      out.write("\n");
+      out.write("                                    <div class=\"alert alert-danger\" role=\"alert\">\n");
+      out.write("                                        ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${alert}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\n");
+      out.write("                                    </div>\n");
+      out.write("                                    ");
+
+                                        }
+                                        session.removeAttribute("status");
+                                    
+      out.write("\n");
+      out.write("                <form method=\"post\" action=\"../products_edit\"\n");
       out.write("                    id=\"validationform\" \n");
       out.write("                    data-parsley-validate=\"\"\n");
       out.write("                    novalidate=\"\">\n");
+      out.write("                    <input type=\"hidden\" required=\"\" name=\"id\" value=\"");
+      out.print(u.getId());
+      out.write("\" placeholder=\"Tên \" class=\"form-control\">\n");
       out.write("                    <div class=\"form-group row\">\n");
       out.write("                        <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Tên</label>\n");
       out.write("                        <div class=\"col-12 col-sm-8 col-lg-6\">\n");
@@ -1107,7 +1160,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <div class=\"col-12 col-sm-8 col-lg-6\">\n");
       out.write("                            <input type=\"text\" required=\"\" name=\"model_year\" value=\"");
       out.print(u.getModel_year());
-      out.write("\" placeholder=\"Model của năm \"form-control\">\n");
+      out.write("\" placeholder=\"Model của năm \" class=\"form-control\">\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
       out.write("\n");
@@ -1117,6 +1170,16 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <input type=\"text\" required=\"\" name=\"location\" value=\"");
       out.print(u.getLocation());
       out.write("\" placeholder=\"Đại chỉ \" class=\"form-control\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                        \n");
+      out.write("                    <div class=\"form-group row\">\n");
+      out.write("                        <label class=\"col-12 col-sm-3 col-form-label text-sm-right\"> Nội dung</label>\n");
+      out.write("                        <div class=\"col-12 col-sm-8 col-lg-6\">\n");
+      out.write("                            <input type=\"text\" required=\"\" name=\"content\" value=\"");
+      out.print(u.getContent());
+      out.write("\"  placeholder=\"Nội dung \" class=\"form-control\">\n");
+      out.write("                            \n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
       out.write("\n");
@@ -1282,7 +1345,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"form-group row text-right\">\n");
       out.write("                        <div class=\"col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0\">\n");
       out.write("                            <button type=\"submit\" class=\"btn btn-space btn-primary\">Submit</button>\n");
-      out.write("                            <button class=\"btn btn-space btn-secondary\">Cancel</button>\n");
+      out.write("                            \n");
+      out.write("                            <a href=\"index.jsp\" class=\"btn btn-space btn-secondary\" >Cancel</a>\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
       out.write("                </form>\n");
@@ -1293,6 +1357,158 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <!-- end valifation types -->\n");
       out.write("    <!-- ============================================================== -->\n");
       out.write("</div>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                    ");
+
+                        }else if( status.equals("DetailProduct")){
+                    
+      out.write("\n");
+      out.write("                        ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+
+    String sid = request.getParameter("id");
+    int id = Integer.parseInt(sid);
+
+    Products u = products.findbyid(id);
+    String name = u.getName();
+
+      out.write("\n");
+      out.write("<div class=\"row\">\n");
+      out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n");
+      out.write("        <div class=\"page-header\">\n");
+      out.write("            <h2 class=\"pageheader-title\">Chi tiết SP</h2>\n");
+      out.write("\n");
+      out.write("            <div class=\"page-breadcrumb\">\n");
+      out.write("                <nav aria-label=\"breadcrumb\">\n");
+      out.write("                    <ol class=\"breadcrumb\">\n");
+      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Dashboard</a></li>\n");
+      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Produts</a></li>\n");
+      out.write("                        <li class=\"breadcrumb-item active\" aria-current=\"page\">Chi tiết</li>\n");
+      out.write("                    </ol>\n");
+      out.write("                </nav>\n");
+      out.write("            </div>\n");
+      out.write("        </div>\n");
+      out.write("    </div>\n");
+      out.write("</div>\n");
+      out.write("<!-- ============================================================== -->\n");
+      out.write("<!-- end pageheader -->\n");
+      out.write("<!-- ============================================================== -->\n");
+      out.write("\n");
+      out.write("<div class=\"row\">\n");
+      out.write("    <!-- ============================================================== -->\n");
+      out.write("    <!-- data table multiselects  -->\n");
+      out.write("    <!-- ============================================================== -->\n");
+      out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n");
+      out.write("        <div class=\"card\">\n");
+      out.write("            <div class=\"card-header\">\n");
+      out.write("                <h5 class=\"mb-0\">Products </h5>\n");
+      out.write("\n");
+      out.write("            </div>\n");
+      out.write("            <div class=\"card-body\">\n");
+      out.write("                <div class=\"table-responsive\">\n");
+      out.write("                    <div>\n");
+      out.write("                        <div>\n");
+      out.write("\n");
+      out.write("                            <table id=\"example3\" class=\"table table-striped table-bordered\" style=\"width:100%\">\n");
+      out.write("                                <thead>\n");
+      out.write("                                    <tr>\n");
+      out.write("                                        <th>Tên code</th>\n");
+      out.write("                                        <th>Giá trị </th>\n");
+      out.write("\n");
+      out.write("                                    </tr>\n");
+      out.write("                                </thead>\n");
+      out.write("                                <tbody>\n");
+      out.write("\n");
+      out.write("                                    <tr>\n");
+      out.write("                                        <td>id </td>\n");
+      out.write("                                        <td>");
+      out.print(u.getId());
+      out.write("</td>\n");
+      out.write("                                    </tr>\n");
+      out.write("                                    <tr>\n");
+      out.write("                                        <td>Tên  </td>\n");
+      out.write("                                        <td>");
+      out.print(u.getName());
+      out.write("</td>\n");
+      out.write("                                    </tr>\n");
+      out.write("                                    <tr>\n");
+      out.write("                                        <td>Giá </td>\n");
+      out.write("                                        <td>");
+      out.print(u.getPrice());
+      out.write("</td>\n");
+      out.write("                                    </tr>\n");
+      out.write("                                    <tr>\n");
+      out.write("                                        <td>Nơi sx  </td>\n");
+      out.write("                                        <td>");
+      out.print(u.getMade_in());
+      out.write("</td>\n");
+      out.write("                                    </tr>\n");
+      out.write("                                    <tr>\n");
+      out.write("                                        <td>Phân khối  </td>\n");
+      out.write("                                        <td>");
+      out.print(u.getCapacity());
+      out.write("</td>\n");
+      out.write("                                    </tr>\n");
+      out.write("                                    <tr>\n");
+      out.write("                                        <td>Màu </td>\n");
+      out.write("                                        <td>");
+      out.print(u.getColor());
+      out.write("</td>\n");
+      out.write("                                    </tr>\n");
+      out.write("                                    <tr>\n");
+      out.write("                                        <td>Đời xe </td>\n");
+      out.write("                                        <td>");
+      out.print(u.getModel_year());
+      out.write("</td>\n");
+      out.write("                                    </tr>\n");
+      out.write("                                    <tr>\n");
+      out.write("                                        <td>Địa điểm </td>\n");
+      out.write("                                        <td>");
+      out.print(u.getLocation());
+      out.write("</td>\n");
+      out.write("                                    </tr>\n");
+      out.write("                                    <tr>\n");
+      out.write("                                        <td>Ngày đăng </td>\n");
+      out.write("                                        <td>");
+      out.print(u.getCreated_at());
+      out.write("</td>\n");
+      out.write("                                    </tr>\n");
+      out.write("                                    <tr>\n");
+      out.write("                                        <td>Hãng xe </td>\n");
+      out.write("                                        <td>");
+      out.print(u.getBrand());
+      out.write("</td>\n");
+      out.write("                                    </tr>\n");
+      out.write("                                    <tr>\n");
+      out.write("                                        <td>Nội dung </td>\n");
+      out.write("                                        <td>");
+      out.print(u.getContent());
+      out.write("</td>\n");
+      out.write("                                    </tr>\n");
+      out.write("\n");
+      out.write("                                </tbody>\n");
+      out.write("\n");
+      out.write("                            </table>\n");
+      out.write("\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("            </div>\n");
+      out.write("            <div class=\"form-group row text-right\">\n");
+      out.write("                <div class=\"col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0\">\n");
+      out.write("                    \n");
+      out.write("                    <a href=\"index.jsp\" class=\"btn btn-space btn-secondary\" >Cancel</a>\n");
+      out.write("                </div>\n");
+      out.write("            </div>\n");
+      out.write("            <!-- ============================================================== -->\n");
+      out.write("            <!-- end data table multiselects  -->\n");
+      out.write("            <!-- ============================================================== -->\n");
+      out.write("        </div>\n");
       out.write("\n");
       out.write("\n");
       out.write("                    ");
@@ -1866,7 +2082,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <!-- ============================================================== -->\n");
       out.write("    <!-- Optional JavaScript -->\n");
       out.write("    <!-- jquery 3.3.1 -->\n");
-      out.write("    <script src=\"assets/vendor/jquery/jquery-3.3.1.min.js\"></script>\n");
+      out.write("    \n");
       out.write("    <!-- bootstap bundle js -->\n");
       out.write("    <script src=\"assets/vendor/bootstrap/js/bootstrap.bundle.js\"></script>\n");
       out.write("    <!-- slimscroll js -->\n");
@@ -1887,7 +2103,14 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <script src=\"assets/libs/js/dashboard-ecommerce.js\"></script>\n");
       out.write("</body>\n");
       out.write(" \n");
-      out.write("</html>");
+      out.write("</html>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
