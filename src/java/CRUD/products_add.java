@@ -18,6 +18,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 //import java.util.Calendar;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -26,6 +27,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -51,54 +53,73 @@ public class products_add extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     private static final long serialVersionUID = 1L;
-
+ 
     public static final String SAVE_DIRECTORY = "uploadDir";
-
+ 
     public products_add() {
-        super();
+       super();
     }
+ 
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
-
-        String avatar = "../imager/" + request.getParameter("avatar");
-
         
         
-        DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
-        ServletFileUpload upload = new ServletFileUpload(fileItemFactory);
-        List<FileItem> fileItems = null;
-        try {
-            fileItems = upload.parseRequest(request);
-        } catch (FileUploadException ex) {
-            Logger.getLogger(products_add.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        for (FileItem fileItem : fileItems) {
-            if (!fileItem.isFormField()) {
-                // xử lý file
-                String nameimg = fileItem.getName();
-                if (!nameimg.equals("")) {
-                    String dirUrl = request.getServletContext().getRealPath("") + File.separator + "files";
-                    File dir = new File(dirUrl);
-                    if (!dir.exists()) {
-                        dir.mkdir();
-                    }
-                    String fileImg = dirUrl + File.separator + nameimg;
-                    File file = new File(fileImg);
-                    try {
-                        fileItem.write(file);
-                        System.out.println("UPLOAD THÀNH CÔNG...!");
-                        System.out.println("ĐƯỜNG DẪN KIỂM TRA UPLOAD HÌNH ẢNH : \n" + dirUrl);
-                    } catch (Exception e) {
-                        System.out.println("CÓ LỖ TRONG QUÁ TRÌNH UPLOAD!");
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }
+        
+       try {
+//           String description = request.getParameter("description");
+//           System.out.println("Description: " + description);
+ 
+  
+           // Đường dẫn tuyệt đối tới thư mục gốc của web app.
+           String appPath = request.getServletContext().getRealPath("");
+           appPath = appPath.replace('\\', '/');
+ 
+  
+           // Thư mục để save file tải lên.
+           String fullSavePath = null;
+           if (appPath.endsWith("/")) {
+               fullSavePath = appPath + SAVE_DIRECTORY;
+           } else {
+               fullSavePath = appPath + "/" + SAVE_DIRECTORY;
+           }
+ 
+  
+           // Tạo thư mục nếu nó không tồn tại.
+           File fileSaveDir = new File(fullSavePath);
+           if (!fileSaveDir.exists()) {
+               fileSaveDir.mkdir();
+           }
+           
+           // Danh mục các phần đã upload lên (Có thể là nhiều file).
+           for (Part part : request.getParts()) {
+               String fileName = extractFileName(part);
+               if (fileName != null && fileName.length() > 0) {
+                   String filePath = File.separator + fileName;
+                   System.out.println("Write attachment to file: " + filePath);
+  
+                   // Ghi vào file.
+                   part.write(filePath);
+               }
+           }
+  
+           // Upload thành công.
+            RequestDispatcher dispatcher
+           = request.getServletContext().getRequestDispatcher("/WEB-INF/jsps/uploadFileResults.jsp");
+ 
+            dispatcher.forward(request, response);
+       } catch (Exception e) {
+           e.printStackTrace();
+           request.setAttribute("errorMessage", "Error: " + e.getMessage());
+           RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsps/uploadFile.jsp");
+           dispatcher.forward(request, response);
+       }
 
+       
+       
+       
         HttpSession session = request.getSession();
         java.util.Date date = new java.util.Date();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
@@ -107,7 +128,7 @@ public class products_add extends HttpServlet {
         Products e = new Products();
         e.setName(request.getParameter("name"));
         e.setPrice(Integer.parseInt(request.getParameter("price")));
-        e.setAvatar(avatar);
+        e.setAvatar("dfjk");
         e.setBrand(Integer.parseInt(request.getParameter("brand")));
         e.setCapacity(request.getParameter("capacity"));
         e.setColor(request.getParameter("color"));
@@ -136,6 +157,26 @@ public class products_add extends HttpServlet {
 
         }
     }
+    
+    private String extractFileName(Part part) {
+       // form-data; name="file"; filename="C:\file1.zip"
+       // form-data; name="file"; filename="C:\Note\file2.zip"
+       String contentDisp = part.getHeader("content-disposition");
+       String[] items = contentDisp.split(";");
+       for (String s : items) {
+           if (s.trim().startsWith("filename")) {
+               // C:\file1.zip
+               // C:\Note\file2.zip
+               String clientFileName = s.substring(s.indexOf("=") + 2, s.length() - 1);
+               clientFileName = clientFileName.replace("\\", "/");
+               int i = clientFileName.lastIndexOf('/');
+               // file1.zip
+               // file2.zip
+               return clientFileName.substring(i + 1);
+           }
+       }
+       return null;
+   }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
