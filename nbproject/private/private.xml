@@ -3,13 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/thanh/Documents/github/project_java_web/src/java/CRUD/products_delete.java</file>
-            <file>file:/home/thanh/Documents/github/project_java_web/web/admin/index.jsp</file>
-            <file>file:/home/thanh/Documents/github/project_java_web/web/WEB-INF/jsps/uploadFileResults.jsp</file>
-            <file>file:/home/thanh/Documents/github/project_java_web/web/WEB-INF/jsps/uploadFile.jsp</file>
-            <file>file:/home/thanh/Documents/github/project_java_web/src/java/CRUD/products_add.java</file>
-            <file>file:/home/thanh/Documents/github/project_java_web/web/admin/Views/product/create.jsp</file>
-            <file>file:/home/thanh/Documents/github/project_java_web/nbproject/build-impl.xml</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/index.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/admin/products.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/products_add.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/CRUDproducts.java</file>
         </group>
     </open-files>
 </project-private>
