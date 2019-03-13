@@ -86,9 +86,88 @@
                         }else if( status.equals("DetailProduct")){
                     %>
                         <%@include file="Views/product/details.jsp" %>
+                  
+                    
+                    <!--type-->
+                     <%
+                       
+                        }else if( status.equals("Type"))
+                        {
+                    %>
+                        <%@include file="type.jsp" %>
+                    <%
+                        }else if( status.equals("AddType")){
+                        
+                    %>
+                         <%@include file="Views/type/create.jsp" %>
+                    <%
+                        }else if( status.equals("EditType")){
+                    %>
+                   
+                         <%@include file="Views/type/update.jsp" %>
+                    <%
+                        }else if( status.equals("DetailType")){
+                    %>
+                        <%@include file="Views/type/details.jsp" %>
+                    
+                 <!--endtype-->
+                 
+                 <!--brand-->
+                 
+                 
+                 <%
+                       
+                        }else if( status.equals("Brand"))
+                        {
+                    %>
+                        <%@include file="brand.jsp" %>
+                    <%
+                        }else if( status.equals("AddBrand")){
+                        
+                    %>
+                         <%@include file="Views/brand/create.jsp" %>
+                    <%
+                        }else if( status.equals("EditBrand")){
+                    %>
+                   
+                         <%@include file="Views/brand/update.jsp" %>
+                    <%
+                        }else if( status.equals("DetailBrand")){
+                    %>
+                        <%@include file="Views/brand/details.jsp" %>
+                   
+                    
+                    
+                <!--end brand--> 
+                 
+                
+                <!--users-->
+
+                     <%
+                       
+                        }else if( status.equals("User"))
+                        {
+                    %>
+                        <%@include file="users.jsp" %>
+                    <%
+                        }else if( status.equals("AddUser")){
+                        
+                    %>
+                         <%@include file="Views/user/create.jsp" %>
+                    <%
+                        }else if( status.equals("EditUser")){
+                    %>
+                         
+                         <%@include file="Views/user/update.jsp" %>
+                    <%
+                        }else if( status.equals("DetailUser")){
+                    %>
+                        <%@include file="Views/user/details.jsp" %>
                     <%
                         }
-                    %>
+                    %>        
+            <!-- end users-->
+                 
                     
                     
                     

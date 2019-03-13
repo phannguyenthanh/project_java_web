@@ -20,6 +20,30 @@ import java.util.Vector;
 import Controller.products;
 import Models.Products;
 import Controller.products;
+import java.util.Vector;
+import Models.Types;
+import Controller.types;
+import Models.Brands;
+import Controller.brands;
+import java.util.Vector;
+import Controller.types;
+import Models.Types;
+import Models.Types;
+import java.util.Vector;
+import Controller.types;
+import Models.Types;
+import Controller.types;
+import java.util.Vector;
+import Models.Brands;
+import Controller.brands;
+import java.util.Vector;
+import Controller.brands;
+import Models.Brands;
+import Models.Brands;
+import java.util.Vector;
+import Controller.brands;
+import Models.Brands;
+import Controller.brands;
 
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -29,13 +53,21 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static java.util.List<String> _jspx_dependants;
 
   static {
-    _jspx_dependants = new java.util.ArrayList<String>(7);
+    _jspx_dependants = new java.util.ArrayList<String>(15);
     _jspx_dependants.add("/admin/block/header.jsp");
     _jspx_dependants.add("/admin/block/nav.jsp");
     _jspx_dependants.add("/admin/products.jsp");
     _jspx_dependants.add("/admin/Views/product/create.jsp");
     _jspx_dependants.add("/admin/Views/product/update.jsp");
     _jspx_dependants.add("/admin/Views/product/details.jsp");
+    _jspx_dependants.add("/admin/type.jsp");
+    _jspx_dependants.add("/admin/Views/type/create.jsp");
+    _jspx_dependants.add("/admin/Views/type/update.jsp");
+    _jspx_dependants.add("/admin/Views/type/details.jsp");
+    _jspx_dependants.add("/admin/brand.jsp");
+    _jspx_dependants.add("/admin/Views/brand/create.jsp");
+    _jspx_dependants.add("/admin/Views/brand/update.jsp");
+    _jspx_dependants.add("/admin/Views/brand/details.jsp");
     _jspx_dependants.add("/admin/block/footer.jsp");
   }
 
@@ -249,7 +281,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                Menu\r\n");
       out.write("                            </li>\r\n");
       out.write("                            <li class=\"nav-item\">\r\n");
-      out.write("                                <a class=\"nav-link\" href=\"#\" data-toggle=\"collapse\" aria-expanded=\"false\" data-target=\"#submenu-5\" aria-controls=\"submenu-5\"><i class=\"fas fa-fw fa-table\"></i>Sản phẩm</a>\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"index.jsp\" aria-expanded=\"false\" data-target=\"#submenu-5\" aria-controls=\"submenu-5\"><i class=\"fas fa-fw fa-table\"></i>Sản phẩm</a>\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"index.jsp?status=Type\" aria-expanded=\"false\" data-target=\"#submenu-5\" aria-controls=\"submenu-5\"><i class=\"fas fa-fw fa-table\"></i>Loại xe</a>\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"index.jsp?status=Brand\" aria-expanded=\"false\" data-target=\"#submenu-5\" aria-controls=\"submenu-5\"><i class=\"fas fa-fw fa-table\"></i>Thương hiệu</a>\r\n");
       out.write("<!--                                <div id=\"submenu-5\" class=\"collapse submenu\" style=\"\">\r\n");
       out.write("                                    <ul class=\"nav flex-column\">\r\n");
       out.write("                                        <li class=\"nav-item\">\r\n");
@@ -752,6 +786,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <!-- end data table multiselects  -->\r\n");
       out.write("                    <!-- ============================================================== -->\r\n");
       out.write("                </div>\r\n");
+      out.write("                               \r\n");
       out.write(" ");
       out.write("\r\n");
       out.write("                    ");
@@ -1104,6 +1139,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <form method=\"post\" action=\"../products_edit\"\r\n");
       out.write("                    id=\"validationform\" \r\n");
       out.write("                    data-parsley-validate=\"\"\r\n");
+      out.write("                    enctype = \"multipart/form-data\"\r\n");
       out.write("                    novalidate=\"\">\r\n");
       out.write("                    <input type=\"hidden\" required=\"\" name=\"id\" value=\"");
       out.print(u.getId());
@@ -1127,9 +1163,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"form-group row\">\r\n");
       out.write("                        <label class=\"col-12 col-sm-3 col-form-label text-sm-right\"> Ảnh  </label>\r\n");
       out.write("                        <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
-      out.write("                            <input type=\"text\" required=\"\" name=\"avatar\" value=\"");
-      out.print(u.getAvatar());
-      out.write("\"  placeholder=\"Ảnh \" class=\"form-control\">\r\n");
+      out.write("                            <input type=\"file\" required=\"\" name=\"avatar\"  placeholder=\"Ảnh \" class=\"form-control\">\r\n");
+      out.write("                            \r\n");
       out.write("                        </div>\r\n");
       out.write("                    </div>\r\n");
       out.write("                    <div class=\"form-group row\">\r\n");
@@ -1358,6 +1393,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <!-- end valifation types -->\r\n");
       out.write("    <!-- ============================================================== -->\r\n");
       out.write("</div>\r\n");
+      out.write("                            <script src=\"assets/validate/products.js\"></script>\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("                    ");
@@ -1512,11 +1548,1120 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("                  \r\n");
+      out.write("                    \r\n");
+      out.write("                    <!--type-->\r\n");
+      out.write("                     ");
+
+                       
+                        }else if( status.equals("Type"))
+                        {
+                    
+      out.write("\r\n");
+      out.write("                        ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                <div class=\"row\">\n");
+      out.write("                    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n");
+      out.write("                        <div class=\"page-header\">\n");
+      out.write("                            <h2 class=\"pageheader-title\">Tables</h2>\n");
+      out.write("                            \n");
+      out.write("                            <div class=\"page-breadcrumb\">\n");
+      out.write("                                <nav aria-label=\"breadcrumb\">\n");
+      out.write("                                    <ol class=\"breadcrumb\">\n");
+      out.write("                                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Dashboard</a></li>\n");
+      out.write("                                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Types</a></li>\n");
+      out.write("                                    </ol>\n");
+      out.write("                                </nav>\n");
+      out.write("                            </div>\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("                <!-- ============================================================== -->\n");
+      out.write("                <!-- end pageheader -->\n");
+      out.write("                <!-- ============================================================== -->\n");
+      out.write("                \n");
+      out.write("                <div class=\"row\">\n");
+      out.write("                    <!-- ============================================================== -->\n");
+      out.write("                    <!-- data table multiselects  -->\n");
+      out.write("                    <!-- ============================================================== -->\n");
+      out.write("                    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n");
+      out.write("                        <div class=\"card\">\n");
+      out.write("                            <div class=\"card-header\">\n");
+      out.write("                                <h5 class=\"mb-0\">Types </h5>\n");
+      out.write("                               \n");
+      out.write("                            </div>\n");
+      out.write("                            <div class=\"card-body\">\n");
+      out.write("                                <div class=\"table-responsive\">\n");
+      out.write("                                    <div>\n");
+      out.write("                                        <div>\n");
+      out.write("                                            \n");
+      out.write("                                            ");
+
+                                                
+                                                if(session.getAttribute("status")== "success"){
+                                            
+      out.write("\n");
+      out.write("                                  \n");
+      out.write("                                            <div class=\"alert alert-success\" role=\"alert\">\n");
+      out.write("                                                ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${alert}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\n");
+      out.write("                                            </div>\n");
+      out.write("                                  \n");
+      out.write("                                    ");
+
+                                        }else if(session.getAttribute("status")== "danger"){
+                                    
+      out.write("\n");
+      out.write("                                    <div class=\"alert alert-danger\" role=\"alert\">\n");
+      out.write("                                                ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${alert}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\n");
+      out.write("                                            </div>\n");
+      out.write("                                    ");
+
+                                        }
+                                    
+      out.write("\n");
+      out.write("                                    \n");
+      out.write("                                    ");
+
+                                                session.removeAttribute("status");
+                                                
+                                                types type = new types();
+                                                Vector<Types> list = type.all();
+                                                
+                                                if(list==null){
+                                                    out.println("<h3>Lỗi kết nối CSDL</h3>");
+                                                }
+                                                else if(list.size()<=0){
+                                                    out.println("<h3>Không có sản phẩm</h3>");
+                                                }
+                                                else
+                                                {
+                                                    
+                                    
+      out.write("\n");
+      out.write("                                    <table id=\"example3\" class=\"table table-striped table-bordered\" style=\"width:100%\">\n");
+      out.write("                                        <thead>\n");
+      out.write("                                            <tr>\n");
+      out.write("                                                <th>id</th>\n");
+      out.write("                                                <th>tên</th>\n");
+      out.write("                                                \n");
+      out.write("                                                <th>\n");
+      out.write("                                                    <a href=\"index.jsp?status=AddType\" class=\"btn btn-success active\">Thêm </a>\n");
+      out.write("                                                </th>\n");
+      out.write("                                            </tr>\n");
+      out.write("                                        </thead>\n");
+      out.write("                                        <tbody>\n");
+      out.write("                                             ");
+        
+//                                                    for(int i=0; i<list.size();i++)
+//                                                    {
+//                                                        int malop = list.get(i).getMalop();
+//                                                        String tenlop = dslop.get(i).getTenlop();
+                                                
+                                                
+                                                  for(int i=0; i< list.size();i++)
+                                                   {
+                                                      
+                                                      
+                                              
+      out.write("\n");
+      out.write("                                            <tr>\n");
+      out.write("                                                <td>");
+      out.print(list.get(i).getId());
+      out.write("</td>\n");
+      out.write("                                                <td>");
+      out.print(list.get(i).getName());
+      out.write("</td>\n");
+      out.write("                                               \n");
+      out.write("                                                <td>\n");
+      out.write("                                                    <a href=\"index.jsp?status=EditType&id=");
+      out.print(list.get(i).getId());
+      out.write("\" class=\"btn btn-brand active\">Sửa </a>\n");
+      out.write("                                                    <a href=\"../type_delete?id=");
+      out.print(list.get(i).getId());
+      out.write("\" class=\"btn btn-danger active\">Xóa </a>\n");
+      out.write("                                                    <a href=\"index.jsp?status=DetailType&id=");
+      out.print(list.get(i).getId());
+      out.write("\" class=\"btn btn-info active\">Chi Tiết </a>\n");
+      out.write("                                                </td>\n");
+      out.write("                                            </tr>\n");
+      out.write("                                            ");
+
+                                                }
+                                            
+      out.write("\n");
+      out.write("                                        </tbody>\n");
+      out.write("                                        <tfoot>\n");
+      out.write("                                            <tr>\n");
+      out.write("                                                <th>id</th>\n");
+      out.write("                                                <th>tên</th>\n");
+      out.write("                                                \n");
+      out.write("                                                <th></th>\n");
+      out.write("                                        </tfoot>\n");
+      out.write("                                    </table>\n");
+      out.write("                                        ");
+
+                                                }
+                                            
+      out.write("\n");
+      out.write("                                </div>\n");
+      out.write("                            </div>\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <!-- ============================================================== -->\n");
+      out.write("                    <!-- end data table multiselects  -->\n");
+      out.write("                    <!-- ============================================================== -->\n");
+      out.write("                </div>\n");
+      out.write("                               \n");
+      out.write(" ");
+      out.write("\r\n");
+      out.write("                    ");
+
+                        }else if( status.equals("AddType")){
+                        
+                    
+      out.write("\r\n");
+      out.write("                         ");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!--pageEncoding=\"UTF-8\"%>-->\r\n");
+      out.write("     \r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<div class=\"row\">\r\n");
+      out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n");
+      out.write("        <div class=\"page-header\">\r\n");
+      out.write("            <h2 class=\"pageheader-title\">Thêm</h2>\r\n");
+      out.write("           \r\n");
+      out.write("            <div class=\"page-breadcrumb\">\r\n");
+      out.write("                <nav aria-label=\"breadcrumb\">\r\n");
+      out.write("                    <ol class=\"breadcrumb\">\r\n");
+      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Dashboard</a></li>\r\n");
+      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Types</a></li>\r\n");
+      out.write("                        <li class=\"breadcrumb-item active\" aria-current=\"page\">Thêm</li>\r\n");
+      out.write("                    </ol>\r\n");
+      out.write("                </nav>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("</div>\r\n");
+      out.write("<div class=\"row\">\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("    <!-- valifation types -->\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n");
+      out.write("        <div class=\"card\">\r\n");
+      out.write("            <h5 class=\"card-header\">Types</h5>\r\n");
+      out.write("            <div class=\"card-body\">\r\n");
+      out.write("                \r\n");
+      out.write("                                    ");
+
+                                    if(session.getAttribute("status")== "danger"){
+                                    
+      out.write("\r\n");
+      out.write("                                    <div class=\"alert alert-danger\" role=\"alert\">\r\n");
+      out.write("                                        ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${alert}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                    ");
+
+                                        }
+                                        session.removeAttribute("status");
+                                    
+      out.write("\r\n");
+      out.write("                <form \r\n");
+      out.write("                    method=\"post\" \r\n");
+      out.write("                    action=\"../type_add\" \r\n");
+      out.write("                    id=\"validationform\" \r\n");
+      out.write("                    \r\n");
+      out.write("                    >\r\n");
+      out.write("                    <div class=\"form-group row\">\r\n");
+      out.write("                        <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Tên</label>\r\n");
+      out.write("                        <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                            <input type=\"text\" required=\"\" name=\"name\" placeholder=\"Tên \" class=\"form-control\">\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("              \r\n");
+      out.write("                    <!--                    <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Regular Exp</label>\r\n");
+      out.write("                                            <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                                                <input type=\"text\" required=\"\" data-parsley-pattern=\"#[A-Fa-f0-9]{6}\" placeholder=\"Hex. Color\" class=\"form-control\">\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Equal To</label>\r\n");
+      out.write("                                            <div class=\"col-sm-4 col-lg-3 mb-3 mb-sm-0\">\r\n");
+      out.write("                                                <input id=\"pass2\" type=\"password\" required=\"\" placeholder=\"Password\" class=\"form-control\">\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                            <div class=\"col-sm-4 col-lg-3\">\r\n");
+      out.write("                                                <input type=\"password\" required=\"\" data-parsley-equalto=\"#pass2\" placeholder=\"Re-Type Password\" class=\"form-control\">\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-sm-3 col-form-label text-sm-right\">Min check</label>\r\n");
+      out.write("                                            <div class=\"col-sm-6\">\r\n");
+      out.write("                                                <div class=\"custom-controls-stacked\">\r\n");
+      out.write("                                                    <label class=\"custom-control custom-checkbox\">\r\n");
+      out.write("                                                        <input id=\"ck1\" name=\"ck1\" type=\"checkbox\" data-parsley-multiple=\"groups\" value=\"bar\" data-parsley-mincheck=\"2\" data-parsley-errors-container=\"#error-container1\" class=\"custom-control-input\"><span class=\"custom-control-label\">Option 1</span>\r\n");
+      out.write("                                                    </label>\r\n");
+      out.write("                                                    <label class=\"custom-control custom-checkbox\">\r\n");
+      out.write("                                                        <input id=\"ck2\" name=\"ck2\" type=\"checkbox\" data-parsley-multiple=\"groups\" value=\"bar2\" data-parsley-mincheck=\"2\" data-parsley-errors-container=\"#error-container1\" class=\"custom-control-input\"><span class=\"custom-control-label\">Option 2</span>\r\n");
+      out.write("                                                    </label>\r\n");
+      out.write("                                                    <label class=\"custom-control custom-checkbox\">\r\n");
+      out.write("                                                        <input id=\"ck3\" name=\"ck3\" type=\"checkbox\" data-parsley-multiple=\"groups\" value=\"bar3\" data-parsley-mincheck=\"2\" required=\"\" data-parsley-errors-container=\"#error-container1\" class=\"custom-control-input\"><span class=\"custom-control-label\">Option 3</span>\r\n");
+      out.write("                                                    </label>\r\n");
+      out.write("                                                    <div id=\"error-container1\"></div>\r\n");
+      out.write("                                                </div>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>-->\r\n");
+      out.write("                    <!--                    <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-sm-3 col-form-label text-sm-right\">Max check</label>\r\n");
+      out.write("                                            <div class=\"col-sm-6\">\r\n");
+      out.write("                                                <div class=\"custom-controls-stacked\">\r\n");
+      out.write("                                                    <label class=\"custom-control custom-checkbox\">\r\n");
+      out.write("                                                        <input type=\"checkbox\" value=\"bar\" id=\"e1\" data-parsley-multiple=\"group1\" data-parsley-errors-container=\"#error-container2\" class=\"custom-control-input\"><span class=\"custom-control-label\">Option 1</span>\r\n");
+      out.write("                                                    </label>\r\n");
+      out.write("                                                    <label class=\"custom-control custom-checkbox\">\r\n");
+      out.write("                                                        <input type=\"checkbox\" value=\"bar\" id=\"e2\" data-parsley-multiple=\"group1\" data-parsley-errors-container=\"#error-container2\" class=\"custom-control-input\"><span class=\"custom-control-label\">Option 2</span>\r\n");
+      out.write("                                                    </label>\r\n");
+      out.write("                                                    <label class=\"custom-control custom-checkbox\">\r\n");
+      out.write("                                                        <input type=\"checkbox\" value=\"bar\" id=\"e3\" data-parsley-multiple=\"group1\" data-parsley-maxcheck=\"1\" data-parsley-errors-container=\"#error-container2\" class=\"custom-control-input\"><span class=\"custom-control-label\">Option 3</span>\r\n");
+      out.write("                                                    </label>\r\n");
+      out.write("                                                    <div id=\"error-container2\"></div>\r\n");
+      out.write("                                                </div>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">E-Mail</label>\r\n");
+      out.write("                                            <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                                                <input type=\"email\" required=\"\" data-parsley-type=\"email\" placeholder=\"Enter a valid e-mail\" class=\"form-control\">\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">URL</label>\r\n");
+      out.write("                                            <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                                                <input data-parsley-type=\"url\" type=\"url\" required=\"\" placeholder=\"URL\" class=\"form-control\">\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Digits</label>\r\n");
+      out.write("                                            <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                                                <input data-parsley-type=\"digits\" type=\"text\" required=\"\" placeholder=\"Enter only digits\" class=\"form-control\">\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Number</label>\r\n");
+      out.write("                                            <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                                                <input data-parsley-type=\"number\" type=\"text\" required=\"\" placeholder=\"Enter only numbers\" class=\"form-control\">\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Alphanumeric</label>\r\n");
+      out.write("                                            <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                                                <input data-parsley-type=\"alphanum\" type=\"text\" required=\"\" placeholder=\"Enter alphanumeric value\" class=\"form-control\">\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Textarea</label>\r\n");
+      out.write("                                            <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                                                <textarea required=\"\" class=\"form-control\"></textarea>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>-->\r\n");
+      out.write("                    <div class=\"form-group row text-right\">\r\n");
+      out.write("                        <div class=\"col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0\">\r\n");
+      out.write("                            <button type=\"submit\" class=\"btn btn-space btn-primary\">Submit</button>\r\n");
+      out.write("                             <a href=\"index.jsp?status=Type\" class=\"btn btn-space btn-secondary\" >Cancel</a>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </form>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("    <!-- end valifation types -->\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("</div>\r\n");
+      out.write("<script src=\"assets/validate/products.js\"></script>");
+      out.write("\r\n");
+      out.write("                    ");
+
+                        }else if( status.equals("EditType")){
+                    
+      out.write("\r\n");
+      out.write("                   \r\n");
+      out.write("                         ");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+
+     String sid=request.getParameter("id");  
+     int id=Integer.parseInt(sid);  
+     
+     Types  u = types.findbyid(id);
+     String name = u.getName();
+
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<div class=\"row\">\r\n");
+      out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n");
+      out.write("        <div class=\"page-header\">\r\n");
+      out.write("            <h2 class=\"pageheader-title\">Chỉnh sửa </h2>\r\n");
+      out.write("           \r\n");
+      out.write("            <div class=\"page-breadcrumb\">\r\n");
+      out.write("                <nav aria-label=\"breadcrumb\">\r\n");
+      out.write("                    <ol class=\"breadcrumb\">\r\n");
+      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Dashboard</a></li>\r\n");
+      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Types </a></li>\r\n");
+      out.write("                        <li class=\"breadcrumb-item active\" aria-current=\"page\">Chỉnh sửa </li>\r\n");
+      out.write("                    </ol>\r\n");
+      out.write("                </nav>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("</div>\r\n");
+      out.write("<div class=\"row\">\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("    <!-- valifation types -->\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n");
+      out.write("        <div class=\"card\">\r\n");
+      out.write("            <h5 class=\"card-header\">Types</h5>\r\n");
+      out.write("            <div class=\"card-body\">\r\n");
+      out.write("                                    ");
+
+                                    if(session.getAttribute("status")== "danger"){
+                                    
+      out.write("\r\n");
+      out.write("                                    <div class=\"alert alert-danger\" role=\"alert\">\r\n");
+      out.write("                                        ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${alert}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                    ");
+
+                                        }
+                                        session.removeAttribute("status");
+                                    
+      out.write("\r\n");
+      out.write("                <form method=\"post\" action=\"../type_edit\"\r\n");
+      out.write("                    id=\"validationform\" \r\n");
+      out.write("                    data-parsley-validate=\"\"\r\n");
+      out.write("                    novalidate=\"\">\r\n");
+      out.write("                    <input type=\"hidden\" required=\"\" name=\"id\" value=\"");
+      out.print(u.getId());
+      out.write("\" placeholder=\"id \" class=\"form-control\">\r\n");
+      out.write("                    <div class=\"form-group row\">\r\n");
+      out.write("                        <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Tên</label>\r\n");
+      out.write("                        <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                            <input type=\"text\" required=\"\" name=\"name\" value=\"");
+      out.print(u.getName());
+      out.write("\" placeholder=\"Tên \" class=\"form-control\">\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    \r\n");
+      out.write("                    <div class=\"form-group row text-right\">\r\n");
+      out.write("                        <div class=\"col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0\">\r\n");
+      out.write("                            <button type=\"submit\" class=\"btn btn-space btn-primary\">Submit</button>\r\n");
+      out.write("                            \r\n");
+      out.write("                            <a href=\"index.jsp?status=Type\" class=\"btn btn-space btn-secondary\" >Cancel</a>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </form>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("    <!-- end valifation types -->\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("</div>\r\n");
+      out.write(" <script src=\"assets/validate/products.js\"></script>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("                    ");
+
+                        }else if( status.equals("DetailType")){
+                    
+      out.write("\r\n");
+      out.write("                        ");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+
+    String sid = request.getParameter("id");
+    int id = Integer.parseInt(sid);
+
+    Types u = types.findbyid(id);
+    String name = u.getName();
+
+      out.write("\r\n");
+      out.write("<div class=\"row\">\r\n");
+      out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n");
+      out.write("        <div class=\"page-header\">\r\n");
+      out.write("            <h2 class=\"pageheader-title\">Chi tiết loại sp</h2>\r\n");
+      out.write("\r\n");
+      out.write("            <div class=\"page-breadcrumb\">\r\n");
+      out.write("                <nav aria-label=\"breadcrumb\">\r\n");
+      out.write("                    <ol class=\"breadcrumb\">\r\n");
+      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Dashboard</a></li>\r\n");
+      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Types</a></li>\r\n");
+      out.write("                        <li class=\"breadcrumb-item active\" aria-current=\"page\">Chi tiết</li>\r\n");
+      out.write("                    </ol>\r\n");
+      out.write("                </nav>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("</div>\r\n");
+      out.write("<!-- ============================================================== -->\r\n");
+      out.write("<!-- end pageheader -->\r\n");
+      out.write("<!-- ============================================================== -->\r\n");
+      out.write("\r\n");
+      out.write("<div class=\"row\">\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("    <!-- data table multiselects  -->\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n");
+      out.write("        <div class=\"card\">\r\n");
+      out.write("            <div class=\"card-header\">\r\n");
+      out.write("                <h5 class=\"mb-0\">Types </h5>\r\n");
+      out.write("\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"card-body\">\r\n");
+      out.write("                <div class=\"table-responsive\">\r\n");
+      out.write("                    <div>\r\n");
+      out.write("                        <div>\r\n");
+      out.write("\r\n");
+      out.write("                            <table id=\"example3\" class=\"table table-striped table-bordered\" style=\"width:100%\">\r\n");
+      out.write("                                <thead>\r\n");
+      out.write("                                    <tr>\r\n");
+      out.write("                                        <th>Tên code</th>\r\n");
+      out.write("                                        <th>Giá trị </th>\r\n");
+      out.write("\r\n");
+      out.write("                                    </tr>\r\n");
+      out.write("                                </thead>\r\n");
+      out.write("                                <tbody>\r\n");
+      out.write("\r\n");
+      out.write("                                    <tr>\r\n");
+      out.write("                                        <td>id </td>\r\n");
+      out.write("                                        <td>");
+      out.print(u.getId());
+      out.write("</td>\r\n");
+      out.write("                                    </tr>\r\n");
+      out.write("                                    <tr>\r\n");
+      out.write("                                        <td>Tên  </td>\r\n");
+      out.write("                                        <td>");
+      out.print(u.getName());
+      out.write("</td>\r\n");
+      out.write("                                    </tr>\r\n");
+      out.write("                                   \r\n");
+      out.write("\r\n");
+      out.write("                                </tbody>\r\n");
+      out.write("\r\n");
+      out.write("                            </table>\r\n");
+      out.write("\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"form-group row text-right\">\r\n");
+      out.write("                <div class=\"col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0\">\r\n");
+      out.write("                    \r\n");
+      out.write("                    <a href=\"index.jsp?status=Type\" class=\"btn btn-space btn-secondary\" >Cancel</a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <!-- ============================================================== -->\r\n");
+      out.write("            <!-- end data table multiselects  -->\r\n");
+      out.write("            <!-- ============================================================== -->\r\n");
+      out.write("        </div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("                    \r\n");
+      out.write("                 <!--endtype-->\r\n");
+      out.write("                 \r\n");
+      out.write("                 <!--brand-->\r\n");
+      out.write("                 \r\n");
+      out.write("                 \r\n");
+      out.write("                 ");
+
+                       
+                        }else if( status.equals("Brand"))
+                        {
+                    
+      out.write("\r\n");
+      out.write("                        ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                <div class=\"row\">\n");
+      out.write("                    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n");
+      out.write("                        <div class=\"page-header\">\n");
+      out.write("                            <h2 class=\"pageheader-title\">Tables</h2>\n");
+      out.write("                            \n");
+      out.write("                            <div class=\"page-breadcrumb\">\n");
+      out.write("                                <nav aria-label=\"breadcrumb\">\n");
+      out.write("                                    <ol class=\"breadcrumb\">\n");
+      out.write("                                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Dashboard</a></li>\n");
+      out.write("                                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Brands</a></li>\n");
+      out.write("                                    </ol>\n");
+      out.write("                                </nav>\n");
+      out.write("                            </div>\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("                <!-- ============================================================== -->\n");
+      out.write("                <!-- end pageheader -->\n");
+      out.write("                <!-- ============================================================== -->\n");
+      out.write("                \n");
+      out.write("                <div class=\"row\">\n");
+      out.write("                    <!-- ============================================================== -->\n");
+      out.write("                    <!-- data table multiselects  -->\n");
+      out.write("                    <!-- ============================================================== -->\n");
+      out.write("                    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n");
+      out.write("                        <div class=\"card\">\n");
+      out.write("                            <div class=\"card-header\">\n");
+      out.write("                                <h5 class=\"mb-0\">Brands </h5>\n");
+      out.write("                               \n");
+      out.write("                            </div>\n");
+      out.write("                            <div class=\"card-body\">\n");
+      out.write("                                <div class=\"table-responsive\">\n");
+      out.write("                                    <div>\n");
+      out.write("                                        <div>\n");
+      out.write("                                            \n");
+      out.write("                                            ");
+
+                                                
+                                                if(session.getAttribute("status")== "success"){
+                                            
+      out.write("\n");
+      out.write("                                  \n");
+      out.write("                                            <div class=\"alert alert-success\" role=\"alert\">\n");
+      out.write("                                                ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${alert}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\n");
+      out.write("                                            </div>\n");
+      out.write("                                  \n");
+      out.write("                                    ");
+
+                                        }else if(session.getAttribute("status")== "danger"){
+                                    
+      out.write("\n");
+      out.write("                                    <div class=\"alert alert-danger\" role=\"alert\">\n");
+      out.write("                                                ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${alert}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\n");
+      out.write("                                            </div>\n");
+      out.write("                                    ");
+
+                                        }
+                                    
+      out.write("\n");
+      out.write("                                    \n");
+      out.write("                                    ");
+
+                                                session.removeAttribute("status");
+                                                
+                                                brands type = new brands();
+                                                Vector<Brands> list = type.all();
+                                                
+                                                if(list==null){
+                                                    out.println("<h3>Lỗi kết nối CSDL</h3>");
+                                                }
+                                                else if(list.size()<=0){
+                                                    out.println("<h3>Không có sản phẩm</h3>");
+                                                }
+                                                else
+                                                {
+                                                    
+                                    
+      out.write("\n");
+      out.write("                                    <table id=\"example3\" class=\"table table-striped table-bordered\" style=\"width:100%\">\n");
+      out.write("                                        <thead>\n");
+      out.write("                                            <tr>\n");
+      out.write("                                                <th>id</th>\n");
+      out.write("                                                <th>tên</th>\n");
+      out.write("                                                \n");
+      out.write("                                                <th>\n");
+      out.write("                                                    <a href=\"index.jsp?status=AddType\" class=\"btn btn-success active\">Thêm </a>\n");
+      out.write("                                                </th>\n");
+      out.write("                                            </tr>\n");
+      out.write("                                        </thead>\n");
+      out.write("                                        <tbody>\n");
+      out.write("                                             ");
+        
+//                                                    for(int i=0; i<list.size();i++)
+//                                                    {
+//                                                        int malop = list.get(i).getMalop();
+//                                                        String tenlop = dslop.get(i).getTenlop();
+                                                
+                                                
+                                                  for(int i=0; i< list.size();i++)
+                                                   {
+                                                      
+                                                      
+                                              
+      out.write("\n");
+      out.write("                                            <tr>\n");
+      out.write("                                                <td>");
+      out.print(list.get(i).getId());
+      out.write("</td>\n");
+      out.write("                                                <td>");
+      out.print(list.get(i).getName());
+      out.write("</td>\n");
+      out.write("                                               \n");
+      out.write("                                                <td>\n");
+      out.write("                                                    <a href=\"index.jsp?status=EditBrand&id=");
+      out.print(list.get(i).getId());
+      out.write("\" class=\"btn btn-brand active\">Sửa </a>\n");
+      out.write("                                                    <a href=\"../brand_delete?id=");
+      out.print(list.get(i).getId());
+      out.write("\" class=\"btn btn-danger active\">Xóa </a>\n");
+      out.write("                                                    <a href=\"index.jsp?status=DetailBrand&id=");
+      out.print(list.get(i).getId());
+      out.write("\" class=\"btn btn-info active\">Chi Tiết </a>\n");
+      out.write("                                                </td>\n");
+      out.write("                                            </tr>\n");
+      out.write("                                            ");
+
+                                                }
+                                            
+      out.write("\n");
+      out.write("                                        </tbody>\n");
+      out.write("                                        <tfoot>\n");
+      out.write("                                            <tr>\n");
+      out.write("                                                <th>id</th>\n");
+      out.write("                                                <th>tên</th>\n");
+      out.write("                                                \n");
+      out.write("                                                <th></th>\n");
+      out.write("                                        </tfoot>\n");
+      out.write("                                    </table>\n");
+      out.write("                                        ");
+
+                                                }
+                                            
+      out.write("\n");
+      out.write("                                </div>\n");
+      out.write("                            </div>\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <!-- ============================================================== -->\n");
+      out.write("                    <!-- end data table multiselects  -->\n");
+      out.write("                    <!-- ============================================================== -->\n");
+      out.write("                </div>\n");
+      out.write("                               \n");
+      out.write(" ");
+      out.write("\r\n");
+      out.write("                    ");
+
+                        }else if( status.equals("AddBrand")){
+                        
+                    
+      out.write("\r\n");
+      out.write("                         ");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!--pageEncoding=\"UTF-8\"%>-->\r\n");
+      out.write("     \r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<div class=\"row\">\r\n");
+      out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n");
+      out.write("        <div class=\"page-header\">\r\n");
+      out.write("            <h2 class=\"pageheader-title\">Thêm</h2>\r\n");
+      out.write("           \r\n");
+      out.write("            <div class=\"page-breadcrumb\">\r\n");
+      out.write("                <nav aria-label=\"breadcrumb\">\r\n");
+      out.write("                    <ol class=\"breadcrumb\">\r\n");
+      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Dashboard</a></li>\r\n");
+      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Brands</a></li>\r\n");
+      out.write("                        <li class=\"breadcrumb-item active\" aria-current=\"page\">Thêm</li>\r\n");
+      out.write("                    </ol>\r\n");
+      out.write("                </nav>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("</div>\r\n");
+      out.write("<div class=\"row\">\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("    <!-- valifation brands -->\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n");
+      out.write("        <div class=\"card\">\r\n");
+      out.write("            <h5 class=\"card-header\">Brands</h5>\r\n");
+      out.write("            <div class=\"card-body\">\r\n");
+      out.write("                \r\n");
+      out.write("                                    ");
+
+                                    if(session.getAttribute("status")== "danger"){
+                                    
+      out.write("\r\n");
+      out.write("                                    <div class=\"alert alert-danger\" role=\"alert\">\r\n");
+      out.write("                                        ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${alert}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                    ");
+
+                                        }
+                                        session.removeAttribute("status");
+                                    
+      out.write("\r\n");
+      out.write("                <form \r\n");
+      out.write("                    method=\"post\" \r\n");
+      out.write("                    action=\"../type_add\" \r\n");
+      out.write("                    id=\"validationform\" \r\n");
+      out.write("                    \r\n");
+      out.write("                    >\r\n");
+      out.write("                    <div class=\"form-group row\">\r\n");
+      out.write("                        <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Tên</label>\r\n");
+      out.write("                        <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                            <input type=\"text\" required=\"\" name=\"name\" placeholder=\"Tên \" class=\"form-control\">\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("              \r\n");
+      out.write("                    <!--                    <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Regular Exp</label>\r\n");
+      out.write("                                            <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                                                <input type=\"text\" required=\"\" data-parsley-pattern=\"#[A-Fa-f0-9]{6}\" placeholder=\"Hex. Color\" class=\"form-control\">\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Equal To</label>\r\n");
+      out.write("                                            <div class=\"col-sm-4 col-lg-3 mb-3 mb-sm-0\">\r\n");
+      out.write("                                                <input id=\"pass2\" type=\"password\" required=\"\" placeholder=\"Password\" class=\"form-control\">\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                            <div class=\"col-sm-4 col-lg-3\">\r\n");
+      out.write("                                                <input type=\"password\" required=\"\" data-parsley-equalto=\"#pass2\" placeholder=\"Re-Type Password\" class=\"form-control\">\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-sm-3 col-form-label text-sm-right\">Min check</label>\r\n");
+      out.write("                                            <div class=\"col-sm-6\">\r\n");
+      out.write("                                                <div class=\"custom-controls-stacked\">\r\n");
+      out.write("                                                    <label class=\"custom-control custom-checkbox\">\r\n");
+      out.write("                                                        <input id=\"ck1\" name=\"ck1\" type=\"checkbox\" data-parsley-multiple=\"groups\" value=\"bar\" data-parsley-mincheck=\"2\" data-parsley-errors-container=\"#error-container1\" class=\"custom-control-input\"><span class=\"custom-control-label\">Option 1</span>\r\n");
+      out.write("                                                    </label>\r\n");
+      out.write("                                                    <label class=\"custom-control custom-checkbox\">\r\n");
+      out.write("                                                        <input id=\"ck2\" name=\"ck2\" type=\"checkbox\" data-parsley-multiple=\"groups\" value=\"bar2\" data-parsley-mincheck=\"2\" data-parsley-errors-container=\"#error-container1\" class=\"custom-control-input\"><span class=\"custom-control-label\">Option 2</span>\r\n");
+      out.write("                                                    </label>\r\n");
+      out.write("                                                    <label class=\"custom-control custom-checkbox\">\r\n");
+      out.write("                                                        <input id=\"ck3\" name=\"ck3\" type=\"checkbox\" data-parsley-multiple=\"groups\" value=\"bar3\" data-parsley-mincheck=\"2\" required=\"\" data-parsley-errors-container=\"#error-container1\" class=\"custom-control-input\"><span class=\"custom-control-label\">Option 3</span>\r\n");
+      out.write("                                                    </label>\r\n");
+      out.write("                                                    <div id=\"error-container1\"></div>\r\n");
+      out.write("                                                </div>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>-->\r\n");
+      out.write("                    <!--                    <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-sm-3 col-form-label text-sm-right\">Max check</label>\r\n");
+      out.write("                                            <div class=\"col-sm-6\">\r\n");
+      out.write("                                                <div class=\"custom-controls-stacked\">\r\n");
+      out.write("                                                    <label class=\"custom-control custom-checkbox\">\r\n");
+      out.write("                                                        <input type=\"checkbox\" value=\"bar\" id=\"e1\" data-parsley-multiple=\"group1\" data-parsley-errors-container=\"#error-container2\" class=\"custom-control-input\"><span class=\"custom-control-label\">Option 1</span>\r\n");
+      out.write("                                                    </label>\r\n");
+      out.write("                                                    <label class=\"custom-control custom-checkbox\">\r\n");
+      out.write("                                                        <input type=\"checkbox\" value=\"bar\" id=\"e2\" data-parsley-multiple=\"group1\" data-parsley-errors-container=\"#error-container2\" class=\"custom-control-input\"><span class=\"custom-control-label\">Option 2</span>\r\n");
+      out.write("                                                    </label>\r\n");
+      out.write("                                                    <label class=\"custom-control custom-checkbox\">\r\n");
+      out.write("                                                        <input type=\"checkbox\" value=\"bar\" id=\"e3\" data-parsley-multiple=\"group1\" data-parsley-maxcheck=\"1\" data-parsley-errors-container=\"#error-container2\" class=\"custom-control-input\"><span class=\"custom-control-label\">Option 3</span>\r\n");
+      out.write("                                                    </label>\r\n");
+      out.write("                                                    <div id=\"error-container2\"></div>\r\n");
+      out.write("                                                </div>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">E-Mail</label>\r\n");
+      out.write("                                            <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                                                <input type=\"email\" required=\"\" data-parsley-type=\"email\" placeholder=\"Enter a valid e-mail\" class=\"form-control\">\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">URL</label>\r\n");
+      out.write("                                            <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                                                <input data-parsley-type=\"url\" type=\"url\" required=\"\" placeholder=\"URL\" class=\"form-control\">\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Digits</label>\r\n");
+      out.write("                                            <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                                                <input data-parsley-type=\"digits\" type=\"text\" required=\"\" placeholder=\"Enter only digits\" class=\"form-control\">\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Number</label>\r\n");
+      out.write("                                            <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                                                <input data-parsley-type=\"number\" type=\"text\" required=\"\" placeholder=\"Enter only numbers\" class=\"form-control\">\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Alphanumeric</label>\r\n");
+      out.write("                                            <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                                                <input data-parsley-type=\"alphanum\" type=\"text\" required=\"\" placeholder=\"Enter alphanumeric value\" class=\"form-control\">\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <div class=\"form-group row\">\r\n");
+      out.write("                                            <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Textarea</label>\r\n");
+      out.write("                                            <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                                                <textarea required=\"\" class=\"form-control\"></textarea>\r\n");
+      out.write("                                            </div>\r\n");
+      out.write("                                        </div>-->\r\n");
+      out.write("                    <div class=\"form-group row text-right\">\r\n");
+      out.write("                        <div class=\"col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0\">\r\n");
+      out.write("                            <button type=\"submit\" class=\"btn btn-space btn-primary\">Submit</button>\r\n");
+      out.write("                             <a href=\"index.jsp?status=Brand\" class=\"btn btn-space btn-secondary\" >Cancel</a>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </form>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("    <!-- end valifation brands -->\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("</div>\r\n");
+      out.write("<script src=\"assets/validate/products.js\"></script>");
+      out.write("\r\n");
+      out.write("                    ");
+
+                        }else if( status.equals("EditBrand")){
+                    
+      out.write("\r\n");
+      out.write("                   \r\n");
+      out.write("                         ");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+
+     String sid=request.getParameter("id");  
+     int id=Integer.parseInt(sid);  
+     
+     Brands  u = brands.findbyid(id);
+     String name = u.getName();
+
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<div class=\"row\">\r\n");
+      out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n");
+      out.write("        <div class=\"page-header\">\r\n");
+      out.write("            <h2 class=\"pageheader-title\">Chỉnh sửa </h2>\r\n");
+      out.write("           \r\n");
+      out.write("            <div class=\"page-breadcrumb\">\r\n");
+      out.write("                <nav aria-label=\"breadcrumb\">\r\n");
+      out.write("                    <ol class=\"breadcrumb\">\r\n");
+      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Dashboard</a></li>\r\n");
+      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Brands </a></li>\r\n");
+      out.write("                        <li class=\"breadcrumb-item active\" aria-current=\"page\">Chỉnh sửa </li>\r\n");
+      out.write("                    </ol>\r\n");
+      out.write("                </nav>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("</div>\r\n");
+      out.write("<div class=\"row\">\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("    <!-- valifation brands -->\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n");
+      out.write("        <div class=\"card\">\r\n");
+      out.write("            <h5 class=\"card-header\">Brands</h5>\r\n");
+      out.write("            <div class=\"card-body\">\r\n");
+      out.write("                                    ");
+
+                                    if(session.getAttribute("status")== "danger"){
+                                    
+      out.write("\r\n");
+      out.write("                                    <div class=\"alert alert-danger\" role=\"alert\">\r\n");
+      out.write("                                        ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${alert}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                    ");
+
+                                        }
+                                        session.removeAttribute("status");
+                                    
+      out.write("\r\n");
+      out.write("                <form method=\"post\" action=\"../type_edit\"\r\n");
+      out.write("                    id=\"validationform\" \r\n");
+      out.write("                    data-parsley-validate=\"\"\r\n");
+      out.write("                    novalidate=\"\">\r\n");
+      out.write("                    <input type=\"hidden\" required=\"\" name=\"id\" value=\"");
+      out.print(u.getId());
+      out.write("\" placeholder=\"id \" class=\"form-control\">\r\n");
+      out.write("                    <div class=\"form-group row\">\r\n");
+      out.write("                        <label class=\"col-12 col-sm-3 col-form-label text-sm-right\">Tên</label>\r\n");
+      out.write("                        <div class=\"col-12 col-sm-8 col-lg-6\">\r\n");
+      out.write("                            <input type=\"text\" required=\"\" name=\"name\" value=\"");
+      out.print(u.getName());
+      out.write("\" placeholder=\"Tên \" class=\"form-control\">\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    \r\n");
+      out.write("                    <div class=\"form-group row text-right\">\r\n");
+      out.write("                        <div class=\"col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0\">\r\n");
+      out.write("                            <button type=\"submit\" class=\"btn btn-space btn-primary\">Submit</button>\r\n");
+      out.write("                            \r\n");
+      out.write("                            <a href=\"index.jsp?status=Brand\" class=\"btn btn-space btn-secondary\" >Cancel</a>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </form>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("    <!-- end valifation brands -->\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("</div>\r\n");
+      out.write(" <script src=\"assets/validate/products.js\"></script>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("                    ");
+
+                        }else if( status.equals("DetailBrand")){
+                    
+      out.write("\r\n");
+      out.write("                        ");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+
+    String sid = request.getParameter("id");
+    int id = Integer.parseInt(sid);
+
+    Brands u = brands.findbyid(id);
+    String name = u.getName();
+
+      out.write("\r\n");
+      out.write("<div class=\"row\">\r\n");
+      out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n");
+      out.write("        <div class=\"page-header\">\r\n");
+      out.write("            <h2 class=\"pageheader-title\">Chi tiết loại sp</h2>\r\n");
+      out.write("\r\n");
+      out.write("            <div class=\"page-breadcrumb\">\r\n");
+      out.write("                <nav aria-label=\"breadcrumb\">\r\n");
+      out.write("                    <ol class=\"breadcrumb\">\r\n");
+      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Dashboard</a></li>\r\n");
+      out.write("                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Brands</a></li>\r\n");
+      out.write("                        <li class=\"breadcrumb-item active\" aria-current=\"page\">Chi tiết</li>\r\n");
+      out.write("                    </ol>\r\n");
+      out.write("                </nav>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("</div>\r\n");
+      out.write("<!-- ============================================================== -->\r\n");
+      out.write("<!-- end pageheader -->\r\n");
+      out.write("<!-- ============================================================== -->\r\n");
+      out.write("\r\n");
+      out.write("<div class=\"row\">\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("    <!-- data table multiselects  -->\r\n");
+      out.write("    <!-- ============================================================== -->\r\n");
+      out.write("    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\r\n");
+      out.write("        <div class=\"card\">\r\n");
+      out.write("            <div class=\"card-header\">\r\n");
+      out.write("                <h5 class=\"mb-0\">Brands </h5>\r\n");
+      out.write("\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"card-body\">\r\n");
+      out.write("                <div class=\"table-responsive\">\r\n");
+      out.write("                    <div>\r\n");
+      out.write("                        <div>\r\n");
+      out.write("\r\n");
+      out.write("                            <table id=\"example3\" class=\"table table-striped table-bordered\" style=\"width:100%\">\r\n");
+      out.write("                                <thead>\r\n");
+      out.write("                                    <tr>\r\n");
+      out.write("                                        <th>Tên code</th>\r\n");
+      out.write("                                        <th>Giá trị </th>\r\n");
+      out.write("\r\n");
+      out.write("                                    </tr>\r\n");
+      out.write("                                </thead>\r\n");
+      out.write("                                <tbody>\r\n");
+      out.write("\r\n");
+      out.write("                                    <tr>\r\n");
+      out.write("                                        <td>id </td>\r\n");
+      out.write("                                        <td>");
+      out.print(u.getId());
+      out.write("</td>\r\n");
+      out.write("                                    </tr>\r\n");
+      out.write("                                    <tr>\r\n");
+      out.write("                                        <td>Tên  </td>\r\n");
+      out.write("                                        <td>");
+      out.print(u.getName());
+      out.write("</td>\r\n");
+      out.write("                                    </tr>\r\n");
+      out.write("                                   \r\n");
+      out.write("\r\n");
+      out.write("                                </tbody>\r\n");
+      out.write("\r\n");
+      out.write("                            </table>\r\n");
+      out.write("\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"form-group row text-right\">\r\n");
+      out.write("                <div class=\"col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0\">\r\n");
+      out.write("                    \r\n");
+      out.write("                    <a href=\"index.jsp?status=Brand\" class=\"btn btn-space btn-secondary\" >Cancel</a>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <!-- ============================================================== -->\r\n");
+      out.write("            <!-- end data table multiselects  -->\r\n");
+      out.write("            <!-- ============================================================== -->\r\n");
+      out.write("        </div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("                    ");
 
                         }
                     
       out.write("\r\n");
+      out.write("                    \r\n");
+      out.write("                    \r\n");
+      out.write("                <!--end brand--> \r\n");
+      out.write("                 \r\n");
+      out.write("                 \r\n");
       out.write("                    \r\n");
       out.write("                    \r\n");
       out.write("                    \r\n");

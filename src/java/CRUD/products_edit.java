@@ -7,15 +7,23 @@ package CRUD;
 
 import Controller.products;
 import Models.Products;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import static java.lang.System.out;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Iterator;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
  *
@@ -35,41 +43,148 @@ public class products_edit extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
-         HttpSession session = request.getSession();
+
+        products sql = new products();
         Products e = new Products();
-        String id = request.getParameter("id");
-        e.setId(Integer.parseInt(request.getParameter("id")) );
-        e.setName(request.getParameter("name"));
-        e.setPrice(Integer.parseInt(request.getParameter("price")));
-        e.setAvatar(request.getParameter("avatar"));
-        e.setBrand(Integer.parseInt(request.getParameter("brand")));
-        e.setCapacity(request.getParameter("capacity"));
-        e.setColor(request.getParameter("color"));
-        e.setLocation(request.getParameter("location"));
-        e.setMade_in(request.getParameter("made_in"));
-        e.setModel_year( request.getParameter("model_year"));
-        e.setType(Integer.parseInt(request.getParameter("type")));
-        e.setContent(request.getParameter("content"));
-        
-        products sql    = new products();
-        
-        int status      = sql.update(e);
-        
-        if(status>0){  
-            out.print("<p>Record saved successfully!</p>"); 
-            session.setAttribute("status","success");
-            session.setAttribute("alert","Chỉnh sửa thành công");
+
+        String id;
+        String avatar;
+        String brand;
+        String name;
+        String price;
+        String capacity;
+        String color;
+        String strDate;
+        String location;
+        String made_in;
+        String model_year;
+        String type;
+        String content;
+
+        //name = request.getParameter("name");
+        HttpSession session = request.getSession();
+        java.util.Date date = new java.util.Date();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
+        strDate = dateFormat.format(date);
+
+        File file;
+        int maxFileSize = 5000 * 1024;
+        int maxMemSize = 5000 * 1024;
+        String filePath = "E:/java/javawep/test_tomcat/web/imager/";
+
+        String contentType = request.getContentType();
+        if ((contentType.indexOf("multipart/form-data") >= 0)) {
+
+            DiskFileItemFactory factory = new DiskFileItemFactory();
+            factory.setSizeThreshold(maxMemSize);
+            factory.setRepository(new File("E:/java/javawep/test_tomcat"));
+            ServletFileUpload upload = new ServletFileUpload(factory);
+            upload.setSizeMax(maxFileSize);
+            try {
+                List fileItems = upload.parseRequest(request);
+                Iterator i = fileItems.iterator();
+
+                while (i.hasNext()) {
+
+                    FileItem fi = (FileItem) i.next();
+                    String fieldName = fi.getFieldName();
+                    //lặp các input submit từ form
+                    if (fi.isFormField()) //nếu là input thường
+                    {
+
+                        switch (fieldName) {
+                            case "id":
+                                id = fi.getString("UTF-8");
+                                e.setId(Integer.parseInt(id));
+                                break;
+
+                            case "brand":
+                                brand = fi.getString("UTF-8");
+                                e.setBrand(Integer.parseInt(brand));
+                                break;
+                            case "name":
+                                name = fi.getString("UTF-8");
+                                e.setName(name);
+                                break;
+                            case "price":
+                                price = fi.getString("UTF-8");
+                                e.setPrice(Integer.parseInt(price));
+                                break;
+                            case "capacity":
+                                capacity = fi.getString("UTF-8");
+                                e.setCapacity(capacity);
+                                break;
+                            case "color":
+                                color = fi.getString("UTF-8");
+                                e.setColor(color);
+                                break;
+                            case "location":
+                                location = fi.getString("UTF-8");
+                                e.setLocation(location);
+                                break;
+                            case "made_in":
+                                made_in = fi.getString("UTF-8");
+                                e.setMade_in(made_in);
+                                break;
+                            case "model_year":
+                                model_year = fi.getString("UTF-8");
+                                e.setModel_year(model_year);
+                                break;
+                            case "type":
+                                type = fi.getString("UTF-8");
+                                e.setType(Integer.parseInt(type));
+                                break;
+                            case "content":
+                                content = fi.getString("UTF-8");
+                                e.setContent(content);
+                                break;
+                            case "avatar_text":
+                                avatar = fi.getString("UTF-8");
+                                e.setAvatar("../imager/" + avatar);
+                                break;
+                                
+                            default:
+                                out.println("<br> other <br>");
+                        }
+
+                    } else {//nếu là input dạng file
+                        avatar = fi.getName();
+                        if (avatar != "") {
+                            boolean isInMemory = fi.isInMemory();
+                            long sizeInBytes = fi.getSize();
+                            file = new File(filePath + avatar);
+                            e.setAvatar("../imager/" + avatar);
+                            fi.write(file);
+                        }
+
+//                        out.println("Uploaded Filename: " + filePath + fileName + "<br>");
+                    }
+                }
+            } catch (Exception ex) {
+                System.out.println(ex);
+            }
+        }
+
+        e.setCreated_at(strDate);
+
+        int status = sql.update(e);
+
+        if (status > 0) {
+            out.print("<p>Record saved successfully!</p>");
+            session.setAttribute("status", "success");
+            session.setAttribute("alert", "Chỉnh sửa thành công");
 //            request.getRequestDispatcher("admind/products.jsp").forward(request, response);
             response.sendRedirect("admin/index.jsp");
-        }else{  
-            session.setAttribute("status","danger");
-            session.setAttribute("alert","Chỉnh sửa thất bại");
-            
-            response.sendRedirect("admin/index.jsp?status=EditProduct&id="+id);
-            
-        }  
+        } else {
+            session.setAttribute("status", "danger");
+            session.setAttribute("alert", "Chỉnh sửa thất bại");
+
+            response.sendRedirect("admin/index.jsp?status=EditProduct&id=" + e.getId());
+
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

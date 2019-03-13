@@ -59,6 +59,7 @@
                 <form method="post" action="../products_edit"
                     id="validationform" 
                     data-parsley-validate=""
+                    enctype = "multipart/form-data"
                     novalidate="">
                     <input type="hidden" required="" name="id" value="<%=u.getId()%>" placeholder="Tên " class="form-control">
                     <div class="form-group row">
@@ -73,10 +74,12 @@
                             <input type="number" required="" name="price" value="<%=u.getPrice()%>" placeholder="Giá " class="form-control">
                         </div>
                     </div>
+                        <input type="hidden" required="" name="avatar_text" value="<%=u.getAvatar()%>"  placeholder="Ảnh " class="form-control">
                     <div class="form-group row">
                         <label class="col-12 col-sm-3 col-form-label text-sm-right"> Ảnh  </label>
                         <div class="col-12 col-sm-8 col-lg-6">
-                            <input type="text" required="" name="avatar" value="<%=u.getAvatar()%>"  placeholder="Ảnh " class="form-control">
+                            <input type="file" required="" name="avatar"  placeholder="Ảnh " class="form-control">
+                            
                         </div>
                     </div>
                     <div class="form-group row">
@@ -273,4 +276,5 @@
     <!-- end valifation types -->
     <!-- ============================================================== -->
 </div>
+                            <script src="assets/validate/products.js"></script>
 

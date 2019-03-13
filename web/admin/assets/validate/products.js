@@ -58,13 +58,16 @@ $().ready(function () {
                  required: true,
             },
             avatar: {
-                 required: true,
+                 required: false,
             },
             brand: {
                  required: true,
             },
             content: {
                  required: true,
+            },
+            email:{
+                required: true,
             }
             
         },
@@ -102,6 +105,8 @@ $().ready(function () {
             },
             content: {
                  required: "Bạn chưa nhập nội dung ",
+            },email:{
+                required: "Bạn chưa nhập email ",
             }
         }
     });
