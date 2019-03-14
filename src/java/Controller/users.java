@@ -157,6 +157,34 @@ public class users {
 
         return e;
     }
+    
+    
+     public static Users login_admin(String email, String password) {
+        Users e = new Users();
+
+        try {
+            Connection con = DB.KetnoiCSDL();
+            PreparedStatement ps = con.prepareStatement("select * from `user` where email=? AND password = ? AND permissions = 1 ");
+            ps.setString(1, email);
+            ps.setString(2, password);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+             
+                    e.setId(rs.getInt("id"));
+                    e.setAvatar(rs.getString("avatar"));
+                    e.setName(rs.getString("name"));
+                    e.setEmail(rs.getString("email"));
+                    e.setPermissions(rs.getInt("permissions"));
+                    e.setPassword(rs.getString("password"));
+            }
+            con.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return e;
+    }
+
 
     
 }

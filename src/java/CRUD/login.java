@@ -5,23 +5,26 @@
  */
 package CRUD;
 
-import Controller.products;
-import Models.Products;
+
+import Controller.users;
+import Models.Users;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.out;
+import java.util.ArrayList;
+import java.util.Vector;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author thanh
+ * @author sinhs
  */
-@WebServlet(name = "CRUDproducts", urlPatterns = {"/CRUDproducts"})
-public class CRUDproducts extends HttpServlet {
+@WebServlet(name = "login", urlPatterns = {"/login"})
+public class login extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,48 +35,42 @@ public class CRUDproducts extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    @SuppressWarnings("empty-statement")
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-//        String name = request.getParameter("name");
-//        String price =     request.getParameter("price");
-//        String made_in = request.getParameter("made_in");
-//        String capacity = request.getParameter("capacity");
-//        String color = request.getParameter("color");
-//        String created_at = request.getParameter("created_at");
-//        String model_year = request.getParameter("model_year");
-//        String location = request.getParameter("location");
-//        String type = request.getParameter("type");
-//        String avatar = request.getParameter("avatar");
-//        String brand = request.getParameter("brand");
-//        String content = request.getParameter("content");
-        out.print("<p>Record saved successfully!</p>");
-        Products e = new Products();
-        e.setName(request.getParameter("name"));
-        e.setPrice(Integer.parseInt(request.getParameter("price")));
-        e.setAvatar(request.getParameter("avatar"));
-        e.setBrand(Integer.parseInt(request.getParameter("brand")));
-        e.setCapacity(request.getParameter("capacity"));
-        e.setColor(request.getParameter("color"));
-        e.setCreated_at(request.getParameter("created_at"));
-        e.setLocation(request.getParameter("location"));
-        e.setMade_in(request.getParameter("made_in"));
-        e.setModel_year( request.getParameter("model_year"));
-        e.setType(Integer.parseInt(request.getParameter("type")));
-        e.setContent(request.getParameter("content"));
+        request.setCharacterEncoding("utf-8");
         
-        products sql    = new products();
+    
         
-        int status      = sql.save(e);
+        String email        = request.getParameter("email");
+        String password     = request.getParameter("password");
         
-        if(status>0){  
-            out.print("<p>Record saved successfully!</p>"); 
-            request.setAttribute("alert","thêm thành công");
-//            request.getRequestDispatcher("admind/products.jsp").forward(request, response);
+        HttpSession session = request.getSession();
+        
+        Users u = users.login_admin(email,password);
+         
+
+        
+        if(u.getId()!=0){
+            
+            session.setAttribute("account","ok");
+            session.setAttribute("name",u.getName());
+            session.setAttribute("email",u.getEmail());
+            session.setAttribute("avatar",u.getAvatar());
+            session.setAttribute("id",u.getId());
+            
             response.sendRedirect("admin/index.jsp");
-        }else{  
-            out.println("Sorry! unable to save record");  
-        }  
+        }else{
+            session.setAttribute("status", "danger");
+            session.setAttribute("alert", "Đăng nhập  thất bại");
+
+            response.sendRedirect("admin/index.jsp" );
+        }
+        
+        
+        
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

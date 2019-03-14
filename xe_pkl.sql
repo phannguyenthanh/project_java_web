@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Feb 24, 2019 at 07:20 PM
--- Server version: 5.7.25-0ubuntu0.18.10.2
--- PHP Version: 7.2.15-0ubuntu0.18.10.1
+-- Host: 127.0.0.1
+-- Generation Time: Mar 14, 2019 at 04:28 PM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -67,16 +69,13 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `price`, `made_in`, `capacity`, `color`, `created_at`, `model_year`, `location`, `type`, `avatar`, `brand`, `content`) VALUES
 (4, 'HONDA SH 150i 2016', 80000000, 'Vietnam', '150cc', 'red', '2019-02-08', '2016', 'Đống Đa , Hà Nội', 2, '../imager/dat-bien-so-xe-pkl-28704-1451232869-56800e65bee92.jpeg', 2, NULL),
-(5, 'd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '../imager/dat-bien-so-xe-pkl-28704-1451232869-56800e65bee92.jpeg', NULL, NULL),
-(11, 'd', 0, 'null', 'null', 'null', NULL, 'null', 'null', 1, '../imager/dat-bien-so-xe-pkl-28704-1451232869-56800e65bee92.jpeg', 1, NULL),
-(24, 'thÃ¡nh', 12, 'fdsa', 'dsfa', 'dsf', '2019-02-24', 'fsda', 'dfs', 1, '../imager/dat-bien-so-xe-pkl-28704-1451232869-56800e65bee92.jpeg', 1, 'fsda'),
-(25, 'thÃ¡nh', 12, 'dsf', 'dsf', 'dsf', '2019-02-24', 'fsd', 'fds', 1, '../imager/dat-bien-so-xe-pkl-28704-1451232869-56800e65bee92.jpeg', 1, 'fds'),
-(26, 'thÃ¡nh', 12, 'dfs', 'df', 'dsf', '2019-02-24', 'dsf', 'fsd', 1, '../imager/dat-bien-so-xe-pkl-28704-1451232869-56800e65bee92.jpeg', 1, 'fsd'),
-(27, 'thÃ¡nh', 2121, 'Vietnam', 'fsda', 'sfd', '2019-02-24', 'sfd', 'dsf', 1, '../imager/dat-bien-so-xe-pkl-28704-1451232869-56800e65bee92.jpeg', 1, 'sfd'),
-(28, 'thÃ¡nh', 12, 'Vietnam', 'phÃ¢n khá»i', 'fds', '2019-02-24', 'dfs', 'dsf', 1, '../imager/dat-bien-so-xe-pkl-28704-1451232869-56800e65bee92.jpeg', 1, 'dsf'),
+(5, 'dfg', 12, 'sd', 'ds', 'sd', NULL, 'sd', 'sd', 1, '../imager/4-1.jpg', 1, 'sd'),
 (29, 'thánh', 2232, 'fsd', 'sdf', 'dsf', '2019-02-24', 'dsf', 'dsf', 2, '../imager/dat-bien-so-xe-pkl-28704-1451232869-56800e65bee92.jpeg', 1, 'fds'),
-(30, 'thánh quẩy', 12, 'Vietnam', 'phân khối', 'Màu', '2019-02-24', 'model year', 'Đại chỉ', 1, 'ảnh', 1, 'sdfa'),
-(31, 'thánh tên', 122112, 'sdf', 'fsd', 'dfs', '2019-02-24', 'sdf', 'fds', 1, 'ảnh', 1, 'dsf');
+(50, '1233', 12, '', '', '', '2019-03-09', '', '', 0, '../imager/4-1.jpg', 0, ''),
+(51, '12', 12, '12', '1212', '21', '2019-03-09', '12', '12', 1, '../imager/4-1.jpg', 1, '21'),
+(52, 'tÃªn', 120000, 'noi sáº£n xuáº¥t', 'phÃ¢n khÃ´i', 'mÃ u', '2019-03-10', 'model year', 'Äáº¡i chá»', 1, '../imager/4-1.jpg', 1, 'ná»i dung'),
+(53, 'thÃ¡nh', 12, '12', '21', '12', '2019-03-10', '21', '21', 1, '../imager/4-1.jpg', 1, '12'),
+(56, 'hÃÂÃÂÃÂ', 12, 'fa', 'sdf', 'ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¡d', '2019-03-12', 'fsda', 'fasd', 1, '../imager/1518911051875.jpg', 1, 'fds');
 
 -- --------------------------------------------------------
 
@@ -95,7 +94,8 @@ CREATE TABLE `types` (
 
 INSERT INTO `types` (`id`, `name`) VALUES
 (1, 'Naked bike'),
-(2, 'Sport bike');
+(2, 'Sport bike'),
+(10, 'dfdffddsf');
 
 -- --------------------------------------------------------
 
@@ -105,11 +105,22 @@ INSERT INTO `types` (`id`, `name`) VALUES
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `permissions` int(1) NOT NULL
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `permissions` int(1) DEFAULT NULL,
+  `avatar` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `password`, `permissions`, `avatar`) VALUES
+(1, 'thanh', 'pnthanh22121999@gmail.com', '123456', 1, '../imager_user/Deodar_Cedar_(Cedrus_deodara)_(3502433476).jpg'),
+(2, 'link', 'admin@gmail.com', '123456', 1, '../imager_user/1518911050787.jpg'),
+(3, 'employ', 'sinhsongtu55@gmail.com', '123456', 0, '../imager/1518927039108.jpg'),
+(4, 'thanh phan Ädf', 'pnthanh22121999@gmail.com', '1212', 0, '../imager/../imager/1518911051875.jpg');
 
 --
 -- Indexes for dumped tables
@@ -148,21 +159,26 @@ ALTER TABLE `user`
 --
 ALTER TABLE `brands`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+
 --
 -- AUTO_INCREMENT for table `types`
 --
 ALTER TABLE `types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

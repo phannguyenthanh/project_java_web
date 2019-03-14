@@ -17,13 +17,13 @@
 <div class="row">
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="page-header">
-            <h2 class="pageheader-title">Chi tiết SP</h2>
+            <h2 class="pageheader-title">Chi tiết tk</h2>
 
             <div class="page-breadcrumb">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Produts</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Users</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Chi tiết</li>
                     </ol>
                 </nav>
@@ -96,6 +96,7 @@
                 <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
                     
                     <a href="index.jsp?status=User" class="btn btn-space btn-secondary" >Cancel</a>
+                    <a href="index.jsp?status=EditUser&id=<%=u.getId()%>" class="btn btn-brand ">Sửa </a>
                 </div>
             </div>
             <!-- ============================================================== -->
