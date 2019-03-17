@@ -71,12 +71,12 @@ public class products {
     public static int save(Products e) {
         int status = 0;
         try {
-            Connection con =  DB.KetnoiCSDL();
+            Connection con = DB.KetnoiCSDL();
             PreparedStatement ps = con.prepareStatement(
                     "INSERT INTO `products` "
-                            + "(`id`, `name`, `price`, `made_in`, `capacity`, `color`, `created_at`, "
-                            + "`model_year`, `location`, `type`, `avatar`, `brand`, `content`)"
-                            + " VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    + "(`id`, `name`, `price`, `made_in`, `capacity`, `color`, `created_at`, "
+                    + "`model_year`, `location`, `type`, `avatar`, `brand`, `content`)"
+                    + " VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             ps.setString(1, e.getName());
             ps.setInt(2, e.getPrice());
             ps.setString(3, e.getMade_in());
@@ -96,7 +96,7 @@ public class products {
         } catch (Exception ex) {
             out.print(ex.getMessage());
             ex.printStackTrace();
-            
+
         }
 
         return status;
@@ -108,19 +108,18 @@ public class products {
             Connection con = DB.KetnoiCSDL();
             PreparedStatement ps = con.prepareStatement(
                     "UPDATE `products` SET "
-                            
-                            + "`name` = ?, "
-                            + "`price` = ?, "
-                            + "`made_in` = ?, "
-                            + "`capacity` = ?, "
-                            + "`color` = ?, "
-                            + "`model_year` = ?, "
-                            + "`location` = ?, "
-                            + "`type` = ?, "
-                            + "`avatar` = ?, "
-                            + "`brand` = ?, "
-                            + "`content` = ? "
-                            + " WHERE `id` = ? ");
+                    + "`name` = ?, "
+                    + "`price` = ?, "
+                    + "`made_in` = ?, "
+                    + "`capacity` = ?, "
+                    + "`color` = ?, "
+                    + "`model_year` = ?, "
+                    + "`location` = ?, "
+                    + "`type` = ?, "
+                    + "`avatar` = ?, "
+                    + "`brand` = ?, "
+                    + "`content` = ? "
+                    + " WHERE `id` = ? ");
             ps.setString(1, e.getName());
             ps.setInt(2, e.getPrice());
             ps.setString(3, e.getMade_in());
@@ -140,7 +139,7 @@ public class products {
         } catch (Exception ex) {
             out.print(ex.getMessage());
             ex.printStackTrace();
-            
+
         }
 
         return status;
@@ -171,21 +170,20 @@ public class products {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-             
 
-                    e.setId(rs.getInt("id"));
-                    e.setName(rs.getString("name"));
-                    e.setPrice(rs.getInt("price"));
-                    e.setAvatar(rs.getString("avatar"));
-                    e.setBrand(rs.getInt("brand"));
-                    e.setCapacity(rs.getString("capacity"));
-                    e.setColor(rs.getString("color"));
-                    e.setCreated_at(rs.getString("created_at"));
-                    e.setLocation(rs.getString("location"));
-                    e.setMade_in(rs.getString("made_in"));
-                    e.setModel_year(rs.getString("model_year"));
-                    e.setType(rs.getInt("type"));
-                    e.setContent(rs.getString("content"));
+                e.setId(rs.getInt("id"));
+                e.setName(rs.getString("name"));
+                e.setPrice(rs.getInt("price"));
+                e.setAvatar(rs.getString("avatar"));
+                e.setBrand(rs.getInt("brand"));
+                e.setCapacity(rs.getString("capacity"));
+                e.setColor(rs.getString("color"));
+                e.setCreated_at(rs.getString("created_at"));
+                e.setLocation(rs.getString("location"));
+                e.setMade_in(rs.getString("made_in"));
+                e.setModel_year(rs.getString("model_year"));
+                e.setType(rs.getInt("type"));
+                e.setContent(rs.getString("content"));
             }
             con.close();
         } catch (Exception ex) {
@@ -195,6 +193,166 @@ public class products {
         return e;
     }
 
+    public Vector<Products> productNew() {
+        Vector<Products> List = new Vector<Products>();
+        Connection cnn = DB.KetnoiCSDL();
+        if (cnn == null) {
+            return null;
+        } else {
 
+            try {
+                String sql = "SELECT * FROM products  ORDER BY created_at DESC LIMIT 0,9 ";
+
+                Statement stm = cnn.createStatement();
+                ResultSet rs = stm.executeQuery(sql);
+                while (rs.next())//duyệt từng bản ghi kết quả select
+                {
+                    Products e = new Products();
+                    e.setId(rs.getInt("id"));
+                    e.setAvatar(rs.getString("avatar"));
+                    e.setBrand(rs.getInt("brand"));
+
+                    e.setCapacity(rs.getString("capacity"));
+
+                    e.setColor(rs.getString("color"));
+                    e.setCreated_at(rs.getString("created_at"));
+                    e.setLocation(rs.getString("location"));
+
+                    e.setMade_in(rs.getString("made_in"));
+                    e.setModel_year(rs.getString("model_year"));
+                    e.setName(rs.getString("name"));
+
+                    e.setPrice(rs.getInt("price"));
+
+                    e.setType(rs.getInt("type"));
+                    e.setContent(rs.getString("content"));
+
+                    List.add(e);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(products.class.getName()).log(Level.SEVERE, null, ex);
+                return null;
+            }
+
+        }
+        return List;
+    }
+
+    public Vector<Products> productView() {
+        Vector<Products> List = new Vector<Products>();
+        Connection cnn = DB.KetnoiCSDL();
+        if (cnn == null) {
+            return null;
+        } else {
+
+            try {
+                String sql = "SELECT * FROM products  ORDER BY view DESC LIMIT 0,9 ";
+
+                Statement stm = cnn.createStatement();
+                ResultSet rs = stm.executeQuery(sql);
+                while (rs.next())//duyệt từng bản ghi kết quả select
+                {
+                    Products e = new Products();
+                    e.setId(rs.getInt("id"));
+                    e.setAvatar(rs.getString("avatar"));
+                    e.setBrand(rs.getInt("brand"));
+
+                    e.setCapacity(rs.getString("capacity"));
+
+                    e.setColor(rs.getString("color"));
+                    e.setCreated_at(rs.getString("created_at"));
+                    e.setLocation(rs.getString("location"));
+
+                    e.setMade_in(rs.getString("made_in"));
+                    e.setModel_year(rs.getString("model_year"));
+                    e.setName(rs.getString("name"));
+
+                    e.setPrice(rs.getInt("price"));
+
+                    e.setType(rs.getInt("type"));
+                    e.setContent(rs.getString("content"));
+
+                    List.add(e);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(products.class.getName()).log(Level.SEVERE, null, ex);
+                return null;
+            }
+
+        }
+        return List;
+    }
+
+    public Vector<Products> productOption(String status, String sid , String search) {
+        Vector<Products> List = new Vector<Products>();
+        String sql;
+        Connection cnn = DB.KetnoiCSDL();
+        int id = 0;
+
+        if (cnn == null) {
+            return null;
+        } else {
+
+            try {
+
+                if (status == null || status.equals("")) {
+                    
+                    sql = "SELECT * FROM products  ORDER BY created_at DESC  ";
+                } else if (status.equals("search")) {
+
+                    sql = "SELECT * FROM products where name LIKE '%"+search+"%' ORDER BY created_at DESC  ";
+
+                } else if (status.equals("type")) {
+
+                    id = Integer.parseInt(sid);
+                    sql = "SELECT * FROM products where type ="+id+"  ORDER BY created_at DESC  ";
+                    
+
+                } else if (status.equals("brand")) {
+
+                    id = Integer.parseInt(sid);
+                   sql = "SELECT * FROM products where brand ="+id+"  ORDER BY created_at DESC  ";
+                } else {
+                    
+                    sql = "SELECT * FROM products  ORDER BY created_at DESC  ";
+                }
+
+                
+
+                Statement stm = cnn.createStatement();
+                ResultSet rs = stm.executeQuery(sql);
+                while (rs.next())//duyệt từng bản ghi kết quả select
+                {
+                    Products e = new Products();
+                    e.setId(rs.getInt("id"));
+                    e.setAvatar(rs.getString("avatar"));
+                    e.setBrand(rs.getInt("brand"));
+
+                    e.setCapacity(rs.getString("capacity"));
+
+                    e.setColor(rs.getString("color"));
+                    e.setCreated_at(rs.getString("created_at"));
+                    e.setLocation(rs.getString("location"));
+
+                    e.setMade_in(rs.getString("made_in"));
+                    e.setModel_year(rs.getString("model_year"));
+                    e.setName(rs.getString("name"));
+
+                    e.setPrice(rs.getInt("price"));
+
+                    e.setType(rs.getInt("type"));
+                    e.setContent(rs.getString("content"));
+
+                    List.add(e);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(products.class.getName()).log(Level.SEVERE, null, ex);
+                return null;
+            }
+
+        }
+        return List;
+    }
+//    $sql = "select * from $table where discontinued = 1 ORDER BY $order DESC LIMIT $stat,$lim";
 
 }
