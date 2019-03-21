@@ -53,6 +53,12 @@ import java.util.Vector;
 import Controller.users;
 import Models.Users;
 import Controller.users;
+import java.text.DecimalFormat;
+import Controller.products;
+import Controller.users;
+import java.util.Vector;
+import Models.Carts;
+import Controller.carts;
 
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -62,7 +68,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static java.util.List<String> _jspx_dependants;
 
   static {
-    _jspx_dependants = new java.util.ArrayList<String>(19);
+    _jspx_dependants = new java.util.ArrayList<String>(20);
     _jspx_dependants.add("/admin/block/header.jsp");
     _jspx_dependants.add("/admin/block/nav.jsp");
     _jspx_dependants.add("/admin/products.jsp");
@@ -81,6 +87,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_dependants.add("/admin/Views/user/create.jsp");
     _jspx_dependants.add("/admin/Views/user/update.jsp");
     _jspx_dependants.add("/admin/Views/user/details.jsp");
+    _jspx_dependants.add("/admin/carts.jsp");
     _jspx_dependants.add("/admin/block/footer.jsp");
   }
 
@@ -317,6 +324,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                <a class=\"nav-link\" href=\"index.jsp?status=Type\" aria-expanded=\"false\" data-target=\"#submenu-5\" aria-controls=\"submenu-5\"><i class=\"fas fa-fw fa-table\"></i>Loại xe</a>\r\n");
       out.write("                                <a class=\"nav-link\" href=\"index.jsp?status=Brand\" aria-expanded=\"false\" data-target=\"#submenu-5\" aria-controls=\"submenu-5\"><i class=\"fas fa-fw fa-table\"></i>Thương hiệu</a>\r\n");
       out.write("                                <a class=\"nav-link\" href=\"index.jsp?status=User\" aria-expanded=\"false\" data-target=\"#submenu-5\" aria-controls=\"submenu-5\"><i class=\"fas fa-fw fa-table\"></i>Tài khoản</a>\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"index.jsp?status=Cart\" aria-expanded=\"false\" data-target=\"#submenu-5\" aria-controls=\"submenu-5\"><i class=\"fas fa-fw fa-table\"></i>Giỏ hàng</a>\r\n");
       out.write("<!--                                <div id=\"submenu-5\" class=\"collapse submenu\" style=\"\">\r\n");
       out.write("                                    <ul class=\"nav flex-column\">\r\n");
       out.write("                                        <li class=\"nav-item\">\r\n");
@@ -3309,12 +3317,263 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("                        \r\n");
+      out.write("            <!-- end users-->\r\n");
+      out.write("            \r\n");
+      out.write("            <!--cart-->\r\n");
       out.write("                    ");
 
-                        }
+                        }else if( status.equals("Cart")){
                     
-      out.write("        \r\n");
-      out.write("            <!-- end users-->\r\n");
+      out.write("  \r\n");
+      out.write("                    ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+
+
+
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                <div class=\"row\">\n");
+      out.write("                    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n");
+      out.write("                        <div class=\"page-header\">\n");
+      out.write("                            <h2 class=\"pageheader-title\">Tables</h2>\n");
+      out.write("                            \n");
+      out.write("                            <div class=\"page-breadcrumb\">\n");
+      out.write("                                <nav aria-label=\"breadcrumb\">\n");
+      out.write("                                    <ol class=\"breadcrumb\">\n");
+      out.write("                                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Dashboard</a></li>\n");
+      out.write("                                        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Carts</a></li>\n");
+      out.write("                                    </ol>\n");
+      out.write("                                </nav>\n");
+      out.write("                            </div>\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("                <!-- ============================================================== -->\n");
+      out.write("                <!-- end pageheader -->\n");
+      out.write("                <!-- ============================================================== -->\n");
+      out.write("                \n");
+      out.write("                <div class=\"row\">\n");
+      out.write("                    <!-- ============================================================== -->\n");
+      out.write("                    <!-- data table multiselects  -->\n");
+      out.write("                    <!-- ============================================================== -->\n");
+      out.write("                    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n");
+      out.write("                        <div class=\"card\">\n");
+      out.write("                            <div class=\"card-header\">\n");
+      out.write("                                <h5 class=\"mb-0\">Carts </h5>\n");
+      out.write("                               \n");
+      out.write("                            </div>\n");
+      out.write("                            <div class=\"card-body\">\n");
+      out.write("                                <div class=\"table-responsive\">\n");
+      out.write("                                    <div>\n");
+      out.write("                                        <div>\n");
+      out.write("                                            \n");
+      out.write("                                            ");
+
+                                                
+                                                if(session.getAttribute("status")== "success"){
+                                            
+      out.write("\n");
+      out.write("                                  \n");
+      out.write("                                            <div class=\"alert alert-success\" role=\"alert\">\n");
+      out.write("                                                ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${alert}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\n");
+      out.write("                                            </div>\n");
+      out.write("                                  \n");
+      out.write("                                    ");
+
+                                        }
+                                    
+      out.write("\n");
+      out.write("                                    \n");
+      out.write("                                    ");
+
+                                                session.removeAttribute("status");
+                                                carts e = new carts();
+                                                Vector<Carts> list = e.all();
+                                                
+                                                if(list==null){
+                                                    out.println("<h3>Lỗi kết nối CSDL</h3>");
+                                                }
+                                                else if(list.size()<=0){
+                                                    out.println("<h3>Không có sản phẩm</h3>");
+                                                }
+                                                else
+                                                {
+                                                    
+                                    
+      out.write("\n");
+      out.write("                                    <table id=\"example3\" class=\"table table-striped table-bordered\" style=\"width:100%\">\n");
+      out.write("                                        <thead>\n");
+      out.write("                                            <tr>\n");
+      out.write("                                                <th>id</th>\n");
+      out.write("                                                <th>id_user</th>\n");
+      out.write("                                                <th>id_produc</th>\n");
+      out.write("                                                <th>Tên<th>\n");
+      out.write("                                                <th>Số điện thoại<th>\n");
+      out.write("                                                <th>Địa chỉ<th>\n");
+      out.write("                                                <th>Số lượng<th>\n");
+      out.write("                                                <th>Tổng tiền</th>\n");
+      out.write("                                                <th>trạng thái</th>\n");
+      out.write("                                                \n");
+      out.write("                                                \n");
+      out.write("                                                <th>\n");
+      out.write("                                                    Acction\n");
+      out.write("                                                </th>\n");
+      out.write("                                            </tr>\n");
+      out.write("                                        </thead>\n");
+      out.write("                                        <tbody>\n");
+      out.write("                                             ");
+        
+//                                                    for(int i=0; i<list.size();i++)
+//                                                    {
+//                                                        int malop = list.get(i).getMalop();
+//                                                        String tenlop = dslop.get(i).getTenlop();
+                                                
+                                                
+                                                  for(int i=0; i< list.size();i++)
+                                                   {
+                                                      
+                                                      
+                                              
+      out.write("\n");
+      out.write("                                            <tr>\n");
+      out.write("                                                <td>");
+      out.print(list.get(i).getId());
+      out.write("</td>\n");
+      out.write("                                                <td>\n");
+      out.write("                                                    <a href=\"index.jsp?status=EditUser&id=");
+      out.print(list.get(i).getId_user());
+      out.write("\">\n");
+      out.write("                                                        ");
+      out.print( users.findbyid(list.get(i).getId_user()).getName());
+      out.write("\n");
+      out.write("                                                    </a>\n");
+      out.write("                                                </td>\n");
+      out.write("                                                <td>\n");
+      out.write("                                                    <a href=\"index.jsp?status=DetailProduct&id=");
+      out.print(list.get(i).getId_product());
+      out.write("\">\n");
+      out.write("                                                        ");
+      out.print( products.findbyid(list.get(i).getId_product()).getName());
+      out.write("\n");
+      out.write("                                                    </a>\n");
+      out.write("                                                    \n");
+      out.write("                                                    \n");
+      out.write("                                                </td>\n");
+      out.write("                                                <td>");
+      out.print(list.get(i).getName());
+      out.write("</td>\n");
+      out.write("                                                <td>");
+      out.print(list.get(i).getPhone());
+      out.write("</td>\n");
+      out.write("                                                <td>");
+      out.print(list.get(i).getAddress());
+      out.write("</td>\n");
+      out.write("                                                <td>");
+      out.print(list.get(i).getAmount());
+      out.write("</td>\n");
+      out.write("                                                \n");
+      out.write("                                                ");
+
+                                                int p = products.findbyid(list.get(i).getId_product()).getPrice();
+                                                 DecimalFormat formatter = new DecimalFormat("###,###,###");
+                                                String price= formatter.format(p);
+                                                
+                                                
+      out.write("\n");
+      out.write("                                                <td>\n");
+      out.write("                                                    ");
+      out.print(price);
+      out.write(" đ\n");
+      out.write("                                                </td>\n");
+      out.write("                                              \n");
+      out.write("                                                \n");
+      out.write("                                                <td>\n");
+      out.write("                                                \n");
+      out.write("                                                    ");
+
+                                                        if(list.get(i).getStatus()==1){
+                                                             out.println("admin" );
+                                                        }else{
+                                                            out.println("Thường");
+                                                        }
+                                                      
+      out.write("\n");
+      out.write("                                                     \n");
+      out.write("                                                </td>\n");
+      out.write("                                                \n");
+      out.write("                                                <td>\n");
+      out.write("                                                    <a href=\"index.jsp?status=EditUser&id=");
+      out.print(list.get(i).getId());
+      out.write("\" class=\"btn btn-brand active\">Sửa </a>\n");
+      out.write("                                                    <a href=\"../carts_delete?id=");
+      out.print(list.get(i).getId());
+      out.write("\" class=\"btn btn-danger active\">Xóa </a>\n");
+      out.write("                                                    <a href=\"index.jsp?status=DetailUser&id=");
+      out.print(list.get(i).getId());
+      out.write("\" class=\"btn btn-info active\">Chi Tiết </a>\n");
+      out.write("                                                </td>\n");
+      out.write("                                            </tr>\n");
+      out.write("                                            ");
+
+                                                }
+                                            
+      out.write("\n");
+      out.write("                                        </tbody>\n");
+      out.write("                                        <tfoot>\n");
+      out.write("                                           <tr>\n");
+      out.write("                                                <th>id</th>\n");
+      out.write("                                                <th>id_user</th>\n");
+      out.write("                                                <th>id_produc</th>\n");
+      out.write("                                                <th>Tên<th>\n");
+      out.write("                                                <th>Số điện thoại<th>\n");
+      out.write("                                                <th>Địa chỉ<th>\n");
+      out.write("                                                <th>Số lượng<th>\n");
+      out.write("                                                <th>Tổng tiền</th>\n");
+      out.write("                                                <th>trạng thái</th>\n");
+      out.write("                                                \n");
+      out.write("                                                \n");
+      out.write("                                                <th>\n");
+      out.write("                                                    Acction\n");
+      out.write("                                                </th>\n");
+      out.write("                                            </tr>\n");
+      out.write("                                        </tfoot>\n");
+      out.write("                                    </table>\n");
+      out.write("                                        ");
+
+                                                }
+                                            
+      out.write("\n");
+      out.write("                                </div>\n");
+      out.write("                            </div>\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <!-- ============================================================== -->\n");
+      out.write("                    <!-- end data table multiselects  -->\n");
+      out.write("                    <!-- ============================================================== -->\n");
+      out.write("                </div>\n");
+      out.write("                               \n");
+      out.write(" ");
+      out.write("\r\n");
+      out.write("                    ");
+
+                    }
+                    
+      out.write("\r\n");
+      out.write("            <!--cart end-->\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("                </div>\r\n");

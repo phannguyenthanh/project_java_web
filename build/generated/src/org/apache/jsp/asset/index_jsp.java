@@ -176,10 +176,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                     </div>\n");
       out.write("                     <div id=\"chir_search_head\" class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12\">\n");
       out.write("                        <div class=\"chir_frm\">\n");
-      out.write("                           <form id=\"frm_search_head\" action=\"/search\">\n");
+      out.write("                           <form id=\"frm_search_head\" action=\"product.jsp\">\n");
       out.write("                              <i class=\"fa fa-search\"></i>\n");
-      out.write("                              <input type=\"hidden\" name=\"type\" value=\"product\" />\n");
-      out.write("                              <input required type=\"text\" name=\"q\" placeholder=\"Tìm kiếm...\" />\n");
+      out.write("                              <input type=\"hidden\" name=\"status\" value=\"search\" />\n");
+      out.write("                              <input required type=\"text\" name=\"search\" placeholder=\"Tìm kiếm...\" />\n");
       out.write("                              <button type=\"submit\" class=\"chir_btn_sub\">\n");
       out.write("                              Tìm kiếm\n");
       out.write("                              </button>\n");
@@ -514,7 +514,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                            <a href=\"javascript:void(0)\" class=\"quick_views btn-quickview-1\" data-alias=\"/ban-phim-choi-game-led-gia-co-r8-1818\" ><img src=\"");
       out.print(list.get(i).getAvatar());
       out.write("\" alt=\"Xem nhanh\" title=\"Xem nhanh\" /></a>\r\n");
-      out.write("                                                            <a href=\"/ban-phim-choi-game-led-gia-co-r8-1818\"  class=\"view_product\"><img src=\"images/eye_w.png\" alt=\"Xem chi tiết\" title=\"Xem chi tiết\" /></a>\r\n");
+      out.write("                                                            <a href=\"product-details.jsp?id=");
+      out.print(list.get(i).getId());
+      out.write("\"  class=\"view_product\"><img src=\"images/eye_w.png\" alt=\"Xem chi tiết\" title=\"Xem chi tiết\" /></a>\r\n");
       out.write("                                                            <a href=\"javascript:void(0)\" class=\"add-cart design_cart Addcart\" data-variantid=\"11091464\"><img src=\"images/cart_w.png\" alt=\"Thêm vào giỏ\" title=\"Thêm vào giỏ\" /></a>\r\n");
       out.write("                                                        </div>\r\n");
       out.write("                                                    </div>\r\n");
@@ -628,7 +630,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                        </a>\r\n");
       out.write("                                                        <div class=\"chi-action\">\r\n");
       out.write("                                                            <a href=\"javascript:void(0)\" class=\"quick_views btn-quickview-1\" data-alias=\"/ban-phim-choi-game-led-gia-co-r8-1818\" ><img src=\"images/zoom_w.png\" alt=\"Xem nhanh\" title=\"Xem nhanh\" /></a>\r\n");
-      out.write("                                                            <a href=\"/ban-phim-choi-game-led-gia-co-r8-1818\"  class=\"view_product\"><img src=\"images/eye_w.png\" alt=\"Xem chi tiết\" title=\"Xem chi tiết\" /></a>\r\n");
+      out.write("                                                            <a href=\"product-details.jsp?id=");
+      out.print(list.get(i).getId());
+      out.write("\"  class=\"view_product\"><img src=\"images/eye_w.png\" alt=\"Xem chi tiết\" title=\"Xem chi tiết\" /></a>\r\n");
       out.write("                                                            <a href=\"javascript:void(0)\" class=\"add-cart design_cart Addcart\" data-variantid=\"11091464\"><img src=\"images/cart_w.png\" alt=\"Thêm vào giỏ\" title=\"Thêm vào giỏ\" /></a>\r\n");
       out.write("                                                        </div>\r\n");
       out.write("                                                    </div>\r\n");

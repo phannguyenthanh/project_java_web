@@ -24,6 +24,7 @@
                                 <a class="nav-link" href="index.jsp?status=Type" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Loại xe</a>
                                 <a class="nav-link" href="index.jsp?status=Brand" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Thương hiệu</a>
                                 <a class="nav-link" href="index.jsp?status=User" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Tài khoản</a>
+                                <a class="nav-link" href="index.jsp?status=Cart" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Giỏ hàng</a>
 <!--                                <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">

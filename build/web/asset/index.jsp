@@ -125,7 +125,7 @@
                                                         </a>
                                                         <div class="chi-action">
                                                             <a href="javascript:void(0)" class="quick_views btn-quickview-1" data-alias="/ban-phim-choi-game-led-gia-co-r8-1818" ><img src="<%=list.get(i).getAvatar()%>" alt="Xem nhanh" title="Xem nhanh" /></a>
-                                                            <a href="/ban-phim-choi-game-led-gia-co-r8-1818"  class="view_product"><img src="images/eye_w.png" alt="Xem chi tiết" title="Xem chi tiết" /></a>
+                                                            <a href="product-details.jsp?id=<%=list.get(i).getId()%>"  class="view_product"><img src="images/eye_w.png" alt="Xem chi tiết" title="Xem chi tiết" /></a>
                                                             <a href="javascript:void(0)" class="add-cart design_cart Addcart" data-variantid="11091464"><img src="images/cart_w.png" alt="Thêm vào giỏ" title="Thêm vào giỏ" /></a>
                                                         </div>
                                                     </div>
@@ -217,7 +217,7 @@
                                                         </a>
                                                         <div class="chi-action">
                                                             <a href="javascript:void(0)" class="quick_views btn-quickview-1" data-alias="/ban-phim-choi-game-led-gia-co-r8-1818" ><img src="images/zoom_w.png" alt="Xem nhanh" title="Xem nhanh" /></a>
-                                                            <a href="/ban-phim-choi-game-led-gia-co-r8-1818"  class="view_product"><img src="images/eye_w.png" alt="Xem chi tiết" title="Xem chi tiết" /></a>
+                                                            <a href="product-details.jsp?id=<%=list.get(i).getId()%>"  class="view_product"><img src="images/eye_w.png" alt="Xem chi tiết" title="Xem chi tiết" /></a>
                                                             <a href="javascript:void(0)" class="add-cart design_cart Addcart" data-variantid="11091464"><img src="images/cart_w.png" alt="Thêm vào giỏ" title="Thêm vào giỏ" /></a>
                                                         </div>
                                                     </div>

@@ -9,14 +9,14 @@
            <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
        <![endif]-->
        <title>
-      ÄÄng nháº­p tÃ i khoáº£n  Super store
+      Đăng nhập tài khoản  Super store
        </title>
-       <meta name="description" content="Template b&#225;n h&#224;ng Äáº¹p, nhiá»u t&#237;nh nÄng, kháº£ nÄng Responsive th&#226;n thiá»n vá»i ngÆ°á»i d&#249;ng. TÆ°Æ¡ng th&#237;ch vá»i má»i thiáº¿t bá» di Äá»ng.">
+       <meta name="description" content="Template b&#225;n h&#224;ng đẹp, nhiều t&#237;nh năng, khả năng Responsive th&#226;n thiện với người d&#249;ng. Tương th&#237;ch với mọi thiết bị di động.">
        <meta content='width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=0' name='viewport' />
        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
        <meta name='revisit-after' content='1 days' />
        <link rel="canonical" href="https://super-store.bizwebvietnam.net" />
-       <meta name="keywords" content="Template bÃ¡n hÃ ng Äáº¹p, nhiá»u tÃ­nh nÄng, kháº£ nÄng Responsive thÃ¢n thiá»n vá»i ngÆ°á»i dÃ¹ng. TÆ°Æ¡ng thÃ­ch vá»i má»i thiáº¿t bá» di Äá»ng.">
+       <meta name="keywords" content="Template bán hàng đẹp, nhiều tính năng, khả năng Responsive thân thiện với người dùng. Tương thích với mọi thiết bị di động.">
        <script src='js/jquery.v2.1.3.js' type='text/javascript'></script>
        <script src='js/jquery-migrate-1.2.0.js' type='text/javascript'></script>
        <link href='css/bootstrap.css' rel='stylesheet' type='text/css' />
@@ -25,7 +25,7 @@
        <link href='css/styles.css' rel='stylesheet' type='text/css' />
        <link href='css/responsive.css' rel='stylesheet' type='text/css' />
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="ÄÄng nháº­p tÃ i khoáº£n" />
+		<meta property="og:title" content="Đăng nhập tài khoản" />
 		<meta property="og:image" content="http://bizweb.dktcdn.net/100/172/651/themes/226402/assets/share_fb_home.png?1523791827416" />
 		<meta property="og:image" content="https://bizweb.dktcdn.net/100/172/651/themes/226402/assets/share_fb_home.png?1523791827416" />
 		<meta property="og:url" content="https://super-store.bizwebvietnam.net/account/login" />
@@ -33,288 +33,13 @@
    </head>
     <body class="chir_un_home">
       <div class="chir-page">
-        <header id="header_chir" class="bg_w">
-          <section id="chir_top_bar" class="hidden-xs hidden-sm">
-            <div class="main">
-              <div class="container">
-                <ul>
-                  <li><i class="fa fa-map-marker" aria-hidden="true"></i> <span>Sá» 288, DÆ°Æ¡ng ÄÃ¬nh Há»i, P. TÄng NhÆ¡n PhÃº B, Quáº­n 9 - TP Há» ChÃ­ Minh</span></li>
-                  <li><a href="mailto:inspire.itdev@gmail.com" ><i class="fa fa-envelope" aria-hidden="true"></i> inspire.itdev@gmail.com</a></li>
-                  <li><a href="tel:01662465188"><i class="fa fa-mobile" aria-hidden="true"></i> 01662 465 188</a></li>
-                </ul>
-              </div>
-            </div>
-          </section>
-          <section id="main_header">
-            <div class="container">
-              <div class="row">
-                <div id="chir_logo" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                  <div class="tool_bar_menu visible-xs visible-sm">
-                    <a href="javascript:void(0)">
-                    <span class="open-menu"></span>
-                    </a>
-                  </div>
-                  <div class="tool_bar_user visible-xs visible-sm">
-                    <a href="/cart" title="Giá» hÃ ng" class="cart_mobile">
-                    <span class="cart-control control-4">
-                    </span>
-                    <span id="count_Cart_mobile" class="header-cart-count CartCount">0</span>
-                    </a>
-                    <div class="site_user_xs relative">
-                      <span class="open-user">
-                        <div class="div-user-control control-2">
-                        </div>
-                      </span>
-                      <div class="box_user_xs">
-                        <ul class="dropdown-menu info-user user-xs" aria-labelledby="dLabel">
-                          <li class="info"><a href="/account/login" class="login"><i class="fa fa-sign-in" aria-hidden="true"></i> ÄÄng nháº­p</a></li>
-                          <li class="info"><a href="/account/register"><i class="fa fa-registered" aria-hidden="true"></i> ÄÄng kÃ½</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <p>
-                    <a href="/"><img src="images/logo.png" /></a>
-                  </p>
-                </div>
-                <div id="chir_search_head" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                  <div class="chir_frm">
-                    <form id="frm_search_head" action="/search">
-                      <i class="fa fa-search"></i>
-                      <input type="hidden" name="type" value="product" />
-                      <input required type="text" name="q" placeholder="TÃ¬m kiáº¿m..." />
-                      <button type="submit" class="chir_btn_sub">
-                      TÃ¬m kiáº¿m
-                      </button>
-                    </form>
-                  </div>
-                  <ul class="chir_autocomplete">
-                    <li class="title"><strong>Gá»£i Ã½ tá»« khÃ³a: </strong></li>
-                    <li><span>Thá»i trang nam, Thá»i trang ná»¯, Balo, TÃºi xÃ¡ch, MÃ¨ vÃ  bÃ©...</span></li>
-                  </ul>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 hidden-sm hidden-xs fr scroll-down2">
-                  <div class="control-box">
-                    <ul class="ul-control-box">
-                      <li class="top-hotline">
-                        <a href="/apps/kiem-tra-don-hang" title="Hot line">
-                        <span class="div-user-control control-4">
-                        <img src="images/phone.png"/>
-                        </span>
-                        <span class="info">Tra cá»©u ÄÆ¡n hÃ ng</span>
-                        </a>
-                      </li>
-                      <li class="top-cart-block">
-                        <a href="/cart" class="open-cart-popup" title="Giá» hÃ ng">
-                        <span class="div-user-control control-4" id="cartItemsCount">
-                        </span>
-                        <span class="info">Giá» hÃ ng</span>
-                        <span id="count_Cart" class="header-cart-count CartCount">0</span>
-                        </a>
-                      </li>
-                      <li class="dropdown" id="segment_user_do_login">
-                        <a class="info" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                          <div class="div-user-control control-2">
-                          </div>
-                          <span> TÃ i khoáº£n </span>
-                        </a>
-                        <ul class="dropdown-menu info-user" aria-labelledby="dLabel">
-                          <li class="info"><a href="/account/login" class="login"><i class="fa fa-sign-in" aria-hidden="true"></i> ÄÄng nháº­p</a></li>
-                          <li class="info"><a href="/account/register"><i class="fa fa-registered" aria-hidden="true"></i> ÄÄng kÃ½</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </header>
-        <nav id="chir_main_menu" class="hidden-sm hidden-xs">
-          <div class="main">
-            <div class="container">
-              <div class="navar_menu">
-                <ul class="nav-navbar clearfix">
-                  <li class="">
-                    <a href="/" class="" title="Trang chá»§">
-                    Trang chá»§
-                    <span class="label_icon no_label"></span>
-                    </a>
-                  </li>
-                  <li class="li_child ">
-                    <a href="/san-pham-noi-bat" title="Bá» sÆ°u táº­p" class=" fa_down up">
-                    Bá» sÆ°u táº­p <i class="fa fa-angle-down" aria-hidden="true"></i>
-                    <span class="label_icon label_hot"></span>
-                    </a>
-                    <ul class="menu_child levlup_2" role="menu">
-                      <li class="hasChild">
-                        <a href="/deal-time" class=" fa_down right" title="Thá»i trang ná»¯">Thá»i trang ná»¯ <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                        <ul class="menu_child levlup_3">
-                          <li>
-                            <a href="/thoi-trang-ban-chay" title="Ão sÆ¡ mi ná»¯">Ão sÆ¡ mi ná»¯</a>
-                          </li>
-                          <li>
-                            <a href="/dam-mac-nha-phoi-no-xinh-xan-twins" title="Ão thun ná»¯">Ão thun ná»¯</a>
-                          </li>
-                          <li>
-                            <a href="/dam-body-duoi-ca-d0248" title="Ão thun ná»¯ tay dÃ i">Ão thun ná»¯ tay dÃ i</a>
-                          </li>
-                          <li>
-                            <a href="/dam-dao-pho-hoa-tiet-style-a1" title="Ão khoÃ¡t ná»¯">Ão khoÃ¡t ná»¯</a>
-                          </li>
-                          <li>
-                            <a href="/dam-mac-nha-tay-lo-nitimo-2001" title="Äáº§m/ChÃ¢n vÃ¡y">Äáº§m/ChÃ¢n vÃ¡y</a>
-                          </li>
-                          <li>
-                            <a href="/dam-maxi-du-tiec-hoa-hong-nh028" title="NÃ³n thá»i trang">NÃ³n thá»i trang</a>
-                          </li>
-                          <li>
-                            <a href="/dam-body-lap-the-tay-dai" title="TÃºi xÃ¡ch ná»¯">TÃºi xÃ¡ch ná»¯</a>
-                          </li>
-                          <li>
-                            <a href="/dam-vai-be-gai-laluna-g066009-2t-hong" title="Phá»¥ kiá»n thá»i trang">Phá»¥ kiá»n thá»i trang</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="">
-                        <a href="/all" title="Balo hÃ ng hiá»u">Balo hÃ ng hiá»u</a>
-                      </li>
-                      <li class="">
-                        <a href="/thoi-trang-ban-chay" title="Trang sá»©c hoÃ ng cung">Trang sá»©c hoÃ ng cung</a>
-                      </li>
-                      <li class="">
-                        <a href="/trang-suc" title="NÆ°á»c hoa ngoáº¡i">NÆ°á»c hoa ngoáº¡i</a>
-                      </li>
-                      <li class="hasChild">
-                        <a href="/frontpage" class=" fa_down right" title="Thá»i trang nam">Thá»i trang nam <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                        <ul class="menu_child levlup_3">
-                          <li>
-                            <a href="/thoi-trang-ban-chay" title="Ão sÆ¡ mi nam">Ão sÆ¡ mi nam</a>
-                          </li>
-                          <li>
-                            <a href="/non-nike-xanh-den-n249" title="Ão thun nam">Ão thun nam</a>
-                          </li>
-                          <li>
-                            <a href="/combo-balo-tui-ipad-vi-nu-sunny-day-sid49183" title="Ão khoÃ¡t nam">Ão khoÃ¡t nam</a>
-                          </li>
-                          <li>
-                            <a href="/non-nike-xanh-den-n249" title="Dá»¥ng cá»¥ thá» nao nam">Dá»¥ng cá»¥ thá» nao nam</a>
-                          </li>
-                          <li>
-                            <a href="/giay-tennis-t19-xanh" title="GiÃ y thá» thao nam">GiÃ y thá» thao nam</a>
-                          </li>
-                          <li>
-                            <a href="/non-nike-xanh-den-n249" title="Quáº§n tÃ¢y nam">Quáº§n tÃ¢y nam</a>
-                          </li>
-                          <li>
-                            <a href="/deal-time" title="Quáº§n jean nam">Quáº§n jean nam</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="">
-                        <a href="/my-pham" title="Má»¹ pháº©m cao cáº¥p">Má»¹ pháº©m cao cáº¥p</a>
-                      </li>
-                      <li class="">
-                        <a href="/collections/all" title="Iphone 7/7s/7 Plus">Iphone 7/7s/7 Plus</a>
-                      </li>
-                      <li class="hasChild">
-                        <a href="/deal-time" class=" fa_down right" title="Phá»¥ kiá»n cÃ´ng nghá»">Phá»¥ kiá»n cÃ´ng nghá» <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                        <ul class="menu_child levlup_3">
-                          <li>
-                            <a href="/tai-nghe-chup-tai-siberia-v3-prism-gaming" title="Tai nghe Samsung">Tai nghe Samsung</a>
-                          </li>
-                          <li>
-                            <a href="/tai-nghe-chup-tai-cho-game-thu-kanen-km780" title="Loa Laptop">Loa Laptop</a>
-                          </li>
-                          <li>
-                            <a href="/pin-sac-du-phong-romoss-solo-5-10000mah" title="á»p lÆ°ng">á»p lÆ°ng</a>
-                          </li>
-                          <li>
-                            <a href="/pin-sac-du-phong-romoss-solo-5-10000mah" title="Pin sáº¡t dá»± phÃ²ng">Pin sáº¡t dá»± phÃ²ng</a>
-                          </li>
-                          <li>
-                            <a href="/usb-otg-sandisk-sddd2-32gb" title="USB">USB</a>
-                          </li>
-                          <li>
-                            <a href="/vien-uong-tang-cuong-testoterone-tu-nhien-cho-nam-gioi-testostro-grow" title="Chuá»t mÃ¡y tÃ­nh">Chuá»t mÃ¡y tÃ­nh</a>
-                          </li>
-                          <li>
-                            <a href="/ban-phim-may-tinh-hp-cd3000zn" title="BÃ n phÃ­m mÃ¡y tÃ­nh">BÃ n phÃ­m mÃ¡y tÃ­nh</a>
-                          </li>
-                          <li>
-                            <a href="/ban-phim-choi-game-led-gia-co-r8-1818" title="Tháº» nhá»">Tháº» nhá»</a>
-                          </li>
-                          <li>
-                            <a href="/sat-du-phong-a4000" title="CÃ¡p sáº¡t Äiá»n thoáº¡i">CÃ¡p sáº¡t Äiá»n thoáº¡i</a>
-                          </li>
-                          <li>
-                            <a href="/tai-nghe-chup-tai-cho-game-thu-kanen-km780" title="Loa mini">Loa mini</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="">
-                    <a href="/collections/all" class="" title="Sáº£n pháº©m">
-                    Sáº£n pháº©m
-                    <span class="label_icon no_label"></span>
-                    </a>
-                  </li>
-                  <li class="">
-                    <a href="/tin-tuc" class="" title="Tin tá»©c">
-                    Tin tá»©c
-                    <span class="label_icon label_new"></span>
-                    </a>
-                  </li>
-                  <li class="">
-                    <a href="/gioi-thieu" class="" title="Giá»i thiá»u">
-                    Giá»i thiá»u
-                    <span class="label_icon no_label"></span>
-                    </a>
-                  </li>
-                  <li class="li_child ">
-                    <a href="/thoi-trang-ban-chay" title="Thá»i trang má»i" class=" fa_down up">
-                    Thá»i trang má»i <i class="fa fa-angle-down" aria-hidden="true"></i>
-                    <span class="label_icon no_label"></span>
-                    </a>
-                    <ul class="menu_child levlup_2" role="menu">
-                      <li class="">
-                        <a href="/non-nike-xanh-den-n249" title="Ão khoÃ¡t len nam">Ão khoÃ¡t len nam</a>
-                      </li>
-                      <li class="">
-                        <a href="/dam-mac-nha-phoi-no-xinh-xan-twins" title="Ão khoÃ¡t len ná»¯">Ão khoÃ¡t len ná»¯</a>
-                      </li>
-                      <li class="">
-                        <a href="/giay-tennis-t19-xanh" title="GiÃ y nam/ná»¯">GiÃ y nam/ná»¯</a>
-                      </li>
-                      <li class="">
-                        <a href="/dam-dao-pho-hoa-tiet-style-a1" title="VÃ­ nam/ná»¯">VÃ­ nam/ná»¯</a>
-                      </li>
-                      <li class="">
-                        <a href="/deal-time" title="TÃºi xÃ¡ch ná»¯">TÃºi xÃ¡ch ná»¯</a>
-                      </li>
-                      <li class="">
-                        <a href="/thoi-trang-ban-chay" title="Balo sale">Balo sale</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="">
-                    <a href="/deal-time" class="" title="Best Seller">
-                    Best Seller
-                    <span class="label_icon label_sale"></span>
-                    </a>
-                  </li>
-                  <li class="">
-                    <a href="/lien-he-voi-chung-toi" class="" title="LiÃªn há»">
-                    LiÃªn há»
-                    <span class="label_icon no_label"></span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </nav>
+        <!--header-->
+            <%@ include file="block/header.jsp" %>
+            <!--header-->
+
+            <!--menu-->
+            <%@ include file="block/menu.jsp" %>
+            <!--menu-->
         <div class="chir_main">
           <style>
             h1.title-box-login {
@@ -484,32 +209,43 @@
                   <div class="row">
                     <div class="col-sm-6 col-xs-12">
                       <h1 class="title-box-login">
-                        ÄÄng nháº­p
+                        Đăng nhập
                       </h1>
                       <div class="content-cus-form cus-login">
                         <div id='login'>
-                          <form accept-charset='UTF-8' action='/account/login' id='customer_login' method='post'>
+                            
+                                    <%
+                                    if(session.getAttribute("status")== "danger"){
+                                    %>
+                                    <div class="alert alert-danger" role="alert">
+                                        ${alert}
+                                    </div>
+                                    <%
+                                        }
+                                        session.removeAttribute("status");
+                                    %>
+                          <form accept-charset='UTF-8' action='../login_asset' id='customer_login' method='post'>
                             <input name='FormType' type='hidden' value='customer_login' />
                             <input name='utf8' type='hidden' value='true' />
                             <div class="col_full">
                               <span class="not-null">*</span>
                               <span class="icon_checkout ico-email"></span>
-                              <input required type="email" title="email" name="email" id="email" placeholder="Email cá»§a báº¡n" value="" class="form-control" />
+                              <input required type="email" title="email" name="email" id="email" placeholder="Email của bạn" value="" class="form-control" />
                             </div>
                             <div class="col_full">
                               <span class="not-null">*</span>
                               <span class="icon_checkout ico-pass"></span>
-                              <input required type="password" title="Máº­t kháº©u" name="password" id="pass" placeholder="Nháº­p máº­t kháº©u" value="" class="form-control" />
+                              <input required type="password" title="Mật khẩu" name="password" id="pass" placeholder="Nhập mật khẩu" value="" class="form-control" />
                             </div>
                             <div class="col_full nobottommargin action">
-                              <button class="button button-3d button-black nomargin" id="login-form-submit" name="login-form-submit" type='submit' value="login">ÄÄng nháº­p</button>
-                              <a href="#" onclick="showRecoverPasswordForm();return false;" class="">QuÃªn máº­t kháº©u?</a>
+                              <button class="button button-3d button-black nomargin" id="login-form-submit" name="login-form-submit" type='submit' value="login">Đăng nhập</button>
+                              <a href="#" onclick="showRecoverPasswordForm();return false;" class="">Quên mật khẩu?</a>
                             </div>
                             <!--</form>-->
                           </form>
                         </div>
                         <div id="recover-password" style="display:none;" class="userbox">
-                          <div class="acctitle"><i class="fa fa-refresh"></i>QuÃªn máº­t kháº©u</div>
+                          <div class="acctitle"><i class="fa fa-refresh"></i>Quên mật khẩu</div>
                           <div class="">
                             <form accept-charset='UTF-8' action='/account/recover' id='recover_customer_password' method='post'>
                               <input name='FormType' type='hidden' value='recover_customer_password' />
@@ -517,11 +253,11 @@
                               <div class="col_full">
                                 <span class="not-null">*</span>
                                 <span class="icon_checkout ico-email"></span>
-                                <input required type="text" title="email" name="email" placeholder="Nháº­p email cá»§a báº¡n" id="recover-email" value="" class="form-control" />
+                                <input required type="text" title="email" name="email" placeholder="Nhập email của bạn" id="recover-email" value="" class="form-control" />
                               </div>
                               <div class="col_full nobottommargin text-center">
-                                <button class="button button-3d button-black nomargin" type="submit">Gá»­i</button>
-                                <button class="button button-3d button-red nomargin cancel" onclick="hideRecoverPasswordForm(); return false;" name="">Há»§y</button>
+                                <button class="button button-3d button-black nomargin" type="submit">Gửi</button>
+                                <button class="button button-3d button-red nomargin cancel" onclick="hideRecoverPasswordForm(); return false;" name="">Hủy</button>
                               </div>
                             </form>
                           </div>
@@ -530,7 +266,7 @@
                     </div>
                     <div class="col-sm-6 col-xs-12">
                       <h1 class="title-box-login">
-                        ÄÄng kÃ½ thÃ nh viÃªn má»i
+                        Đăng ký thành viên mới
                       </h1>
                       <div class="content-cus-form cus-reg">
                         <form accept-charset='UTF-8' action='/account/register' id='customer_register' method='post'>
@@ -539,12 +275,12 @@
                           <div class="col_full">
                             <span class="not-null">*</span>
                             <span class="icon_checkout ico-name"></span>
-                            <input required type="text" name="FirstName" title="TÃªn" class="input-text "placeholder="TÃªn" id="firstname" class="text" size="30" />
+                            <input required type="text" name="FirstName" title="Tên" class="input-text "placeholder="Tên" id="firstname" class="text" size="30" />
                           </div>
                           <div class="col_full">
                             <span class="not-null">*</span>
                             <span class="icon_checkout ico-name"></span>
-                            <input required type="text" value="" id="lastname" title="Há»" name="LastName" placeholder="Há»" class="text" size="30" />
+                            <input required type="text" value="" id="lastname" title="Họ" name="LastName" placeholder="Họ" class="text" size="30" />
                           </div>
                           <div class="col_full">
                             <span class="not-null">*</span>
@@ -554,10 +290,10 @@
                           <div class="col_full">
                             <span class="not-null">*</span>
                             <span class="icon_checkout ico-pass"></span>
-                            <input required type="password" value="" name="password" id="pass_reg" placeholder="Máº­t kháº©u" class="password text" size="30" />
+                            <input required type="password" value="" name="password" id="pass_reg" placeholder="Mật khẩu" class="password text" size="30" />
                           </div>
                           <div class="col_full nobottommargin action">
-                            <button class="button button-3d button-black nomargin" id="register-form-submit" name="register-form-submit" type='submit'>ÄÄng kÃ½</button>
+                            <button class="button button-3d button-black nomargin" id="register-form-submit" name="register-form-submit" type='submit'>Đăng ký</button>
                           </div>
                         </form>
                       </div>
@@ -579,227 +315,7 @@
             }
           </script>
         </div>
-        <footer id="footer_chir">
-          <section id="footer_promotion" class="bg_w">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-6 item_policy">
-                  <div class="info_policy clearfix">
-                    <span class="name-icon pull-left fa fa-truck"></span>
-                    <div class="description pull-left">
-                      <h4>MIá»N PHÃ Váº¬N CHUYá»N</h4>
-                      <p>Cho ÄÆ¡n hÃ ng trÃªn 500k</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-6 item_policy">
-                  <div class="info_policy clearfix">
-                    <span class="name-icon pull-left fa fa-money"></span>
-                    <div class="description pull-left">
-                      <h4>CAM Káº¾T CHÃNH HÃNG</h4>
-                      <p>Äáº£m báº£o cháº¥t lÆ°á»£ng 100%</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-6 item_policy">
-                  <div class="info_policy clearfix">
-                    <span class="name-icon pull-left fa fa-smile-o"></span>
-                    <div class="description pull-left">
-                      <h4>Há» TRá»¢ TÆ¯ Váº¤N</h4>
-                      <p>Thá»© 2-Thá»© 7 : 08g30 - 17g30</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-6 item_policy">
-                  <div class="info_policy clearfix">
-                    <span class="name-icon pull-left fa fa-phone"></span>
-                    <div class="description pull-left">
-                      <h4>01662 465 188</h4>
-                      <p>Äáº·t hÃ ng ngay</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section id="footer_main">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-12 footer-left">
-                  <div class="fi-about-block grid__item footer-new">
-                    <div class="fi-title1 insScroll"><a href=""><img class="insImageload" src="images/logo_ft.png" alt="" itemprop="logo"></a></div>
-                    <div class="fi-content" style="text-align:justify;">
-                      Super Store lÃ  chuyÃªn cung cáº¥p cÃ¡c sáº£n pháº©m chÃ­nh hÃ£ng vá»i Äáº§y Äá»§ cÃ¡c loáº¡i sáº£n pháº©m tá»« thá»i trang cho Äáº¿n Äá» dÃ¹ng gia ÄÃ¬nh, Äá» dÃ¹ng cÃ¡ nhÃ¢n, máº¹ vÃ  bÃ©, ná»i tháº¥t... Vá»i cÃ¡c thÆ°Æ¡ng hiá»u ná»i tiáº¿ng ÄÆ°á»£c nháº­p kháº©u tá»« nhiá»u nÆ°á»c trÃªn tháº¿ giá»i. 
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-9 col-sm-9 col-xs-12 footer-right">
-                  <div class="col-md-3 col-sm-6 col-xs-6 newfooter">
-                    <div class="fi-title">Vá» chÃºng tÃ´i</div>
-                    <div class="fi-content">
-                      <ul class="grid__item one-whole">
-                        <li>
-                          <a href="/"><span>Trang chá»§</span></a>
-                        </li>
-                        <li>
-                          <a href="/san-pham-noi-bat"><span>Bá» sÆ°u táº­p</span></a>
-                        </li>
-                        <li>
-                          <a href="/collections/all"><span>Sáº£n pháº©m</span></a>
-                        </li>
-                        <li>
-                          <a href="/tin-tuc"><span>Tin tá»©c</span></a>
-                        </li>
-                        <li>
-                          <a href="/gioi-thieu"><span>Giá»i thiá»u</span></a>
-                        </li>
-                        <li>
-                          <a href="/thoi-trang-ban-chay"><span>Thá»i trang má»i</span></a>
-                        </li>
-                        <li>
-                          <a href="/deal-time"><span>Best Seller</span></a>
-                        </li>
-                        <li>
-                          <a href="/lien-he-voi-chung-toi"><span>LiÃªn há»</span></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-3 col-sm-6 col-xs-6 newfooter">
-                    <div class="fi-title">HÆ°á»ng dáº«n</div>
-                    <div class="fi-content">
-                      <ul class="grid__item one-whole">
-                        <li>
-                          <a href="/"><span>Trang chá»§</span></a>
-                        </li>
-                        <li>
-                          <a href="/san-pham-noi-bat"><span>Bá» sÆ°u táº­p</span></a>
-                        </li>
-                        <li>
-                          <a href="/collections/all"><span>Sáº£n pháº©m</span></a>
-                        </li>
-                        <li>
-                          <a href="/tin-tuc"><span>Tin tá»©c</span></a>
-                        </li>
-                        <li>
-                          <a href="/gioi-thieu"><span>Giá»i thiá»u</span></a>
-                        </li>
-                        <li>
-                          <a href="/thoi-trang-ban-chay"><span>Thá»i trang má»i</span></a>
-                        </li>
-                        <li>
-                          <a href="/deal-time"><span>Best Seller</span></a>
-                        </li>
-                        <li>
-                          <a href="/lien-he-voi-chung-toi"><span>LiÃªn há»</span></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-3 col-sm-6 col-xs-6 newfooter">
-                    <div class="fi-title">ThÃ´ng tin</div>
-                    <div class="fi-content">
-                      <ul class="grid__item one-whole">
-                        <li>
-                          <a href="/"><span>Trang chá»§</span></a>
-                        </li>
-                        <li>
-                          <a href="/san-pham-noi-bat"><span>Bá» sÆ°u táº­p</span></a>
-                        </li>
-                        <li>
-                          <a href="/collections/all"><span>Sáº£n pháº©m</span></a>
-                        </li>
-                        <li>
-                          <a href="/tin-tuc"><span>Tin tá»©c</span></a>
-                        </li>
-                        <li>
-                          <a href="/gioi-thieu"><span>Giá»i thiá»u</span></a>
-                        </li>
-                        <li>
-                          <a href="/thoi-trang-ban-chay"><span>Thá»i trang má»i</span></a>
-                        </li>
-                        <li>
-                          <a href="/deal-time"><span>Best Seller</span></a>
-                        </li>
-                        <li>
-                          <a href="/lien-he-voi-chung-toi"><span>LiÃªn há»</span></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-3 col-sm-6 col-xs-6 newfooter">
-                    <div class="fi-title">ChÃ­nh sÃ¡ch</div>
-                    <div class="fi-content">
-                      <ul class="grid__item one-whole">
-                        <li>
-                          <a href="/"><span>Trang chá»§</span></a>
-                        </li>
-                        <li>
-                          <a href="/san-pham-noi-bat"><span>Bá» sÆ°u táº­p</span></a>
-                        </li>
-                        <li>
-                          <a href="/collections/all"><span>Sáº£n pháº©m</span></a>
-                        </li>
-                        <li>
-                          <a href="/tin-tuc"><span>Tin tá»©c</span></a>
-                        </li>
-                        <li>
-                          <a href="/gioi-thieu"><span>Giá»i thiá»u</span></a>
-                        </li>
-                        <li>
-                          <a href="/thoi-trang-ban-chay"><span>Thá»i trang má»i</span></a>
-                        </li>
-                        <li>
-                          <a href="/deal-time"><span>Best Seller</span></a>
-                        </li>
-                        <li>
-                          <a href="/lien-he-voi-chung-toi"><span>LiÃªn há»</span></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section id="footer_bottom" class="bg_w">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-9 col-sm-12 col-xs-12">
-                  <div class="bot-ft clearfix insScroll">
-                    <div class="logo-ft-1 hidden-xs hidden-sm">
-                      <a href="/" title="Bá» cÃ´ng thÆ°Æ¡ng">
-                      <img class="insImageload" data-load="true" src="images/dtb.png">
-                      </a>
-                    </div>
-                    <div class="copy">
-                      <p>
-                        CÃ´ng ty TMDV Super store
-                        <br>
-                        Template bÃ¡n hÃ ng Äáº¹p, nhiá»u tÃ­nh nÄng, kháº£ nÄng Responsive thÃ¢n thiá»n vá»i ngÆ°á»i dÃ¹ng. TÆ°Æ¡ng thÃ­ch vá»i má»i thiáº¿t bá» di Äá»ng.
-                        <br>
-                        Äá»a chá»: Sá» 288, DÆ°Æ¡ng ÄÃ¬nh Há»i, P. TÄng NhÆ¡n PhÃº B, Quáº­n 9 - TP Há» ChÃ­ Minh
-                        <br>
-                        ÄT: <a href="tel:01662465188">01662 465 188</a>
-                        <br>
-                        Email: <a href="mailto:inspire.itdev@gmail.com" >inspire.itdev@gmail.com</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 hidden-xs hidden-sm ft_payment">
-                  <div class="fi-title">Thanh toÃ¡n</div>
-                  <div class="fi-content insScroll">
-                    <img class="insImageload" data-load="true" src="images/payment.png" alt="CÃ¡c phÆ°Æ¡ng thá»©c thanh toÃ¡n" />
-                  </div>
-                </div>
-                <p class="col-sm-12 col-xs-12 cpr">
-                  &copy; Báº£n quyá»n thuá»c vá» Inspired theme | Cung cáº¥p bá»i <a rel="nofollow" href="https://www.sapo.vn/" title="Sapo" target="_blank">Sapo</a>.
-                </p>
-              </div>
-            </div>
-          </section>
-        </footer>
+        <%@ include file="block/footer.jsp" %>
       </div>
       <div class="fixedItem backtop">
         <a href="javascript:void(0)"><img src="images/top.png" alt="Super store" /></a>
@@ -811,7 +327,7 @@
         <nav>
           <div class="head">
             <p>
-              Danh má»¥c sáº£n pháº©m 
+              Danh mục sản phẩm 
             </p>
             <div class="tool_bar_menu">
               <a href="javascript:void(0)">
@@ -821,87 +337,87 @@
           </div>
           <ul class="chir_menu_mobile">
             <li>
-              <a href="/" class="" title="Trang chá»§">
-              <span>Trang chá»§</span>
+              <a href="/" class="" title="Trang chủ">
+              <span>Trang chủ</span>
               </a>
             </li>
             <li class="mobile_child">
-              <a href="/san-pham-noi-bat" title="Bá» sÆ°u táº­p" class="">
-              Bá» sÆ°u táº­p <i class="fa fa-angle-down" aria-hidden="true"></i>
+              <a href="/san-pham-noi-bat" title="Bộ sưu tập" class="">
+              Bộ sưu tập <i class="fa fa-angle-down" aria-hidden="true"></i>
               </a>
               <ul class="mobile_lvlup lv2" role="menu">
                 <li class="mobile_child">
-                  <a href="/deal-time" title="Thá»i trang ná»¯">Thá»i trang ná»¯ <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                  <a href="/deal-time" title="Thời trang nữ">Thời trang nữ <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                   <ul class="mobile_lvlup lv3">
                     <li>
-                      <a href="/thoi-trang-ban-chay" title="Ão sÆ¡ mi ná»¯">Ão sÆ¡ mi ná»¯</a>
+                      <a href="/thoi-trang-ban-chay" title="Áo sơ mi nữ">Áo sơ mi nữ</a>
                     </li>
                     <li>
-                      <a href="/dam-mac-nha-phoi-no-xinh-xan-twins" title="Ão thun ná»¯">Ão thun ná»¯</a>
+                      <a href="/dam-mac-nha-phoi-no-xinh-xan-twins" title="Áo thun nữ">Áo thun nữ</a>
                     </li>
                     <li>
-                      <a href="/dam-body-duoi-ca-d0248" title="Ão thun ná»¯ tay dÃ i">Ão thun ná»¯ tay dÃ i</a>
+                      <a href="/dam-body-duoi-ca-d0248" title="Áo thun nữ tay dài">Áo thun nữ tay dài</a>
                     </li>
                     <li>
-                      <a href="/dam-dao-pho-hoa-tiet-style-a1" title="Ão khoÃ¡t ná»¯">Ão khoÃ¡t ná»¯</a>
+                      <a href="/dam-dao-pho-hoa-tiet-style-a1" title="Áo khoát nữ">Áo khoát nữ</a>
                     </li>
                     <li>
-                      <a href="/dam-mac-nha-tay-lo-nitimo-2001" title="Äáº§m/ChÃ¢n vÃ¡y">Äáº§m/ChÃ¢n vÃ¡y</a>
+                      <a href="/dam-mac-nha-tay-lo-nitimo-2001" title="Đầm/Chân váy">Đầm/Chân váy</a>
                     </li>
                     <li>
-                      <a href="/dam-maxi-du-tiec-hoa-hong-nh028" title="NÃ³n thá»i trang">NÃ³n thá»i trang</a>
+                      <a href="/dam-maxi-du-tiec-hoa-hong-nh028" title="Nón thời trang">Nón thời trang</a>
                     </li>
                     <li>
-                      <a href="/dam-body-lap-the-tay-dai" title="TÃºi xÃ¡ch ná»¯">TÃºi xÃ¡ch ná»¯</a>
+                      <a href="/dam-body-lap-the-tay-dai" title="Túi xách nữ">Túi xách nữ</a>
                     </li>
                     <li>
-                      <a href="/dam-vai-be-gai-laluna-g066009-2t-hong" title="Phá»¥ kiá»n thá»i trang">Phá»¥ kiá»n thá»i trang</a>
+                      <a href="/dam-vai-be-gai-laluna-g066009-2t-hong" title="Phụ kiện thời trang">Phụ kiện thời trang</a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a href="/all" title="Balo hÃ ng hiá»u">Balo hÃ ng hiá»u</a>
+                  <a href="/all" title="Balo hàng hiệu">Balo hàng hiệu</a>
                 </li>
                 <li>
-                  <a href="/thoi-trang-ban-chay" title="Trang sá»©c hoÃ ng cung">Trang sá»©c hoÃ ng cung</a>
+                  <a href="/thoi-trang-ban-chay" title="Trang sức hoàng cung">Trang sức hoàng cung</a>
                 </li>
                 <li>
-                  <a href="/trang-suc" title="NÆ°á»c hoa ngoáº¡i">NÆ°á»c hoa ngoáº¡i</a>
+                  <a href="/trang-suc" title="Nước hoa ngoại">Nước hoa ngoại</a>
                 </li>
                 <li class="mobile_child">
-                  <a href="/frontpage" title="Thá»i trang nam">Thá»i trang nam <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                  <a href="/frontpage" title="Thời trang nam">Thời trang nam <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                   <ul class="mobile_lvlup lv3">
                     <li>
-                      <a href="/thoi-trang-ban-chay" title="Ão sÆ¡ mi nam">Ão sÆ¡ mi nam</a>
+                      <a href="/thoi-trang-ban-chay" title="Áo sơ mi nam">Áo sơ mi nam</a>
                     </li>
                     <li>
-                      <a href="/non-nike-xanh-den-n249" title="Ão thun nam">Ão thun nam</a>
+                      <a href="/non-nike-xanh-den-n249" title="Áo thun nam">Áo thun nam</a>
                     </li>
                     <li>
-                      <a href="/combo-balo-tui-ipad-vi-nu-sunny-day-sid49183" title="Ão khoÃ¡t nam">Ão khoÃ¡t nam</a>
+                      <a href="/combo-balo-tui-ipad-vi-nu-sunny-day-sid49183" title="Áo khoát nam">Áo khoát nam</a>
                     </li>
                     <li>
-                      <a href="/non-nike-xanh-den-n249" title="Dá»¥ng cá»¥ thá» nao nam">Dá»¥ng cá»¥ thá» nao nam</a>
+                      <a href="/non-nike-xanh-den-n249" title="Dụng cụ thể nao nam">Dụng cụ thể nao nam</a>
                     </li>
                     <li>
-                      <a href="/giay-tennis-t19-xanh" title="GiÃ y thá» thao nam">GiÃ y thá» thao nam</a>
+                      <a href="/giay-tennis-t19-xanh" title="Giày thể thao nam">Giày thể thao nam</a>
                     </li>
                     <li>
-                      <a href="/non-nike-xanh-den-n249" title="Quáº§n tÃ¢y nam">Quáº§n tÃ¢y nam</a>
+                      <a href="/non-nike-xanh-den-n249" title="Quần tây nam">Quần tây nam</a>
                     </li>
                     <li>
-                      <a href="/deal-time" title="Quáº§n jean nam">Quáº§n jean nam</a>
+                      <a href="/deal-time" title="Quần jean nam">Quần jean nam</a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a href="/my-pham" title="Má»¹ pháº©m cao cáº¥p">Má»¹ pháº©m cao cáº¥p</a>
+                  <a href="/my-pham" title="Mỹ phẩm cao cấp">Mỹ phẩm cao cấp</a>
                 </li>
                 <li>
                   <a href="/collections/all" title="Iphone 7/7s/7 Plus">Iphone 7/7s/7 Plus</a>
                 </li>
                 <li class="mobile_child">
-                  <a href="/deal-time" title="Phá»¥ kiá»n cÃ´ng nghá»">Phá»¥ kiá»n cÃ´ng nghá» <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                  <a href="/deal-time" title="Phụ kiện công nghệ">Phụ kiện công nghệ <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                   <ul class="mobile_lvlup lv3">
                     <li>
                       <a href="/tai-nghe-chup-tai-siberia-v3-prism-gaming" title="Tai nghe Samsung">Tai nghe Samsung</a>
@@ -910,25 +426,25 @@
                       <a href="/tai-nghe-chup-tai-cho-game-thu-kanen-km780" title="Loa Laptop">Loa Laptop</a>
                     </li>
                     <li>
-                      <a href="/pin-sac-du-phong-romoss-solo-5-10000mah" title="á»p lÆ°ng">á»p lÆ°ng</a>
+                      <a href="/pin-sac-du-phong-romoss-solo-5-10000mah" title="Ốp lưng">Ốp lưng</a>
                     </li>
                     <li>
-                      <a href="/pin-sac-du-phong-romoss-solo-5-10000mah" title="Pin sáº¡t dá»± phÃ²ng">Pin sáº¡t dá»± phÃ²ng</a>
+                      <a href="/pin-sac-du-phong-romoss-solo-5-10000mah" title="Pin sạt dự phòng">Pin sạt dự phòng</a>
                     </li>
                     <li>
                       <a href="/usb-otg-sandisk-sddd2-32gb" title="USB">USB</a>
                     </li>
                     <li>
-                      <a href="/vien-uong-tang-cuong-testoterone-tu-nhien-cho-nam-gioi-testostro-grow" title="Chuá»t mÃ¡y tÃ­nh">Chuá»t mÃ¡y tÃ­nh</a>
+                      <a href="/vien-uong-tang-cuong-testoterone-tu-nhien-cho-nam-gioi-testostro-grow" title="Chuột máy tính">Chuột máy tính</a>
                     </li>
                     <li>
-                      <a href="/ban-phim-may-tinh-hp-cd3000zn" title="BÃ n phÃ­m mÃ¡y tÃ­nh">BÃ n phÃ­m mÃ¡y tÃ­nh</a>
+                      <a href="/ban-phim-may-tinh-hp-cd3000zn" title="Bàn phím máy tính">Bàn phím máy tính</a>
                     </li>
                     <li>
-                      <a href="/ban-phim-choi-game-led-gia-co-r8-1818" title="Tháº» nhá»">Tháº» nhá»</a>
+                      <a href="/ban-phim-choi-game-led-gia-co-r8-1818" title="Thẻ nhớ">Thẻ nhớ</a>
                     </li>
                     <li>
-                      <a href="/sat-du-phong-a4000" title="CÃ¡p sáº¡t Äiá»n thoáº¡i">CÃ¡p sáº¡t Äiá»n thoáº¡i</a>
+                      <a href="/sat-du-phong-a4000" title="Cáp sạt điện thoại">Cáp sạt điện thoại</a>
                     </li>
                     <li>
                       <a href="/tai-nghe-chup-tai-cho-game-thu-kanen-km780" title="Loa mini">Loa mini</a>
@@ -938,39 +454,39 @@
               </ul>
             </li>
             <li>
-              <a href="/collections/all" class="" title="Sáº£n pháº©m">
-              <span>Sáº£n pháº©m</span>
+              <a href="/collections/all" class="" title="Sản phẩm">
+              <span>Sản phẩm</span>
               </a>
             </li>
             <li>
-              <a href="/tin-tuc" class="" title="Tin tá»©c">
-              <span>Tin tá»©c</span>
+              <a href="/tin-tuc" class="" title="Tin tức">
+              <span>Tin tức</span>
               </a>
             </li>
             <li>
-              <a href="/gioi-thieu" class="" title="Giá»i thiá»u">
-              <span>Giá»i thiá»u</span>
+              <a href="/gioi-thieu" class="" title="Giới thiệu">
+              <span>Giới thiệu</span>
               </a>
             </li>
             <li class="mobile_child">
-              <a href="/thoi-trang-ban-chay" title="Thá»i trang má»i" class="">
-              Thá»i trang má»i <i class="fa fa-angle-down" aria-hidden="true"></i>
+              <a href="/thoi-trang-ban-chay" title="Thời trang mới" class="">
+              Thời trang mới <i class="fa fa-angle-down" aria-hidden="true"></i>
               </a>
               <ul class="mobile_lvlup lv2" role="menu">
                 <li>
-                  <a href="/non-nike-xanh-den-n249" title="Ão khoÃ¡t len nam">Ão khoÃ¡t len nam</a>
+                  <a href="/non-nike-xanh-den-n249" title="Áo khoát len nam">Áo khoát len nam</a>
                 </li>
                 <li>
-                  <a href="/dam-mac-nha-phoi-no-xinh-xan-twins" title="Ão khoÃ¡t len ná»¯">Ão khoÃ¡t len ná»¯</a>
+                  <a href="/dam-mac-nha-phoi-no-xinh-xan-twins" title="Áo khoát len nữ">Áo khoát len nữ</a>
                 </li>
                 <li>
-                  <a href="/giay-tennis-t19-xanh" title="GiÃ y nam/ná»¯">GiÃ y nam/ná»¯</a>
+                  <a href="/giay-tennis-t19-xanh" title="Giày nam/nữ">Giày nam/nữ</a>
                 </li>
                 <li>
-                  <a href="/dam-dao-pho-hoa-tiet-style-a1" title="VÃ­ nam/ná»¯">VÃ­ nam/ná»¯</a>
+                  <a href="/dam-dao-pho-hoa-tiet-style-a1" title="Ví nam/nữ">Ví nam/nữ</a>
                 </li>
                 <li>
-                  <a href="/deal-time" title="TÃºi xÃ¡ch ná»¯">TÃºi xÃ¡ch ná»¯</a>
+                  <a href="/deal-time" title="Túi xách nữ">Túi xách nữ</a>
                 </li>
                 <li>
                   <a href="/thoi-trang-ban-chay" title="Balo sale">Balo sale</a>
@@ -983,8 +499,8 @@
               </a>
             </li>
             <li>
-              <a href="/lien-he-voi-chung-toi" class="" title="LiÃªn há»">
-              <span>LiÃªn há»</span>
+              <a href="/lien-he-voi-chung-toi" class="" title="Liên hệ">
+              <span>Liên hệ</span>
               </a>
             </li>
           </ul>
@@ -995,7 +511,7 @@
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title " id="">ThÃ´ng tin sáº£n pháº©m</h4>
+              <h4 class="modal-title " id="">Thông tin sản phẩm</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -1033,15 +549,15 @@
                         <select id="product-selectors" name="variantId"></select>
                       </div>
                       <div class="form-input qty">
-                        <label>Sá» lÆ°á»£ng</label>
+                        <label>Số lượng</label>
                         <input name="quantity" type="number" min="1" value="1" />
                       </div>
                       <div class="form-input actionQVC" style="width: 100%">
-                        <button type="button" class="btn-addCart ds-cart addToCartModal cart_QV">ThÃªm vÃ o giá»</button>
-                        <!--<button disabled class="btn-detail addtocart btn-color-add btn-min-width btn-mgt btn-soldout">Háº¿t hÃ ng</button>-->
-                        <button style="display:none" type="button" class="btn-addCart ds-cart cart_QV noPrice" onclick="window.location = '/cart'">Xem giá» hÃ ng</button>
+                        <button type="button" class="btn-addCart ds-cart addToCartModal cart_QV">Thêm vào giỏ</button>
+                        <!--<button disabled class="btn-detail addtocart btn-color-add btn-min-width btn-mgt btn-soldout">Hết hàng</button>-->
+                        <button style="display:none" type="button" class="btn-addCart ds-cart cart_QV noPrice" onclick="window.location = '/cart'">Xem giỏ hàng</button>
                         <div class="qv-readmore">
-                          <span> hoáº·c </span><a class="read-more p-url" href="" role="button">Xem chi tiáº¿t</a>
+                          <span> hoặc </span><a class="read-more p-url" href="" role="button">Xem chi tiết</a>
                         </div>
                       </div>
                     </div>
@@ -1077,13 +593,13 @@
         			modal.find('.addToCartModal').show();
         			modal.find('.qv-readmore > span').show();
         			modal.find('.qty').show();
-        			modal.find('.p-price').html(Bizweb.formatMoney(variant.price, "{{amount_no_decimals_with_comma_separator}}â«"));
+        			modal.find('.p-price').html(Bizweb.formatMoney(variant.price, "{{amount_no_decimals_with_comma_separator}}₫"));
         			if (variant.compare_at_price > variant.price )
-        				modal.find('del').html(Bizweb.formatMoney(variant.compare_at_price, "{{amount_no_decimals_with_comma_separator}}â«"));
+        				modal.find('del').html(Bizweb.formatMoney(variant.compare_at_price, "{{amount_no_decimals_with_comma_separator}}₫"));
         			else
         				modal.find('del').html('');
         		}else{
-        			modal.find('.p-price').html('LiÃªn há»');
+        			modal.find('.p-price').html('Liên hệ');
         			modal.find('.addToCartModal').hide();
         			modal.find('.qty').hide();
         			//modal.find('.noPrice').show();
@@ -1091,22 +607,22 @@
         			modal.find('del').html('');
         		}
         		if (variant.available) {
-        			modal.find('.addToCartModal').removeClass('disabled').removeAttr('disabled').html('ThÃªm vÃ o giá»');
+        			modal.find('.addToCartModal').removeClass('disabled').removeAttr('disabled').html('Thêm vào giỏ');
         			//modal.find('.btn-soldout').css('display', 'none');
         		}
         		else {
-        			modal.find('.addToCartModal').addClass('disabled').attr('disabled','disabled').html('Háº¿t hÃ ng');
+        			modal.find('.addToCartModal').addClass('disabled').attr('disabled','disabled').html('Hết hàng');
         			//modal.find('.btn-soldout').css('display', 'block');
         		}
         		if (variant.sku != null ){
-        			modal.find('.m-sku').html('<span>MÃ£ sáº£n pháº©m: </span>'+ variant.sku).show();
+        			modal.find('.m-sku').html('<span>Mã sản phẩm: </span>'+ variant.sku).show();
         		}else{
         			modal.find('.m-sku').hide();
         		}
         	}
         	else {
-        		modal.find('.addToCartModal').addClass('disabled').attr('disabled','disabled').html('Háº¿t hÃ ng').show();
-        		modal.find('.p-price').html('Háº¿t hÃ ng');
+        		modal.find('.addToCartModal').addClass('disabled').attr('disabled','disabled').html('Hết hàng').show();
+        		modal.find('.p-price').html('Hết hàng');
         		modal.find('.qty').hide();
         		modal.find('del').html('');
         	}
@@ -1123,11 +639,11 @@
         			$.each(product.options, function (i, v) {
         				product.options[i] = v.name;
         			})
-        			modal.find('.addToCartModal').removeClass('disabled').removeAttr('disabled').html('ThÃªm vÃ o giá»');
+        			modal.find('.addToCartModal').removeClass('disabled').removeAttr('disabled').html('Thêm vào giỏ');
         			modal.find('.p-title').html('<h3>' + product.name + '</h3>');
         			modal.find('.p-option-wrapper').html(p_select_data);
         			if(product.vendor != null){
-        				modal.find('.m-vendor').html('<span>NhÃ  cung cáº¥p: </span>'+ product.vendor).show();
+        				modal.find('.m-vendor').html('<span>Nhà cung cấp: </span>'+ product.vendor).show();
         			}else{
         				modal.find('.m-vendor').hide();
         			}
@@ -1141,7 +657,7 @@
         				modal.find('.form-des').html(des);
         				modal.find('.form-des').show();
         			}else{
-        				modal.find('.form-des').html('ChÆ°a cÃ³ mÃ´ táº£ cho sáº£n pháº©m nÃ y!');
+        				modal.find('.form-des').html('Chưa có mô tả cho sản phẩm này!');
         			}
         			$('.image-zoom').html(p_zoom);
         			modal.find('.p-url').attr('href', product.url);
@@ -1173,7 +689,7 @@
         						margin: 10,
         						responsiveClass: true,
         						nav : true,
-        						navText: ['â¹' , 'âº'],
+        						navText: ['‹' , '›'],
         						responsive: {
         							0: {
         								items: 1,
@@ -1219,7 +735,7 @@
         					enableHistoryState: true
         				});     
         				//debugger
-        				if (product.options.length == 1 && product.options[0].indexOf('TiÃªu Äá»')==-1)
+        				if (product.options.length == 1 && product.options[0].indexOf('Tiêu đề')==-1)
         
         					modal.find('.selector-wrapper:eq(0)').prepend('<label>' + product.options[0] + '</label>');
         				$('.p-option-wrapper').show();
@@ -1253,7 +769,7 @@
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title " id=""><i class="fa fa-check-square-o" aria-hidden="true"></i> ThÃªm vÃ o giá» thÃ nh cÃ´ng</h4>
+              <h4 class="modal-title " id=""><i class="fa fa-check-square-o" aria-hidden="true"></i> Thêm vào giỏ thành công</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -1268,8 +784,8 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="close continueShopping" data-dismiss="modal" aria-label="Close">Tiáº¿p tá»¥c mua sáº¯m</button>
-              <button type="button" class="close viewCartPage" onclick="window.location = '/cart'">Xem giá» hÃ ng</button>
+              <button type="button" class="close continueShopping" data-dismiss="modal" aria-label="Close">Tiếp tục mua sắm</button>
+              <button type="button" class="close viewCartPage" onclick="window.location = '/cart'">Xem giỏ hàng</button>
             </div>
           </div>
         </div>

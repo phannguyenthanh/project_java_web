@@ -72,7 +72,7 @@
                            </a>
                         </li>
                         <li class="">
-                           <a href="/gioi-thieu" class="" title="Giới thiệu">
+                           <a href="about.jsp" class="" title="Giới thiệu">
                            Giới thiệu
                            <span class="label_icon no_label"></span>
                            </a>

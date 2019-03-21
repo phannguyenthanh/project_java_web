@@ -80,7 +80,7 @@
                                  </a>
                               </li>
                               <li class="top-cart-block">
-                                 <a href="/cart" class="open-cart-popup" title="Giỏ hàng">
+                                 <a href="cart.jsp" class="open-cart-popup" title="Giỏ hàng">
                                  <span class="div-user-control control-4" id="cartItemsCount">
                                  </span>
                                  <span class="info">Giỏ hàng</span>
@@ -88,15 +88,31 @@
                                  </a>
                               </li>
                               <li class="dropdown" id="segment_user_do_login">
+                                  <%
+                                    if(session.getAttribute("account_asset")== "ok"){  
+                                  %>
+                                    <a class="info" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <div class="div-user-control control-2" >
+                                            <img src="${avatar_asset}">
+                                    </div>
+                                    <span> ${name_asset}</span>
+                                 </a>
+                                 <ul class="dropdown-menu info-user" aria-labelledby="dLabel">
+                                    <li class="info"><a href="login.jsp" class="login"><i class="fa fa-sign-in" aria-hidden="true"></i> Tài khoản</a></li>
+                                    <li class="info"><a href="../logout_asset"><i class="fa fa-registered" aria-hidden="true"></i> Đăng xuất</a></li>
+                                 </ul>
+                                  <%}else{%>
                                  <a class="info" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <div class="div-user-control control-2">
+                                    <div class="div-user-control control-2" >
+                                        <img src="default/img_264157.png">
                                     </div>
                                     <span> Tài khoản </span>
                                  </a>
                                  <ul class="dropdown-menu info-user" aria-labelledby="dLabel">
-                                    <li class="info"><a href="/account/login" class="login"><i class="fa fa-sign-in" aria-hidden="true"></i> Đăng nhập</a></li>
-                                    <li class="info"><a href="/account/register"><i class="fa fa-registered" aria-hidden="true"></i> Đăng ký</a></li>
+                                    <li class="info"><a href="login.jsp" class="login"><i class="fa fa-sign-in" aria-hidden="true"></i> Đăng nhập</a></li>
+                                    <li class="info"><a href="register.jsp"><i class="fa fa-registered" aria-hidden="true"></i> Đăng ký</a></li>
                                  </ul>
+                                 <%}%>
                               </li>
                            </ul>
                         </div>

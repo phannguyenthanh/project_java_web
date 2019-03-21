@@ -169,10 +169,18 @@
                         }else if( status.equals("DetailUser")){
                     %>
                         <%@include file="Views/user/details.jsp" %>
-                    <%
-                        }
-                    %>        
+                        
             <!-- end users-->
+            
+            <!--cart-->
+                    <%
+                        }else if( status.equals("Cart")){
+                    %>  
+                    <%@include file="carts.jsp" %>
+                    <%
+                    }
+                    %>
+            <!--cart end-->
 
 
                 </div>

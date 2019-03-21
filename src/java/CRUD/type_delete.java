@@ -37,7 +37,7 @@ public class type_delete extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         
         HttpSession session = request.getSession();
-         String sid=request.getParameter("id");  
+        String sid=request.getParameter("id");  
         int id=Integer.parseInt(sid);  
          
         int status = types.delete(id); 
