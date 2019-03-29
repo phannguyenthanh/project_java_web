@@ -142,7 +142,7 @@
                     %>
                         <%@include file="Views/brand/details.jsp" %>
                    
-                    
+                   
                     
                 <!--end brand--> 
                  
@@ -177,10 +177,18 @@
                         }else if( status.equals("Cart")){
                     %>  
                     <%@include file="carts.jsp" %>
+                    
+            <!--cart end-->
+            
+             <!--Detail_bill-->
+                 <%
+                        }else if( status.equals("Detail_bill")){
+                    %>  
+                    <%@include file="detail_bill.jsp" %>
                     <%
                     }
                     %>
-            <!--cart end-->
+              <!--Detail_bill-->
 
 
                 </div>

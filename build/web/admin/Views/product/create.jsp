@@ -55,7 +55,7 @@
                     action="../products_add" 
                     enctype = "multipart/form-data"
                     id="validationform" 
-                    
+                    novalidate=""
                     >
                     <div class="form-group row">
                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Tên</label>

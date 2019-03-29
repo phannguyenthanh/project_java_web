@@ -44,11 +44,10 @@
                                                 {
                                                     for(int i=0; i< type_menu.size();i++)
                                                    {
-                                                       %>
-                                                    
-                              
+                                                 %>
+                                                
                               <li class="">
-                                 <a href="produt?status=type&id=<%=type_menu.get(i).getId()%>" title="Balo hàng hiệu"><%=type_menu.get(i).getName()%></a>
+                                 <a href="product.jsp?status=type&id=<%=type_menu.get(i).getId()%>" title="Balo hàng hiệu"><%=type_menu.get(i).getName()%></a>
                               </li>
                               
                               <%

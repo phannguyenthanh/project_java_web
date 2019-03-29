@@ -4,7 +4,15 @@
     Author     : sinhs
 --%>
 
+<%@page import="Models.View_Carts"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    View_Carts cart = (View_Carts) session.getAttribute("cart");
+    if(cart == null){
+        cart = new View_Carts();
+        session.setAttribute("cart", cart);
+    }
+%>
 <header id="header_chir" class="bg_w">
             <section id="chir_top_bar" class="hidden-xs hidden-sm">
                <div class="main">
@@ -30,7 +38,7 @@
                            <a href="/cart" title="Giỏ hàng" class="cart_mobile">
                            <span class="cart-control control-4">
                            </span>
-                           <span id="count_Cart_mobile" class="header-cart-count CartCount">0</span>
+                               <span id="count_Cart_mobile" class="header-cart-count CartCount">0</span>
                            </a>
                            <div class="site_user_xs relative">
                               <span class="open-user">
@@ -64,8 +72,8 @@
                            </form>
                         </div>
                         <ul class="chir_autocomplete">
-                           <li class="title"><strong>Gợi ý từ khóa: </strong></li>
-                           <li><span>Thời trang nam, Thời trang nữ, Balo, Túi xách, Mè và bé...</span></li>
+<!--                           <li class="title"><strong>Gợi ý từ khóa: </strong></li>
+                           <li><span>Thời trang nam, Thời trang nữ, Balo, Túi xách, Mè và bé...</span></li>-->
                         </ul>
                      </div>
                      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 hidden-sm hidden-xs fr scroll-down2">
@@ -84,7 +92,7 @@
                                  <span class="div-user-control control-4" id="cartItemsCount">
                                  </span>
                                  <span class="info">Giỏ hàng</span>
-                                 <span id="count_Cart" class="header-cart-count CartCount">0</span>
+                                 <span id="count_Cart" class="header-cart-count CartCount"><%=cart.countItem()%></span>
                                  </a>
                               </li>
                               <li class="dropdown" id="segment_user_do_login">

@@ -39,9 +39,9 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
  * @author thanh
  */
 @WebServlet(name = "products_add", urlPatterns = {"/products_add"})
-@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
-        maxFileSize = 1024 * 1024 * 10, // 10MB
-        maxRequestSize = 1024 * 1024 * 50) // 50MB
+//@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
+//        maxFileSize = 1024 * 1024 * 10, // 10MB
+//        maxRequestSize = 1024 * 1024 * 50) // 50MB
 public class products_add extends HttpServlet {
 
     /**

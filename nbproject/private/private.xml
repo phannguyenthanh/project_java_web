@@ -5,41 +5,57 @@
         <group>
             <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/carts_transport.java</file>
             <file>file:/E:/java/javawep/test_tomcat/web/admin/index.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/asset/product.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/Models/Bills.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/Models/Bill_Detail.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/admin/Views/product/details.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/admin/Views/product/update.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/asset/payment.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/products_add.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/type_delete.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/Controller/users.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/carts_asset.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/Controller/brands.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/Models/Item.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/login_asset.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/asset/product-details.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/Controller/bills_detail.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/carts_successful_shipping.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/asset/block/header.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/admin/block/header.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/brand_add.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/Models/View_Carts.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/admin/dashboard-finance.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/asset/cart.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/Models/Users.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/Models/Products.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/asset/about.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/admin/block/nav.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/asset/index.jsp</file>
             <file>file:/E:/java/javawep/test_tomcat/web/asset/css/styles.css</file>
             <file>file:/E:/java/javawep/test_tomcat/src/java/Controller/carts.java</file>
-            <file>file:/E:/java/javawep/test_tomcat/web/asset/product.jsp</file>
             <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/brand_delete.java</file>
-            <file>file:/E:/java/javawep/test_tomcat/web/admin/Views/product/details.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/bills_add.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/brand_edit.java</file>
             <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/logout_asset.java</file>
             <file>file:/E:/java/javawep/test_tomcat/web/admin/Views/type/details.jsp</file>
             <file>file:/E:/java/javawep/test_tomcat/src/java/Models/Carts.java</file>
             <file>file:/E:/java/javawep/test_tomcat/web/admin/users.jsp</file>
             <file>file:/E:/java/javawep/test_tomcat/web/admin/carts.jsp</file>
             <file>file:/E:/java/javawep/test_tomcat/src/java/Controller/types.java</file>
-            <file>file:/E:/java/javawep/test_tomcat/web/asset/payment.jsp</file>
-            <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/type_delete.java</file>
-            <file>file:/E:/java/javawep/test_tomcat/src/java/Controller/users.java</file>
-            <file>file:/E:/java/javawep/test_tomcat/src/java/Controller/brands.java</file>
             <file>file:/E:/java/javawep/test_tomcat/web/asset/block/menu.jsp</file>
-            <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/login_asset.java</file>
-            <file>file:/E:/java/javawep/test_tomcat/web/asset/product-details.jsp</file>
             <file>file:/E:/java/javawep/test_tomcat/web/admin/products.jsp</file>
             <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/carts_delete.java</file>
-            <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/carts_successful_shipping.java</file>
             <file>file:/E:/java/javawep/test_tomcat/src/java/Controller/products.java</file>
-            <file>file:/E:/java/javawep/test_tomcat/web/asset/block/header.jsp</file>
-            <file>file:/E:/java/javawep/test_tomcat/web/admin/block/header.jsp</file>
-            <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/brand_add.java</file>
             <file>file:/E:/java/javawep/test_tomcat/web/asset/login.jsp</file>
             <file>file:/E:/java/javawep/test_tomcat/web/asset/register.jsp</file>
             <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/logout.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/src/java/Controller/bills.java</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/admin/Views/brand/details.jsp</file>
             <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/carts_add.java</file>
-            <file>file:/E:/java/javawep/test_tomcat/web/asset/cart.jsp</file>
-            <file>file:/E:/java/javawep/test_tomcat/src/java/Models/Products.java</file>
-            <file>file:/E:/java/javawep/test_tomcat/web/asset/about.jsp</file>
-            <file>file:/E:/java/javawep/test_tomcat/web/admin/block/nav.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/asset/block/nav.jsp</file>
+            <file>file:/E:/java/javawep/test_tomcat/web/admin/detail_bill.jsp</file>
             <file>file:/E:/java/javawep/test_tomcat/src/java/CRUD/login.java</file>
-            <file>file:/E:/java/javawep/test_tomcat/web/asset/index.jsp</file>
         </group>
     </open-files>
 </project-private>

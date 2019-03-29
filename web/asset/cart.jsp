@@ -1,4 +1,8 @@
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="java.util.Map"%>
+<%@page import="Models.Item"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!doctype html>
 <!doctype html>
 <html lang="vi">
@@ -221,6 +225,9 @@
                         <div class="page-title">
                            <h2>Giỏ hàng</h2>
                         </div>
+                          <%
+                                                if(cart.getCartItems().entrySet().size()>0){
+                                                %>
                         <div class="insCartTemp">
                            <div class="row">
                               <div class="col-md-8 col-sm-12 col-xs-12 colCart left">
@@ -237,23 +244,41 @@
                                              </tr>
                                           </thead>
                                           <tbody>
+                                             
+                                              <%for (Map.Entry<Long, Item> list : cart.getCartItems().entrySet()) {%>
                                              <tr>
-                                                <td class="image text-center"><a class="product-image" title="Máy Nước Nóng Ferroli Divo SSN 4.5S (BM01) 4.5 kW" href="/may-nuoc-nong-ferroli-divo-ssn-4-5s-bm01-4-5-kw"><img alt="Máy Nước Nóng Ferroli Divo SSN 4.5S (BM01) 4.5 kW" src="images/ferroli-divo-ssn-45s-bm01-300x300.jpg"></a></td>
+                                                <td class="image text-center">
+                                                        <a class="product-image" title="<%=list.getValue().getProduct().getName()%>" href="/may-nuoc-nong-ferroli-divo-ssn-4-5s-bm01-4-5-kw">
+                                                            <img alt="<%=list.getValue().getProduct().getAvatar()%>" src="<%=list.getValue().getProduct().getAvatar()%>" width="100px"></a></td>
                                                 <td class="text-left">
-                                                   <h2 class="product-name"> <a href="/may-nuoc-nong-ferroli-divo-ssn-4-5s-bm01-4-5-kw">Máy Nước Nóng Ferroli Divo SSN 4.5S (BM01) 4.5 kW</a> </h2>
+                                                    <h2 class="product-name"> <a href="/may-nuoc-nong-ferroli-divo-ssn-4-5s-bm01-4-5-kw"><%=list.getValue().getProduct().getName()%></a> </h2>
                                                    <span class="variant-title" style="display: none" >Default Title</span><br>
-                                                   <a class="button remove-item" title="Xóa" href="/cart/change?line=1&amp;quantity=0" data-id="7113532"><i class="fa fa-trash" aria-hidden="true"></i> <span>Xóa sản phẩm</span></a>
+                                                   <a class="button remove-item" title="Xóa" href="../carts_asset?command=remove&id=<%=list.getValue().getProduct().getId()%>" data-id="7113532"><i class="fa fa-trash" aria-hidden="true"></i> <span>Xóa sản phẩm</span></a>
                                                 </td>
-                                                <td class="a-right hidden-xs text-center"><span class="cart-price"> <span class="price">1.550.000₫</span> </span></td>
-                                                <td class="text-center tdQty">
-                                                   <div class="groupQty">
-                                                      <button type="button" class="qtyControl minus">-</button>
-                                                      <input type="number" maxlength="12" min="1" class="input-text qty" title="Số lượng" size="4" value="1" name="Lines" id="updates_7113532">
-                                                      <button type="button" class="qtyControl plus">+</button>
-                                                   </div>
-                                                </td>
-                                                <td class="text-center hidden-xs"><span class="cart-price"> <span class="price">1.550.000₫</span> </span></td>
+                                                            <td class="a-right hidden-xs text-center"><span class="cart-price"> <span class="price">
+                                                    
+                                                                        <%
+                                                            DecimalFormat formatter = new DecimalFormat("###,###,###");
+                                                            out.print(formatter.format(list.getValue().getProduct().getPrice()));
+                                                        %>₫ 
+                                                        </span> </span></td>
+//                                                <td class="text-center tdQty">
+//                                                   <div class="groupQty">
+//                                                      <button type="button" class="qtyControl minus">-</button>
+//                                                      <input type="number"  min="1" max="3" class="input-text qty" title="Số lượng" size="1" value="<%=list.getValue().getQuantity()%>" name="Lines" id="updates_7113532">
+//                                                      <button type="button" class="qtyControl plus">+</button>
+//                                                   </div>
+//                                                </td>
+                                                <td class="text-center hidden-xs"><span class="cart-price"> <span class="price">
+                                                        <%
+                                                           int total = list.getValue().getProduct().getPrice()*list.getValue().getQuantity();
+                                                       
+                                                            out.print(formatter.format(total));
+                                                        %>₫ 
+                                                        </span> </span></td>
                                              </tr>
+                                             <%}%>
+                                             
                                           </tbody>
                                           <tfoot>
                                              <tr class="first last">
@@ -273,13 +298,16 @@
                                           <tfoot>
                                              <tr>
                                                 <td colspan="1" class="a-left"><strong>Tổng tiền</strong></td>
-                                                <td class="a-right text-right"><strong><span class="price">1.550.000₫</span></strong></td>
+                                                <td class="a-right text-right"><strong><span class="price"><%
+                                                     DecimalFormat formatter = new DecimalFormat("###,###,###");
+                                                    out.print(formatter.format(cart.totalCart()));
+                                                %>₫</span></strong></td>
                                              </tr>
                                           </tfoot>
                                        </table>
                                        <ul class="checkout">
                                           <li>
-                                             <button class="button btn-proceed-checkout" title="Tiến hành thanh toán" type="button" onclick="window.location.href='/checkout'"><span>Tiến hành thanh toán</span></button>
+                                             <button class="button btn-proceed-checkout" title="Tiến hành thanh toán" type="button" onclick="window.location.href='payment.jsp'"><span>Tiến hành thanh toán</span></button>
                                           </li>
                                        </ul>
                                        <div class="pd_saler">
@@ -303,6 +331,9 @@
                               </div>
                            </div>
                         </div>
+                                             <%}else{%>
+                                             <h2>Giỏ hàng trống</h2>
+                                             <%}%>
                      </div>
                   </div>
                </div>

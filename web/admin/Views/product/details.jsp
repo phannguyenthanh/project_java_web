@@ -69,6 +69,10 @@
                                         <td><%=u.getName()%></td>
                                     </tr>
                                     <tr>
+                                        <td>Ảnh  </td>
+                                        <td><img src="<%=u.getAvatar()%>" width="100px" /></td>
+                                    </tr>
+                                    <tr>
                                         <td>Giá </td>
                                         <td><%=u.getPrice()%></td>
                                     </tr>

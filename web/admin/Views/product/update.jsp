@@ -76,8 +76,10 @@
                     </div>
                         <input type="hidden" required="" name="avatar_text" value="<%=u.getAvatar()%>"  placeholder="Ảnh " class="form-control">
                     <div class="form-group row">
+                        
                         <label class="col-12 col-sm-3 col-form-label text-sm-right"> Ảnh  </label>
                         <div class="col-12 col-sm-8 col-lg-6">
+                            <img src="<%=u.getAvatar()%>" width="100px" />
                             <input type="file" required="" name="avatar"  placeholder="Ảnh " class="form-control">
                             
                         </div>

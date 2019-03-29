@@ -5,9 +5,13 @@
  */
 package CRUD;
 
-import Controller.bills;
+import Controller.products;
+import Models.Item;
+import Models.Products;
+import Models.View_Carts;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +23,10 @@ import javax.servlet.http.HttpSession;
  *
  * @author sinhs
  */
-@WebServlet(name = "carts_delete", urlPatterns = {"/carts_delete"})
-public class carts_delete extends HttpServlet {
+@WebServlet(name = "carts_asset", urlPatterns = {"/carts_asset"})
+public class carts_asset extends HttpServlet {
+
+    private final products products = new products();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,27 +39,44 @@ public class carts_delete extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
 
+
         HttpSession session = request.getSession();
-        String sid = request.getParameter("id");
-        int id = Integer.parseInt(sid);
+        String command = request.getParameter("command");
+        String id = request.getParameter("id");
+        View_Carts cart = (View_Carts) session.getAttribute("cart");
 
-        int status = bills.delete(id);
+        try {
+            Long idProduct = Long.parseLong(id);
+            Products product = products.findbyid(Integer.parseInt(id));
 
-        if (status > 0) {
+            switch (command) {
+                case "plus":
+                    if (cart.getCartItems().containsKey(idProduct)) {
+                        cart.plusToCart(idProduct, new Item(product, cart.getCartItems().get(idProduct).getQuantity()));
+                    } else {
+                        cart.plusToCart(idProduct, new Item(product, 1));
+                    }
+                    break;
+                case "remove":
+                    cart.removeToCart(idProduct);
+                    break;
+            }
 
-            session.setAttribute("status", "success");
-            session.setAttribute("alert", "Xóa thành công");
-//            request.getRequestDispatcher("admind/products.jsp").forward(request, response);
-            response.sendRedirect("admin/index.jsp?status=Cart");
-        } else {
+        } catch (Exception e) {
+            e.printStackTrace();
             session.setAttribute("status", "danger");
-            session.setAttribute("alert", "Xóa thất bại");
-            response.sendRedirect("admin/index.jsp?status=Cart");
+            session.setAttribute("alert", "Thêm thất bại");
 
+//            response.sendRedirect("asset/cart.jsp");
         }
+        out.print("<p>Record saved successfully!</p>");
+        session.setAttribute("status", "success");
+        session.setAttribute("alert", "Thêm thành công");
+        response.sendRedirect("asset/cart.jsp");
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

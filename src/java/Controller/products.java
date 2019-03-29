@@ -283,7 +283,7 @@ public class products {
         return List;
     }
 
-    public Vector<Products> productOption(String status, String sid , String search) {
+    public Vector<Products> productOption(String status, String sid , String search,int start, int limit) {
         Vector<Products> List = new Vector<Products>();
         String sql;
         Connection cnn = DB.KetnoiCSDL();
@@ -297,24 +297,24 @@ public class products {
 
                 if (status == null || status.equals("")) {
                     
-                    sql = "SELECT * FROM products  ORDER BY created_at DESC  ";
+                    sql = "SELECT * FROM products  ORDER BY created_at DESC LIMIT "+start+","+limit+" ";
                 } else if (status.equals("search")) {
 
-                    sql = "SELECT * FROM products where name LIKE '%"+search+"%' ORDER BY created_at DESC  ";
+                    sql = "SELECT * FROM products where name LIKE '%"+search+"%' ORDER BY created_at DESC LIMIT "+start+","+limit+"  ";
 
                 } else if (status.equals("type")) {
 
                     id = Integer.parseInt(sid);
-                    sql = "SELECT * FROM products where type ="+id+"  ORDER BY created_at DESC  ";
+                    sql = "SELECT * FROM products where type ="+id+"  ORDER BY created_at DESC LIMIT "+start+","+limit+"  ";
                     
 
                 } else if (status.equals("brand")) {
 
                     id = Integer.parseInt(sid);
-                   sql = "SELECT * FROM products where brand ="+id+"  ORDER BY created_at DESC  ";
+                   sql = "SELECT * FROM products where brand ="+id+"  ORDER BY created_at DESC LIMIT "+start+","+limit+"  ";
                 } else {
                     
-                    sql = "SELECT * FROM products  ORDER BY created_at DESC  ";
+                    sql = "SELECT * FROM products  ORDER BY created_at DESC LIMIT "+start+","+limit+"  ";
                 }
 
                 
@@ -354,5 +354,60 @@ public class products {
         return List;
     }
 //    $sql = "select * from $table where discontinued = 1 ORDER BY $order DESC LIMIT $stat,$lim";
+    
+    public int countproductOption(String status, String sid , String search) {
+       
+        String sql;
+        Connection cnn = DB.KetnoiCSDL();
+        int id = 0;
+        int count = 0;
+        if (cnn == null) {
+            return count;
+        } else {
+
+            try {
+
+                if (status == null || status.equals("")) {
+                    
+                    sql = "SELECT count(*) FROM products  ORDER BY created_at DESC  ";
+                } else if (status.equals("search")) {
+
+                    sql = "SELECT count(*) FROM products where name LIKE '%"+search+"%' ORDER BY created_at DESC ";
+
+                } else if (status.equals("type")) {
+
+                    id = Integer.parseInt(sid);
+                    sql = "SELECT count(*) FROM products where type ="+id+"  ORDER BY created_at DESC ";
+                    
+
+                } else if (status.equals("brand")) {
+
+                    id = Integer.parseInt(sid);
+                   sql = "SELECT count(*) FROM products where brand ="+id+"  ORDER BY created_at DESC  ";
+                } else {
+                    
+                    sql = "SELECT count(*) FROM products  ORDER BY created_at DESC  ";
+                }
+
+                
+
+                Statement stm = cnn.createStatement();
+                ResultSet rs = stm.executeQuery(sql);
+                
+                
+                
+                  while (rs.next())//duyệt từng bản ghi kết quả select
+                {
+                   count = rs.getInt(1);
+                }
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(products.class.getName()).log(Level.SEVERE, null, ex);
+                return count;
+            }
+
+        }
+        return count;
+    }
 
 }

@@ -150,7 +150,7 @@
                                         </div>
                                         <div class="clearfix"></div>
                                         <div class="detail-info-entry pd_action">
-                                            <a href="../carts_add?id=<%=u.getId()%>" class="button btn-outline btn-addCart ">Thêm vào giỏ</a>
+                                            <a href="../carts_asset?command=plus&id=<%=u.getId()%>" class="button btn-outline btn-buyNow " >Thêm vào giỏ</a>
                                             <a href="javascript:void(0)" class="button btn-outline btn-buyNow ">Mua ngay</a>
                                             <a href="javascript:void(0)" class="button btn-outline btn-Soldout hidden">Hết hàng</a>
                                             <div class="clear"></div>

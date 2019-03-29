@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2019 at 07:48 AM
+-- Generation Time: Mar 29, 2019 at 09:33 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -21,6 +21,64 @@ SET time_zone = "+00:00";
 --
 -- Database: `xe_pkl`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bills`
+--
+
+CREATE TABLE `bills` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `id_bill` bigint(11) DEFAULT NULL,
+  `id_user` int(11) DEFAULT NULL,
+  `total` bigint(11) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bills`
+--
+
+INSERT INTO `bills` (`id`, `id_bill`, `id_user`, `total`, `name`, `address`, `phone`, `content`, `status`, `created_at`, `updated_at`) VALUES
+(3, 1553423896853, 0, 199999, 'thanh phan', 'LÃª Há» , Kim Báº£ng , HÃ  Nam', '962949332', 'dfs', 1, '2019-03-24 10:37:45', NULL),
+(4, 1553423975966, 0, 199999, 'thanh phan', 'LÃª Há» , Kim Báº£ng , HÃ  Nam', '962949332', 'fsd', 1, '2019-03-24 10:39:35', NULL),
+(5, 1553424073146, 0, 199999, 'thanh phan', 'LÃª Há» , Kim Báº£ng , HÃ  Nam', '962949332', 'fsd', 1, '2019-03-24 10:41:13', NULL),
+(6, 1553424130879, 0, 199999, 'thanh phan', 'LÃª Há» , Kim Báº£ng , HÃ  Nam', '962949332', 'sfd', 1, '2019-03-24 10:42:10', NULL),
+(7, 1553836447983, 0, 306000000, 'thanh phan', 'LÃª Há» , Kim Báº£ng , HÃ  Nam', '962949332', '', 1, '2019-03-29 05:14:07', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bills_detail`
+--
+
+CREATE TABLE `bills_detail` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `id_product` int(11) DEFAULT NULL,
+  `id_bill` bigint(11) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bills_detail`
+--
+
+INSERT INTO `bills_detail` (`id`, `id_product`, `id_bill`, `price`, `quantity`, `created_at`, `updated_at`) VALUES
+(1, 102, 1553423975966, 199999, 1, '2019-03-24 10:39:35', NULL),
+(2, 102, 1553424073146, 199999, 1, '2019-03-24 10:41:13', NULL),
+(3, 102, 1553424130879, 199999, 1, '2019-03-24 10:42:10', NULL),
+(4, 1, 1553836447983, 193000000, 1, '2019-03-29 05:14:07', NULL),
+(5, 6, 1553836447983, 113000000, 1, '2019-03-29 05:14:07', NULL);
 
 -- --------------------------------------------------------
 
@@ -52,35 +110,6 @@ INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
---
-
-CREATE TABLE `cart` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `id_user` int(11) DEFAULT NULL,
-  `id_product` int(11) DEFAULT NULL,
-  `amount` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `name` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`id`, `id_user`, `id_product`, `amount`, `created_at`, `updated_at`, `name`, `address`, `phone`, `content`, `status`) VALUES
-(1, 2, 2, 2, NULL, NULL, 'thanh', 'hà nội', '093837378332', 'sdfd', 0),
-(2, 3, 3, 3, NULL, NULL, 'link', 'ba sao', '023993332', 'sdf', 3),
-(3, 2, 2, 2, NULL, NULL, 'thanh', 'hà nội', '093837378332', 'sdfd', 0);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `migrations`
 --
 
@@ -101,9 +130,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2019_03_14_154510_create_brands', 1),
 (5, '2019_03_14_154640_create_types', 1),
 (6, '2019_03_14_154724_create_products', 1),
-(7, '2019_03_14_155659_create_cart', 1),
-(8, '2019_03_19_142525_add_column_1_cart', 2),
-(9, '2019_03_19_143302_add_column_2_cart', 3);
+(14, '2019_03_14_155659_create_cart', 2),
+(15, '2019_03_23_030227_create_cart_detail', 2);
 
 -- --------------------------------------------------------
 
@@ -133,7 +161,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `made_in`, `capacity`, `created_at`, `model_year`, `location`, `type`, `avatar`, `brand`, `content`, `view`, `color`) VALUES
-(1, 'Hadley Bins', 193000000, 'abyss', '200cc', '2019-03-14', '2016', '88161 Kunde Plain Apt. 185\nWeissnatview, ME 85478', 1, '../imager/dat-bien-so-xe-pkl-28704-1451232869-56800e65bee92.jpeg', 2, 'It was so long since she had been anything near the right size, that it felt quite strange at first; but she got used to it in a few minutes, and began talking to herself, as usual. \'Come, there\'s half my plan done now! How puzzling all these changes are! I\'m never sure what I\'m going to be, from.', 2419, 'blue'),
+(1, 'Hadley Binsf', 193000000, 'abyss', '200cc', '2019-03-14', '2016', '88161 Kunde Plain Apt. 185Weissnatview, ME 85478', 1, '../imager/../imager/../imager/dat-bien-so-xe-pkl-28704-1451232869-56800e65bee92.jpeg', 2, 'It was so long since she had been anything near the right size, that it felt quite strange at first; but she got used to it in a few minutes, and began talking to herself, as usual. \'Come, there\'s half my plan done now! How puzzling all these changes are! I\'m never sure what I\'m going to be, from.', 2419, 'blue'),
 (2, 'Alexander Maggio', 78000000, 'china', '75cc', '2019-03-14', '2014', '259 Terry Pines\nRuntechester, ID 44875-1672', 9, '../imager/1495100302-149503197885351-bmv3.jpg', 6, 'And then, turning to the rose-tree, she went on, \'What HAVE you been doing here?\' \'May it please your Majesty,\' said Two, in a very humble tone, going down on one knee as he spoke, \'we were trying--\' \'I see!\' said the Queen, who had meanwhile been examining the roses. \'Off with their heads!\' and.', 4091, 'blue'),
 (3, 'Einar Considine DVM', 179000000, 'prc', '250cc', '2019-03-14', '2014', '72446 Niko Causeway Apt. 725\nPort Elnora, OH 66294-7947', 10, '../imager/1471920611-147191790694399-moto3.jpg', 8, 'Queen\'s voice in the distance, screaming with passion. She had already heard her sentence three of the players to be executed for having missed their turns, and she did not like the look of the thing at all. \'But perhaps it was only sobbing,\' she thought, and looked into its eyes again, to see if.', 6932, 'white'),
 (4, 'Paolo Bode', 40000000, 'vietnam', '75cc', '2019-03-14', '2019', '753 Schuppe Green Apt. 989\nEleanoreburgh, AZ 54741', 11, '../imager/181316_2.jpg', 3, 'Dormouse, who was sitting next to her. \'I can hardly breathe.\' \'I can\'t help it,\' said Alice very meekly: \'I\'m growing.\' \'You\'ve no right to grow here,\' said the Dormouse. \'Don\'t talk nonsense,\' said Alice more boldly: \'you know you\'re growing too.\' \'Yes, but I grow at a reasonable pace,\' said the.', 7761, 'blue'),
@@ -232,7 +260,8 @@ INSERT INTO `products` (`id`, `name`, `price`, `made_in`, `capacity`, `created_a
 (97, 'Audie Bashirian', 31000000, 'vietnam', '300cc', '2019-03-14', '2017', '4008 Alexandrine Extensions Apt. 566\nJanshire, NV 41558', 11, '../imager/1518927039108.jpg', 7, 'I wonder who will put on your shoes and stockings for you now, dears? I\'m sure _I_ shan\'t be able! I shall be a great deal too far off to trouble myself about you: you must manage the best way you can;--but I must be kind to them,\' thought Alice, \'or perhaps they won\'t walk the way I want to go!.', 597, 'yellow'),
 (98, 'Newton Reinger', 142000000, 'japan', '175cc', '2019-03-14', '2015', '9705 Sanford Locks\nLake Lon, OR 98168', 5, '../imager/dat-bien-so-xe-pkl-28704-1451232869-56800e65bee92.jpeg', 3, 'FIT you,\' said the King, looking round the court with a smile. There was a dead silence. \'It\'s a pun!\' the King added in an offended tone, and everybody laughed, \'Let the jury consider their verdict,\' the King said, for about the twentieth time that day. \'No, no!\' said the Queen. \'Sentence.', 4233, 'yellow'),
 (99, 'Prof. Conor Schroeder Sr.', 87000000, 'japan', '100cc', '2019-03-14', '2010', '7691 Balistreri Plains Suite 597\nCartwrightside, ME 03525', 3, '../imager/hqdefault.jpg', 1, 'Alice, she went on, \'What\'s your name, child?\' \'My name is Alice, so please your Majesty,\' said Alice very politely; but she added, to herself, \'Why, they\'re only a pack of cards, after all. I needn\'t be afraid of them!\' \'And who are THESE?\' said the Queen, pointing to the three gardeners who were.', 1967, 'white'),
-(100, 'Isaias Greenfelder', 159000000, 'india', '75cc', '2019-03-14', '2010', '801 Upton Roads Suite 581\nEast Mableland, WY 53445-2381', 2, '../imager/1471920611-147191790694399-moto3.jpg', 3, 'It was opened by another footman in livery, with a round face, and large eyes like a frog; and both footmen, Alice noticed, had powdered hair that curled all over their heads. She felt very curious to know what it was all about, and crept a little way out of the wood to listen. The Fish-Footman.', 2962, 'red');
+(102, 'san phâm 1', 199999, 'Việt Nam', '120', '2019-03-22', '2019', 'Đại chỉ', 12, '../imager/4-1.jpg', 3, 'fsda', NULL, 'màu'),
+(108, 'hà nội', 12, '21', '21', '2019-03-23', '12', '12', 1, '../imager/121.jpg', 1, '12', NULL, '21');
 
 -- --------------------------------------------------------
 
@@ -262,7 +291,8 @@ INSERT INTO `types` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (8, 'Touring', '2019-03-14 11:47:45', NULL),
 (9, 'Off-road', '2019-03-14 11:47:45', NULL),
 (10, 'Bobber', '2019-03-14 11:47:45', NULL),
-(11, 'Drag', '2019-03-14 11:47:45', NULL);
+(11, 'Drag', '2019-03-14 11:47:45', NULL),
+(12, 'loại moi', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -297,7 +327,7 @@ INSERT INTO `user` (`id`, `name`, `avatar`, `email`, `password`, `permissions`, 
 (8, 'Miss Florence Leuschke', '../imager_user/images.jpg', 'ngerhold@murphy.biz', '123456', 0, NULL, '2019-03-14 11:47:42', NULL),
 (9, 'Prof. Eliezer Smitham I', '../imager_user/212310618041193431006884986278710988847462n-1507458620893.jpg', 'emanuel.price@dubuque.com', '123456', 0, NULL, '2019-03-14 11:47:42', NULL),
 (10, 'Raven Kub', '../imager_user/13151599_807990012635341_3384564945476612801_n_1.jpg', 'crona.arlene@daugherty.com', '123456', 0, NULL, '2019-03-14 11:47:42', NULL),
-(11, 'Lauryn Olson', '../imager_user/fsđsfdsfdsffds.jpg', 'mossie37@von.com', '123456', 0, NULL, '2019-03-14 11:47:42', NULL),
+(11, 'Lauryn Olson', '../imager_user/453296982021299411285530489789381717000192n-1541424536023360360322.png', 'mossie37@von.com', '123456', 0, NULL, '2019-03-14 11:47:42', NULL),
 (12, 'Jovanny Effertz', '../imager_user/koh1495766571_7637.jpg', 'nels34@yahoo.com', '123456', 0, NULL, '2019-03-14 11:47:42', NULL),
 (13, 'Reilly Green', '../imager_user/1395766_1539410562939293_7462015777995791013_n.jpg', 'ihagenes@yahoo.com', '123456', 0, NULL, '2019-03-14 11:47:42', NULL),
 (14, 'Cynthia Lubowitz', '../imager_user/images (3).jpg', 'krajcik.otto@huel.com', '123456', 0, NULL, '2019-03-14 11:47:42', NULL),
@@ -395,15 +425,21 @@ INSERT INTO `user` (`id`, `name`, `avatar`, `email`, `password`, `permissions`, 
 --
 
 --
--- Indexes for table `brands`
+-- Indexes for table `bills`
 --
-ALTER TABLE `brands`
+ALTER TABLE `bills`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `cart`
+-- Indexes for table `bills_detail`
 --
-ALTER TABLE `cart`
+ALTER TABLE `bills_detail`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `brands`
+--
+ALTER TABLE `brands`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -435,34 +471,40 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `bills`
+--
+ALTER TABLE `bills`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `bills_detail`
+--
+ALTER TABLE `bills_detail`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `cart`
---
-ALTER TABLE `cart`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT for table `types`
 --
 ALTER TABLE `types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `user`
