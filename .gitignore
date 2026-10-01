@@ -1,0 +1,42 @@
+# NetBeans build and dist directories
+/build/
+/dist/
+nbproject/private/
+nbproject/Makefile-*.mk
+nbproject/Package-*.bash
+
+# Class files and archives
+*.class
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# IDE specific files
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
